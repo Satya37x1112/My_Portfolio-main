@@ -195,7 +195,7 @@ const Contact: React.FC = () => {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-slate-700 text-center">
           <p className="text-gray-400">
-            © 2024 Alex Johnson. Built with React & Tailwind CSS.
+            Made by Satya Sarthak Manohari with ❤️ | Built with React & Tailwind CSS.
           </p>
         </div>
       </div>
