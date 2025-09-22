@@ -56,7 +56,7 @@ const About: React.FC = () => {
           {/* About Content */}
           <div className="space-y-6 text-gray-300">
             <h3 className="text-2xl font-semibold text-white mb-4">
-              BTech Student & Cybersecurity Enthusiast
+              Satya Sarthak Manohari - BTech Student & Cybersecurity Professional
             </h3>
             <p className="text-lg leading-relaxed">
               Hello! I am Satya Sarthak Manohari, a BTech student at Sri Sri University. Passionate about technology and innovation, I am eager to explore the world of engineering and contribute to cutting-edge advancements. With a strong foundation in problem-solving, a keen interest in robotics, and a budding enthusiasm for cybersecurity, I am driven to learn and grow in these dynamic fields.

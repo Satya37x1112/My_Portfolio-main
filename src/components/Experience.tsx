@@ -8,7 +8,7 @@ const Experience: React.FC = () => {
       institution: "Sri Sri University",
       location: "India",
       period: "Present",
-      description: "Pursuing BTech with focus on engineering fundamentals, technology innovation, and cutting-edge advancements in robotics and cybersecurity.",
+      description: "Satya Sarthak Manohari is pursuing BTech at Sri Sri University with focus on engineering fundamentals, technology innovation, and cutting-edge advancements in robotics and cybersecurity.",
       icon: <GraduationCap className="text-blue-400" size={24} />
     }
   ];
@@ -19,7 +19,7 @@ const Experience: React.FC = () => {
       company: "NISER Bhubaneswar",
       location: "Bhubaneswar, India",
       period: "Previous",
-      description: "Gained hands-on experience in research methodologies and contributed to cutting-edge projects in technology and innovation.",
+      description: "Satya Sarthak Manohari gained hands-on research experience at NISER Bhubaneswar, contributing to cutting-edge projects in technology and innovation.",
       icon: <Briefcase className="text-blue-400" size={24} />
     }
   ];
@@ -59,10 +59,10 @@ const Experience: React.FC = () => {
     <section id="experience" className="py-20 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Experience & Education</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Satya Sarthak Manohari - Experience & Education</h2>
           <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            My academic journey and professional experiences that have shaped my expertise in cybersecurity and technology.
+            Satya Sarthak Manohari's academic journey and professional experiences that have shaped expertise in cybersecurity and technology innovation.
           </p>
         </div>
 

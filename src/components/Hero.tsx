@@ -20,11 +20,11 @@ const Hero: React.FC = () => {
             Hi, I'm <span className="text-blue-400">Satya Sarthak Manohari</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            BTech Student | Cybersecurity Enthusiast | Problem Solver
+            BTech Student | Cybersecurity Professional | Problem Solver
           </p>
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Passionate about technology and innovation at Sri Sri University. Exploring cybersecurity, 
-            robotics, and cutting-edge engineering solutions that make a difference.
+            Satya Sarthak Manohari is passionate about cybersecurity and technology innovation at Sri Sri University, Odisha. 
+            Exploring advanced penetration testing, network security, and cutting-edge cybersecurity solutions.
           </p>
         </div>
 
