@@ -25,8 +25,8 @@ const Hero: React.FC = () => {
             BTech Student | Cybersecurity Professional | Problem Solver
           </p>
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Satya Sarthak Manohari is passionate about cybersecurity and technology innovation at Sri Sri University, Odisha. 
-            Exploring advanced penetration testing, network security, and cutting-edge cybersecurity solutions.
+            I'm passionate about cybersecurity and technology innovation. 
+            Currently Exploring advanced penetration testing, network security, and cutting-edge cybersecurity solutions.
           </p>
         </div>
 
@@ -76,22 +76,12 @@ const Hero: React.FC = () => {
         <div className="flex justify-center mt-4 mb-8">
           <div className="w-64 h-2 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 rounded-full animate-roller" />
         </div>
-        </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ArrowDown className="text-gray-400" size={24} />
       </div>
-// Tailwind custom animation for roller
-// Add this to your global CSS (e.g., index.css or tailwind.config.js):
-// .animate-roller {
-//   animation: roller 2s linear infinite;
-// }
-// @keyframes roller {
-//   0% { background-position: 0% 50%; }
-//   100% { background-position: 100% 50%; }
-// }
     </section>
   );
 };
