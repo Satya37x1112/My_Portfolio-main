@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Optimized CSS without font import - loaded via HTML preload */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -55,6 +55,29 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Heading spacing optimization */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Section headings specific spacing */
+section h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+section h3 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Hero heading - no top margin needed */
+#hero h1 {
+  margin-top: 0;
 }
 
 /* Custom animations */

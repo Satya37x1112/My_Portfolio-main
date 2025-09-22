@@ -42,6 +42,7 @@ const About: React.FC = () => {
                   decoding="async"
                   width="320"
                   height="320"
+                  fetchPriority="high"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-blue-600 rounded-full p-4">
