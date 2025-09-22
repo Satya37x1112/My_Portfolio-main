@@ -36,8 +36,12 @@ const About: React.FC = () => {
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 p-1">
                 <img 
                   src={profileImage} 
-                  alt="Satya Sarthak Manohari" 
+                  alt="Satya Sarthak Manohari - BTech Student and Cybersecurity Enthusiast at Sri Sri University"
                   className="w-full h-full rounded-full object-cover bg-slate-700"
+                  loading="eager"
+                  decoding="async"
+                  width="320"
+                  height="320"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-blue-600 rounded-full p-4">
