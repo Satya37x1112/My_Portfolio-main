@@ -29,7 +29,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-700"
+      className="fixed top-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-700 shadow-lg shadow-blue-900/30"
       role="navigation"
       aria-label="Main navigation"
     >

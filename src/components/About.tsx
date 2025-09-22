@@ -59,9 +59,7 @@ const About: React.FC = () => {
               Satya Sarthak Manohari - BTech Student & Cybersecurity Professional
             </h3>
             <p className="text-lg leading-relaxed">
-              Hello! I am Satya Sarthak Manohari, a BTech student at Sri Sri University. Passionate about technology and innovation, I am eager to explore the world of engineering and contribute to cutting-edge advancements. With a strong foundation in problem-solving, a keen interest in robotics, and a budding enthusiasm for cybersecurity, I am driven to learn and grow in these dynamic fields.
-              I thrive on solving complex security puzzles, dissecting threats, and safeguarding digital landscapes. Whether its penetration testing, network defense, or risk assessment, I’m in my element. Connect with Me: Let’s chat about threat vectors, zero-day exploits, or the latest cybersecurity trends. Connect with me—I’m always up for a cyber conversation!
-            </p>
+              Hi, I’m Satya Sarthak Manohari — a BTech student at Sri Sri University with a strong interest in robotics, innovation, and cybersecurity. I enjoy tackling security challenges, from penetration testing to network defense, and aim to contribute to building safer digital systems. Beyond academics, I thrive on problem-solving, exploring emerging technologies, and turning ideas into impactful projects. My goal is to grow as a researcher and engineer while contributing to the future of secure, intelligent technology.</p>
             <p className="text-lg leading-relaxed">
               I thrive on solving complex security puzzles, dissecting threats, and safeguarding digital landscapes. Whether it's penetration testing, network defense, or risk assessment, I'm in my element. As a TryHackMe Top 10% performer and ex-intern at NISER Bhubaneswar, I bring practical experience to cybersecurity challenges. When I'm not securing systems, you'll find me strategizing over chess or tackling algorithms on LeetCode.
             </p>

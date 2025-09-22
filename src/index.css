@@ -1,3 +1,12 @@
+/* Roller animation for Hero section */
+@keyframes roller {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.animate-roller {
+  background-size: 200% 200%;
+  animation: roller 2s linear infinite;
+}
 /* Optimized CSS without font import - loaded via HTML preload */
 @tailwind base;
 @tailwind components;

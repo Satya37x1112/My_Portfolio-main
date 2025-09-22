@@ -12,11 +12,11 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen pt-24 md:pt-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center relative overflow-hidden scroll-mt-20">
+  <section id="hero" className="min-h-screen pt-24 md:pt-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center relative overflow-hidden scroll-mt-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%234338ca%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Hi, I'm <span className="text-blue-400">Satya Sarthak Manohari</span>
@@ -45,29 +45,37 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Social Links */}
-        <div className="flex items-center justify-center gap-6">
+  <div className="flex items-center justify-center gap-8 py-8">
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
+            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2"
+            aria-label="GitHub"
           >
-            <Github size={28} />
+            <Github size={32} />
           </a>
           <a
             href="https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
+            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2"
+            aria-label="LinkedIn"
           >
-            <Linkedin size={28} />
+            <Linkedin size={32} />
           </a>
           <a
             href="mailto:manoharisatyasarthak@gmail.com"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
+            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2"
+            aria-label="Mail"
           >
-            <Mail size={28} />
+            <Mail size={32} />
           </a>
+        </div>
+        {/* Smooth Roller Animation */}
+        <div className="flex justify-center mt-4 mb-8">
+          <div className="w-64 h-2 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 rounded-full animate-roller" />
+        </div>
         </div>
       </div>
 
@@ -75,6 +83,15 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ArrowDown className="text-gray-400" size={24} />
       </div>
+// Tailwind custom animation for roller
+// Add this to your global CSS (e.g., index.css or tailwind.config.js):
+// .animate-roller {
+//   animation: roller 2s linear infinite;
+// }
+// @keyframes roller {
+//   0% { background-position: 0% 50%; }
+//   100% { background-position: 100% 50%; }
+// }
     </section>
   );
 };
