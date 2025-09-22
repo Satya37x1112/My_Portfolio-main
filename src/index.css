@@ -1,3 +1,9 @@
+/* 
+   Note: @tailwind directives are required for Tailwind CSS to work properly.
+   These may show as "unknown at-rule" warnings in some CSS linters, 
+   but they are processed correctly by Tailwind CSS at build time.
+*/
+
 /* Roller animation for Hero section */
 @keyframes roller {
   0% { background-position: 0% 50%; }
@@ -7,6 +13,7 @@
   background-size: 200% 200%;
   animation: roller 2s linear infinite;
 }
+
 /* Optimized CSS without font import - loaded via HTML preload */
 @tailwind base;
 @tailwind components;
@@ -127,6 +134,7 @@ section h3 {
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
