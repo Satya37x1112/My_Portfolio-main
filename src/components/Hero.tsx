@@ -21,175 +21,106 @@ const Hero: React.FC = () => {
   };
 
   return (
-  <section id="hero" className="min-h-screen pt-24 md:pt-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center relative overflow-hidden scroll-mt-20">
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%234338ca%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] animate-pulse"></div>
+    <section id="hero" className="min-h-screen pt-24 md:pt-20 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center relative overflow-hidden scroll-mt-20">
+      {/* Subtle Professional Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%2364748b%22 fill-opacity=%220.03%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       
-      {/* Floating shapes */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500 rounded-full opacity-10 animate-float"></div>
-      <div className="absolute top-40 right-20 w-16 h-16 bg-purple-500 rounded-full opacity-10 animate-float animate-delay-200"></div>
-      <div className="absolute bottom-32 left-1/4 w-12 h-12 bg-pink-500 rounded-full opacity-10 animate-float animate-delay-400"></div>
+      {/* Subtle geometric accents */}
+      <div className="absolute top-1/4 right-1/4 w-32 h-32 border border-blue-200 dark:border-blue-800 opacity-30 rounded-lg rotate-12"></div>
+      <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border border-slate-200 dark:border-slate-700 opacity-20 rounded-full"></div>
       
-      {/* Modern geometric shapes */}
-      <div className="absolute top-32 right-1/4 w-24 h-24 border-2 border-blue-400 opacity-20 animate-rotate-in animate-delay-300 rotate-45"></div>
-      <div className="absolute bottom-40 right-16 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 opacity-15 animate-float animate-delay-500 clip-path-triangle"></div>
-      <div className="absolute top-1/3 left-16 w-20 h-20 border-2 border-cyan-400 opacity-25 animate-pulse rounded-lg rotate-12"></div>
-      
-      {/* Animated grid pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500 via-transparent to-purple-500 animate-pulse"></div>
-      </div>
-      
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in-up">
-          {/* Ultra Modern Name Section */}
-          <div className="mb-8 ultra-modern-name">
-            <div className="text-lg md:text-xl text-gray-400 mb-4 font-mono tracking-wider animate-fade-in-up cyber-glow">
-              &lt;/&gt; <span className="gradient-text-cyber">WELCOME_TO_MY_WORLD</span> &lt;/&gt;
+          {/* Professional Header */}
+          <div className="mb-8">
+            <div className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-6 font-medium tracking-wide">
+              Cybersecurity Professional & Developer
             </div>
             
-            {/* Main Name with Multiple Effects */}
+            {/* Clean Professional Name */}
             <h1 className="relative mb-6">
-              <span className="block text-3xl md:text-4xl text-gray-300 font-light mb-2 animate-fade-in-left">
-                <span className="text-blue-400 font-mono">&gt;</span> Hello, I'm
+              <span className="block text-2xl md:text-3xl text-slate-700 dark:text-slate-300 font-light mb-4">
+                Hello, I'm
               </span>
               
-              {/* The Name - Ultra Modern */}
-              <span className="block relative overflow-hidden">
-                <span 
-                  className="name-first block text-4xl md:text-6xl lg:text-8xl font-black leading-tight gradient-text-cyber text-glow holographic animate-scale-in mb-2"
-                  data-text="CYBER SECURITY"
-                  style={{ 
-                    fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    fontWeight: '900'
-                  }}
-                >
-                  CYBER SECURITY
-                </span>
-                <span 
-                  className="name-middle block text-3xl md:text-5xl lg:text-7xl font-bold gradient-text-modern neon-text animate-fade-in-right animate-delay-300 mb-2"
-                  style={{ 
-                    fontFamily: "'Space Grotesk', 'Inter', sans-serif",
-                    letterSpacing: '0.1em',
-                    fontWeight: '800'
-                  }}
-                >
-                  ENTHUSIAST
-                </span>
-                <span 
-                  className="name-last block text-2xl md:text-4xl lg:text-5xl font-medium text-3d animate-slide-in-bottom animate-delay-500"
-                  style={{ 
-                    background: 'linear-gradient(45deg, #00d4ff, #090979, #ff0080)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    fontFamily: "'Outfit', 'Poppins', sans-serif",
-                    letterSpacing: '0.05em'
-                  }}
-                >
-                  SATYA SARTHAK MANOHARI
-                </span>
-                
-                {/* Code-style brackets */}
-                <div className="absolute -left-8 top-1/2 transform -translate-y-1/2 text-blue-400 text-4xl font-mono opacity-30 animate-pulse">
-                  &#123;
+              {/* Professional Name Design */}
+              <div className="space-y-2">
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
+                  Satya Sarthak Manohari
                 </div>
-                <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 text-blue-400 text-4xl font-mono opacity-30 animate-pulse animate-delay-200">
-                  &#125;
+                <div className="text-xl md:text-2xl lg:text-3xl font-medium text-blue-600 dark:text-blue-400 mb-4">
+                  Cybersecurity Enthusiast
                 </div>
-              </span>
+              </div>
               
-              {/* Animated underline with pulse effect */}
-              <div className="relative mt-4">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-scale-in animate-delay-600 rounded-full"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse rounded-full opacity-50"></div>
+              {/* Professional accent line */}
+              <div className="relative mt-6">
+                <div className="w-24 h-0.5 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
               </div>
             </h1>
-            
-            {/* Floating code elements */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="absolute top-1/4 left-1/4 text-blue-400 text-xs font-mono opacity-20 animate-float">
-                const dev = "cybersec"
-              </div>
-              <div className="absolute top-1/3 right-1/4 text-purple-400 text-xs font-mono opacity-15 animate-float animate-delay-300">
-                &lt;skills/&gt;
-              </div>
-              <div className="absolute bottom-1/4 left-1/3 text-pink-400 text-xs font-mono opacity-25 animate-float animate-delay-500">
-                function() &#123;&#125;
-              </div>
-              <div className="absolute top-1/2 right-1/3 text-cyan-400 text-xs font-mono opacity-30 animate-float animate-delay-700">
-                #innovation
-              </div>
-            </div>
           </div>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200 font-medium">
-            <span className="gradient-text-modern font-semibold">BTech Student</span> | 
-            <span className="gradient-text-cyber font-semibold"> Cybersecurity Professional</span> | 
-            <span className="gradient-text font-semibold"> Problem Solver</span>
+          <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8 max-w-3xl mx-auto font-medium">
+            <span className="text-blue-600 dark:text-blue-400 font-semibold">BTech Student</span> • 
+            <span className="text-slate-700 dark:text-slate-300 font-semibold"> Cybersecurity Professional</span> • 
+            <span className="text-slate-700 dark:text-slate-300 font-semibold"> Problem Solver</span>
           </p>
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animate-delay-300">
-            I'm passionate about cybersecurity and technology innovation. 
-            Currently Exploring advanced penetration testing, network security, and cutting-edge cybersecurity solutions.
+          <p className="text-lg text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Passionate about cybersecurity and technology innovation. 
+            Currently exploring advanced penetration testing, network security, and cutting-edge cybersecurity solutions.
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
           <button
             onClick={scrollToProjects}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center gap-3 animate-slide-in-bottom animate-delay-400 hover-lift"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center gap-3"
           >
             View My Work
-            <ArrowDown size={20} className="animate-bounce" />
+            <ArrowDown size={20} />
           </button>
           <button 
             onClick={downloadResume}
-            className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3 animate-slide-in-bottom animate-delay-500 hover-glow"
+            className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
           >
             Download Resume
-            <Download size={20} className="group-hover:animate-bounce" />
+            <Download size={20} />
           </button>
         </div>
 
-        {/* Social Links */}
-  <div className="flex items-center justify-center gap-8 py-8 animate-fade-in-up animate-delay-600">
+        {/* Professional Social Links */}
+        <div className="flex items-center justify-center gap-6 py-8">
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2 hover-lift hover-rotate"
+            className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md border border-slate-200 dark:border-slate-700"
             aria-label="GitHub"
           >
-            <Github size={32} />
+            <Github size={28} />
           </a>
           <a
             href="https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2 hover-lift hover-rotate animate-delay-100"
+            className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md border border-slate-200 dark:border-slate-700"
             aria-label="LinkedIn"
           >
-            <Linkedin size={32} />
+            <Linkedin size={28} />
           </a>
           <a
             href="mailto:manoharisatyasarthak@gmail.com"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2 hover-lift hover-rotate animate-delay-200"
+            className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md border border-slate-200 dark:border-slate-700"
             aria-label="Mail"
           >
-            <Mail size={32} />
+            <Mail size={28} />
           </a>
-        </div>
-        {/* Smooth Roller Animation */}
-        <div className="flex justify-center mt-4 mb-8">
-          <div className="w-64 h-2 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 rounded-full animate-roller" />
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="text-gray-400" size={24} />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <ArrowDown className="text-slate-400 dark:text-slate-500 animate-bounce" size={24} />
       </div>
     </section>
   );

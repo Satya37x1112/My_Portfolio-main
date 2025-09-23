@@ -10,39 +10,39 @@ const About: React.FC = () => {
 
   const highlights = [
     {
-      icon: <Code className="text-blue-400" size={32} />,
+      icon: <Code className="text-blue-600 dark:text-blue-400" size={32} />,
       title: "Cybersecurity",
       description: "TryHackMe Top 10% | Ex-Intern at NISER Bhubaneswar | Penetration Testing & Network Defense"
     },
     {
-      icon: <Palette className="text-blue-400" size={32} />,
+      icon: <Palette className="text-blue-600 dark:text-blue-400" size={32} />,
       title: "Problem Solving",
       description: "LeetCode enthusiast | Strategic Chess player | Complex security puzzle solver"
     },
     {
-      icon: <Zap className="text-blue-400" size={32} />,
+      icon: <Zap className="text-blue-600 dark:text-blue-400" size={32} />,
       title: "Technology",
       description: "Robotics enthusiast | BTech at Sri Sri University | Innovation-driven engineering"
     }
   ];
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-slate-800 scroll-mt-20">
+    <section ref={sectionRef} id="about" className="py-20 bg-white dark:bg-slate-800 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About Me</h2>
-          <div className="w-24 h-1 bg-blue-400 mx-auto mb-8 animate-scale-in"></div>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">About Me</h2>
+          <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-8"></div>
         </div>
 
-        {/* Profile Image Section - Moved to top */}
+        {/* Profile Image Section - Professional */}
         <div ref={imageRef} className="text-center mb-12">
           <div className="flex justify-center">
             <div className={`relative transition-all duration-1000 ${imageVisible ? 'animate-scale-in' : 'opacity-0 scale-75'}`}>
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 p-1 hover-glow animate-pulse-glow">
+              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-800 dark:to-blue-700 p-1 shadow-lg">
                 <img 
                   src={profileImage} 
                   alt="BTech Student and Cybersecurity Enthusiast at Sri Sri University"
-                  className="w-full h-full rounded-full object-cover bg-slate-700 hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full rounded-full object-cover bg-slate-200 dark:bg-slate-700 hover:scale-105 transition-transform duration-300"
                   loading="eager"
                   decoding="async"
                   width="320"
@@ -50,7 +50,7 @@ const About: React.FC = () => {
                   fetchPriority="high"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-blue-600 rounded-full p-4 animate-float hover-rotate">
+              <div className="absolute -bottom-4 -right-4 bg-blue-600 dark:bg-blue-500 rounded-full p-4 shadow-lg">
                 <Code className="text-white" size={24} />
               </div>
             </div>
@@ -59,13 +59,14 @@ const About: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* About Content */}
-          <div className={`space-y-6 text-gray-300 transition-all duration-1000 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-10'}`}>
-            <h3 className="text-2xl font-semibold text-white mb-4 animate-fade-in-up animate-delay-300">
+          <div className={`space-y-6 text-slate-600 dark:text-slate-300 transition-all duration-1000 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-10'}`}>
+            <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
               BTech Student & Cybersecurity Professional
             </h3>
-            <p className="text-lg leading-relaxed animate-fade-in-up animate-delay-400">
-              Hi, I'm a BTech student at Sri Sri University with a strong interest in robotics, innovation, and cybersecurity. I enjoy tackling security challenges, from penetration testing to network defense, and aim to contribute to building safer digital systems. Beyond academics, I thrive on problem-solving, exploring emerging technologies, and turning ideas into impactful projects. My goal is to grow as a researcher and engineer while contributing to the future of secure, intelligent technology.</p>
-            <p className="text-lg leading-relaxed animate-fade-in-up animate-delay-500">
+            <p className="text-lg leading-relaxed">
+              Hi, I'm a BTech student at Sri Sri University with a strong interest in robotics, innovation, and cybersecurity. I enjoy tackling security challenges, from penetration testing to network defense, and aim to contribute to building safer digital systems. Beyond academics, I thrive on problem-solving, exploring emerging technologies, and turning ideas into impactful projects. My goal is to grow as a researcher and engineer while contributing to the future of secure, intelligent technology.
+            </p>
+            <p className="text-lg leading-relaxed">
               I thrive on solving complex security puzzles, dissecting threats, and safeguarding digital landscapes. Whether it's penetration testing, network defense, or risk assessment, I'm in my element. As a TryHackMe Top 10% performer and ex-intern at NISER Bhubaneswar, I bring practical experience to cybersecurity challenges. When I'm not securing systems, you'll find me strategizing over chess or tackling algorithms on LeetCode.
             </p>
 
@@ -73,16 +74,16 @@ const About: React.FC = () => {
               {highlights.map((highlight, index) => (
                 <div 
                   key={index} 
-                  className={`text-center p-4 hover-lift transition-all duration-500 ${
+                  className={`text-center p-6 bg-slate-50 dark:bg-slate-700 rounded-lg shadow-md border border-slate-200 dark:border-slate-600 transition-all duration-500 hover:shadow-lg ${
                     visibleItems.includes(index) ? 'animate-scale-in' : 'opacity-0 scale-75'
                   }`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="flex justify-center mb-3 animate-float" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="flex justify-center mb-3">
                     {highlight.icon}
                   </div>
-                  <h4 className="font-semibold text-white mb-2">{highlight.title}</h4>
-                  <p className="text-sm text-gray-400">{highlight.description}</p>
+                  <h4 className="font-semibold text-slate-900 dark:text-white mb-2">{highlight.title}</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">{highlight.description}</p>
                 </div>
               ))}
             </div>

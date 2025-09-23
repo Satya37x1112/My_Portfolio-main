@@ -9,7 +9,7 @@ const Skills: React.FC = () => {
   const skillCategories = [
     {
       title: "Cybersecurity",
-      icon: <Shield className="text-blue-400" size={32} />,
+      icon: <Shield className="text-blue-600 dark:text-blue-400" size={32} />,
       skills: [
         { name: "Penetration Testing", level: 90 },
         { name: "Network Defense", level: 85 },
@@ -20,7 +20,7 @@ const Skills: React.FC = () => {
     },
     {
       title: "Programming Languages",
-      icon: <Code className="text-blue-400" size={32} />,
+      icon: <Code className="text-blue-600 dark:text-blue-400" size={32} />,
       skills: [
         { name: "Python", level: 85 },
         { name: "JavaScript", level: 80 },
@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
     },
     {
       title: "Technical Skills",
-      icon: <Database className="text-blue-400" size={32} />,
+      icon: <Database className="text-blue-600 dark:text-blue-400" size={32} />,
       skills: [
         { name: "Problem Solving", level: 92 },
         { name: "LeetCode", level: 85 },
@@ -42,7 +42,7 @@ const Skills: React.FC = () => {
     },
     {
       title: "Tools & Platforms",
-      icon: <Settings className="text-blue-400" size={32} />,
+      icon: <Settings className="text-blue-600 dark:text-blue-400" size={32} />,
       skills: [
         { name: "Git", level: 88 },
         { name: "Linux", level: 85 },
@@ -54,10 +54,10 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 bg-slate-900 scroll-mt-20">
+    <section ref={sectionRef} id="skills" className="py-20 bg-slate-50 dark:bg-slate-900 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Technical Skills</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Technical Skills</h2>
           <div className="w-24 h-1 bg-blue-400 mx-auto mb-8 animate-scale-in"></div>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             A comprehensive overview of my technical expertise across different domains
