@@ -347,6 +347,14 @@ section h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 2s linear infinite;
+  /* Fallback for browsers that don't support background-clip: text */
+  color: #00f5ff;
+}
+
+/* Ensure text is visible if gradients fail */
+.gradient-text-cyber:not([style*="background"]) {
+  color: #00f5ff !important;
+  background: none !important;
 }
 
 /* Glitch effect */
@@ -565,11 +573,11 @@ section h3 {
 /* Responsive font sizes for ultra-modern name */
 @media (max-width: 768px) {
   .ultra-modern-name .name-first {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important;
     line-height: 1.1 !important;
   }
   .ultra-modern-name .name-middle {
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
   }
   .ultra-modern-name .name-last {
     font-size: 1.5rem !important;
@@ -578,15 +586,22 @@ section h3 {
 
 @media (max-width: 480px) {
   .ultra-modern-name .name-first {
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
     line-height: 1.2 !important;
   }
   .ultra-modern-name .name-middle {
-    font-size: 2rem !important;
+    font-size: 1.75rem !important;
   }
   .ultra-modern-name .name-last {
     font-size: 1.25rem !important;
   }
+}
+
+/* Force visibility for cyber security text */
+.ultra-modern-name .name-first {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Cyberpunk glow effect */

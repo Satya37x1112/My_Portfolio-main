@@ -57,19 +57,19 @@ const Hero: React.FC = () => {
               {/* The Name - Ultra Modern */}
               <span className="block relative overflow-hidden">
                 <span 
-                  className="name-first text-3xl md:text-5xl lg:text-6xl font-black leading-none gradient-text-cyber text-glow holographic glitch animate-scale-in"
+                  className="name-first block text-4xl md:text-6xl lg:text-8xl font-black leading-tight gradient-text-cyber text-glow holographic animate-scale-in mb-2"
                   data-text="CYBER SECURITY"
                   style={{ 
                     fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
-                    letterSpacing: '0.15em',
-                    textTransform: 'uppercase'
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    fontWeight: '900'
                   }}
                 >
                   CYBER SECURITY
                 </span>
-                <br />
                 <span 
-                  className="name-middle text-4xl md:text-6xl lg:text-7xl font-bold gradient-text-modern neon-text animate-fade-in-right animate-delay-300"
+                  className="name-middle block text-3xl md:text-5xl lg:text-7xl font-bold gradient-text-modern neon-text animate-fade-in-right animate-delay-300 mb-2"
                   style={{ 
                     fontFamily: "'Space Grotesk', 'Inter', sans-serif",
                     letterSpacing: '0.1em',
@@ -78,9 +78,8 @@ const Hero: React.FC = () => {
                 >
                   ENTHUSIAST
                 </span>
-                <br />
                 <span 
-                  className="name-last text-3xl md:text-5xl lg:text-6xl font-light text-3d animate-slide-in-bottom animate-delay-500"
+                  className="name-last block text-2xl md:text-4xl lg:text-5xl font-medium text-3d animate-slide-in-bottom animate-delay-500"
                   style={{ 
                     background: 'linear-gradient(45deg, #00d4ff, #090979, #ff0080)',
                     backgroundClip: 'text',
