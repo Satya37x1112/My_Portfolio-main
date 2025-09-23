@@ -30,13 +30,106 @@ const Hero: React.FC = () => {
       <div className="absolute top-40 right-20 w-16 h-16 bg-purple-500 rounded-full opacity-10 animate-float animate-delay-200"></div>
       <div className="absolute bottom-32 left-1/4 w-12 h-12 bg-pink-500 rounded-full opacity-10 animate-float animate-delay-400"></div>
       
+      {/* Modern geometric shapes */}
+      <div className="absolute top-32 right-1/4 w-24 h-24 border-2 border-blue-400 opacity-20 animate-rotate-in animate-delay-300 rotate-45"></div>
+      <div className="absolute bottom-40 right-16 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 opacity-15 animate-float animate-delay-500 clip-path-triangle"></div>
+      <div className="absolute top-1/3 left-16 w-20 h-20 border-2 border-cyan-400 opacity-25 animate-pulse rounded-lg rotate-12"></div>
+      
+      {/* Animated grid pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500 via-transparent to-purple-500 animate-pulse"></div>
+      </div>
+      
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-scale-in">
-            Hi, I'm <span className="text-blue-400 animate-pulse-glow">Satya Sarthak Manohari</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
-            BTech Student | Cybersecurity Professional | Problem Solver
+          {/* Ultra Modern Name Section */}
+          <div className="mb-8 ultra-modern-name">
+            <div className="text-lg md:text-xl text-gray-400 mb-4 font-mono tracking-wider animate-fade-in-up cyber-glow">
+              &lt;/&gt; <span className="gradient-text-cyber">WELCOME_TO_MY_WORLD</span> &lt;/&gt;
+            </div>
+            
+            {/* Main Name with Multiple Effects */}
+            <h1 className="relative mb-6">
+              <span className="block text-3xl md:text-4xl text-gray-300 font-light mb-2 animate-fade-in-left">
+                <span className="text-blue-400 font-mono">&gt;</span> Hello, I'm
+              </span>
+              
+              {/* The Name - Ultra Modern */}
+              <span className="block relative overflow-hidden">
+                <span 
+                  className="name-first text-6xl md:text-8xl lg:text-9xl font-black leading-none gradient-text-cyber text-glow holographic glitch animate-scale-in"
+                  data-text="SATYA"
+                  style={{ 
+                    fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase'
+                  }}
+                >
+                  SATYA
+                </span>
+                <br />
+                <span 
+                  className="name-middle text-4xl md:text-6xl lg:text-7xl font-bold gradient-text-modern neon-text animate-fade-in-right animate-delay-300"
+                  style={{ 
+                    fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+                    letterSpacing: '0.1em',
+                    fontWeight: '800'
+                  }}
+                >
+                  SARTHAK
+                </span>
+                <br />
+                <span 
+                  className="name-last text-3xl md:text-5xl lg:text-6xl font-light text-3d animate-slide-in-bottom animate-delay-500"
+                  style={{ 
+                    background: 'linear-gradient(45deg, #00d4ff, #090979, #ff0080)',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    fontFamily: "'Outfit', 'Poppins', sans-serif",
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  MANOHARI
+                </span>
+                
+                {/* Code-style brackets */}
+                <div className="absolute -left-8 top-1/2 transform -translate-y-1/2 text-blue-400 text-4xl font-mono opacity-30 animate-pulse">
+                  &#123;
+                </div>
+                <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 text-blue-400 text-4xl font-mono opacity-30 animate-pulse animate-delay-200">
+                  &#125;
+                </div>
+              </span>
+              
+              {/* Animated underline with pulse effect */}
+              <div className="relative mt-4">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-scale-in animate-delay-600 rounded-full"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse rounded-full opacity-50"></div>
+              </div>
+            </h1>
+            
+            {/* Floating code elements */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+              <div className="absolute top-1/4 left-1/4 text-blue-400 text-xs font-mono opacity-20 animate-float">
+                const dev = "cybersec"
+              </div>
+              <div className="absolute top-1/3 right-1/4 text-purple-400 text-xs font-mono opacity-15 animate-float animate-delay-300">
+                &lt;skills/&gt;
+              </div>
+              <div className="absolute bottom-1/4 left-1/3 text-pink-400 text-xs font-mono opacity-25 animate-float animate-delay-500">
+                function() &#123;&#125;
+              </div>
+              <div className="absolute top-1/2 right-1/3 text-cyan-400 text-xs font-mono opacity-30 animate-float animate-delay-700">
+                #innovation
+              </div>
+            </div>
+          </div>
+          
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200 font-medium">
+            <span className="gradient-text-modern font-semibold">BTech Student</span> | 
+            <span className="gradient-text-cyber font-semibold"> Cybersecurity Professional</span> | 
+            <span className="gradient-text font-semibold"> Problem Solver</span>
           </p>
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animate-delay-300">
             I'm passionate about cybersecurity and technology innovation. 

@@ -199,6 +199,243 @@ section h3 {
   }
 }
 
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  30% {
+    transform: translate(-2px, -2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+  }
+  60% {
+    transform: translate(2px, -2px);
+  }
+  70% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(2px, 2px);
+  }
+  90% {
+    transform: translate(-2px, 2px);
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px rgba(59, 130, 246, 0.8),
+      0 0 10px rgba(59, 130, 246, 0.6),
+      0 0 15px rgba(59, 130, 246, 0.4),
+      0 0 20px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 10px rgba(59, 130, 246, 1),
+      0 0 20px rgba(59, 130, 246, 0.8),
+      0 0 30px rgba(59, 130, 246, 0.6),
+      0 0 40px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes neon-flicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+  5% {
+    opacity: 0.8;
+    text-shadow: none;
+  }
+  10% {
+    opacity: 1;
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+    text-shadow: none;
+  }
+  30% {
+    opacity: 1;
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+}
+
+/* Modern gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+.gradient-text-modern {
+  background: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #4ecdc4,
+    #45b7d1,
+    #96ceb4,
+    #feca57,
+    #ff9ff3,
+    #54a0ff
+  );
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+
+.gradient-text-cyber {
+  background: linear-gradient(
+    90deg,
+    #00f5ff,
+    #0080ff,
+    #8000ff,
+    #ff0080,
+    #ff4000,
+    #ffff00,
+    #00ff00,
+    #00f5ff
+  );
+  background-size: 800% 800%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 2s linear infinite;
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+  animation: glitch 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitch 2s infinite;
+  color: #ff0000;
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.glitch::after {
+  animation: glitch 2s infinite reverse;
+  color: #00ffff;
+  z-index: -2;
+  clip-path: polygon(0 45%, 100% 45%, 100% 100%, 0 100%);
+}
+
+/* Modern text effects */
+.text-glow {
+  animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+.neon-text {
+  animation: neon-flicker 4s infinite;
+}
+
+/* Typewriter effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid #3b82f6;
+  white-space: nowrap;
+  animation: typewriter 3s steps(30, end), blink 1s step-end infinite;
+}
+
+/* 3D text effect */
+.text-3d {
+  text-shadow: 
+    1px 1px 0px #2563eb,
+    2px 2px 0px #1d4ed8,
+    3px 3px 0px #1e40af,
+    4px 4px 0px #1e3a8a,
+    5px 5px 10px rgba(0,0,0,0.3);
+  transform: perspective(500px) rotateX(15deg);
+}
+
+/* Holographic effect */
+.holographic {
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 2s ease-in-out infinite;
+  position: relative;
+}
+
+.holographic::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: gradient-shift 1.5s ease-in-out infinite;
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out;
 }
@@ -293,6 +530,70 @@ section h3 {
 .fade-in-on-scroll.animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Modern utility classes */
+.clip-path-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.clip-path-hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Enhanced gradients */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  border-radius: inherit;
+  z-index: -1;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+/* Responsive font sizes for ultra-modern name */
+@media (max-width: 768px) {
+  .ultra-modern-name .name-first {
+    font-size: 3rem !important;
+  }
+  .ultra-modern-name .name-middle {
+    font-size: 2.5rem !important;
+  }
+  .ultra-modern-name .name-last {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ultra-modern-name .name-first {
+    font-size: 2.5rem !important;
+  }
+  .ultra-modern-name .name-middle {
+    font-size: 2rem !important;
+  }
+  .ultra-modern-name .name-last {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Cyberpunk glow effect */
+.cyber-glow {
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.3),
+    0 0 40px rgba(0, 212, 255, 0.2),
+    0 0 60px rgba(0, 212, 255, 0.1),
+    inset 0 0 20px rgba(0, 212, 255, 0.1);
 }
 
 /* Custom scrollbar */
