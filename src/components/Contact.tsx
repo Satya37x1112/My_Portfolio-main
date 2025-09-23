@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useTheme } from '../context/ThemeContext';
 
 const Contact: React.FC = () => {
+  const { theme } = useTheme();
   const { elementRef: sectionRef, isVisible } = useScrollAnimation();
   const [formData, setFormData] = useState({
     name: '',
@@ -31,19 +33,19 @@ const Contact: React.FC = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="text-navy-700" size={24} style={{color: '#1e3a8a'}} />,
+      icon: <Mail className="text-navy-700 dark:text-blue-400" style={theme === 'light' ? {color: '#1e3a8a'} : {}} size={24} />,
       label: "Email",
       value: "manoharisatyasarthak@gmail.com",
       href: "mailto:manoharisatyasarthak@gmail.com"
     },
     {
-      icon: <MapPin className="text-navy-700" size={24} style={{color: '#1e3a8a'}} />,
+      icon: <MapPin className="text-navy-700 dark:text-blue-400" style={theme === 'light' ? {color: '#1e3a8a'} : {}} size={24} />,
       label: "Location",
       value: "India",
       href: "#"
     },
     {
-      icon: <Linkedin className="text-navy-700" size={24} style={{color: '#1e3a8a'}} />,
+      icon: <Linkedin className="text-navy-700 dark:text-blue-400" style={theme === 'light' ? {color: '#1e3a8a'} : {}} size={24} />,
       label: "LinkedIn",
       value: "Connect with me",
       href: "https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
@@ -64,12 +66,12 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="contact" className="py-20 bg-white scroll-mt-20">
+    <section ref={sectionRef} id="contact" className="py-20 bg-white dark:bg-slate-900 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6" style={{color: '#1e3a8a'}}>Get In Touch</h2>
-          <div className="w-24 h-1 bg-navy-700 mx-auto mb-8" style={{backgroundColor: '#1e3a8a'}}></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 dark:text-white mb-6" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>Get In Touch</h2>
+          <div className="w-24 h-1 bg-navy-700 dark:bg-blue-400 mx-auto mb-8" style={theme === 'light' ? {backgroundColor: '#1e3a8a'} : {}}></div>
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you.
           </p>
         </div>
@@ -78,8 +80,8 @@ const Contact: React.FC = () => {
           {/* Contact Information */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-10'}`}>
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">Let's Connect</h3>
-              <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+              <h3 className="text-2xl font-semibold text-navy-900 dark:text-white mb-6" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>Let's Connect</h3>
+              <p className="text-slate-600 dark:text-gray-400 text-lg mb-8 leading-relaxed">
                 I'm always interested in new opportunities and exciting projects. 
                 Whether you're looking for a developer, have a question, or just want to say hi, 
                 feel free to reach out!
@@ -91,14 +93,14 @@ const Contact: React.FC = () => {
                 <a
                   key={index}
                   href={info.href}
-                  className="flex items-center gap-4 p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-blue-500/50 transition-colors duration-300 group"
+                  className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-500 transition-colors duration-300 group"
                 >
                   <div className="flex-shrink-0">
                     {info.icon}
                   </div>
                   <div>
-                    <div className="text-sm text-gray-400">{info.label}</div>
-                    <div className="text-white font-medium group-hover:text-blue-400 transition-colors duration-300">
+                    <div className="text-sm text-slate-500 dark:text-gray-400">{info.label}</div>
+                    <div className="text-navy-900 dark:text-white font-medium group-hover:text-navy-700 dark:group-hover:text-blue-400 transition-colors duration-300" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
                       {info.value}
                     </div>
                   </div>
@@ -107,7 +109,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="pt-6">
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+              <h4 className="text-lg font-semibold text-navy-900 dark:text-white mb-4" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>Follow Me</h4>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -115,7 +117,7 @@ const Contact: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
+                    className="text-slate-600 dark:text-gray-400 hover:text-navy-700 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
                     title={social.label}
                   >
                     {social.icon}
@@ -126,10 +128,10 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-slate-800 rounded-lg p-8 border border-slate-700">
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-8 border border-slate-200 dark:border-slate-700">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-2">
                   Full Name
                 </label>
                 <input
@@ -139,13 +141,13 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg text-navy-900 dark:text-white placeholder-slate-500 dark:placeholder-gray-400 focus:border-navy-500 dark:focus:border-blue-400 focus:ring-1 focus:ring-navy-500 dark:focus:ring-blue-400 transition-colors duration-200"
                   placeholder="Your full name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-2">
                   Email Address
                 </label>
                 <input
@@ -155,13 +157,13 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg text-navy-900 dark:text-white placeholder-slate-500 dark:placeholder-gray-400 focus:border-navy-500 dark:focus:border-blue-400 focus:ring-1 focus:ring-navy-500 dark:focus:ring-blue-400 transition-colors duration-200"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -171,7 +173,7 @@ const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg text-navy-900 dark:text-white placeholder-slate-500 dark:placeholder-gray-400 focus:border-navy-500 dark:focus:border-blue-400 focus:ring-1 focus:ring-navy-500 dark:focus:ring-blue-400 transition-colors duration-200 resize-none"
                   placeholder="Tell me about your project or just say hello..."
                 />
               </div>
@@ -179,7 +181,8 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2"
+                className="w-full bg-navy-700 hover:bg-navy-800 dark:bg-blue-600 dark:hover:bg-blue-700 disabled:bg-navy-400 dark:disabled:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2"
+                style={theme === 'light' ? {backgroundColor: '#1e3a8a'} : {}}
               >
                 {isSubmitting ? (
                   <span>Sending...</span>
@@ -195,8 +198,8 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-slate-700 text-center">
-          <p className="text-gray-400">
+        <div className="mt-20 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
+          <p className="text-slate-600 dark:text-gray-400">
             Made with ❤️ | Built with React & Tailwind CSS.
           </p>
         </div>

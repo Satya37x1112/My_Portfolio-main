@@ -1,8 +1,10 @@
 import React from 'react';
 import { GraduationCap, Briefcase, Award, MapPin } from 'lucide-react';
 import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
+import { useTheme } from '../context/ThemeContext';
 
 const Experience: React.FC = () => {
+  const { theme } = useTheme();
   const { elementRef: sectionRef, isVisible } = useScrollAnimation();
   const { containerRef: achievementsRef, visibleItems } = useStaggeredAnimation(4, 150);
 
@@ -60,12 +62,12 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 bg-navy-900 scroll-mt-20" style={{backgroundColor: '#1e3a8a'}}>
+    <section ref={sectionRef} id="experience" className="py-20 bg-white dark:bg-navy-900 scroll-mt-20" style={theme === 'light' ? {} : {backgroundColor: '#1e3a8a'}}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">My Experience & Education</h2>
-          <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 dark:text-white mb-6" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>My Experience & Education</h2>
+          <div className="w-24 h-1 bg-navy-700 dark:bg-white mx-auto mb-8" style={theme === 'light' ? {backgroundColor: '#1e3a8a'} : {}}></div>
+          <p className="text-xl text-slate-600 dark:text-blue-100 max-w-3xl mx-auto">
             My academic journey and professional experiences that have shaped my expertise in cybersecurity and technology innovation.
           </p>
         </div>
@@ -73,25 +75,25 @@ const Experience: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Education */}
           <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-10'}`}>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <GraduationCap className="text-white" size={28} />
+            <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-8 flex items-center gap-3" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
+              <GraduationCap className="text-navy-700 dark:text-white" style={theme === 'light' ? {color: '#1e3a8a'} : {}} size={28} />
               Education
             </h3>
             <div className="space-y-6">
               {education.map((edu, index) => (
-                <div key={index} className="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-blue-400 transition-colors duration-300 hover-lift animate-scale-in animate-delay-200">
+                <div key={index} className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-400 transition-colors duration-300 hover-lift animate-scale-in animate-delay-200">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 animate-rotate-in animate-delay-300">
                       {edu.icon}
                     </div>
                     <div className="flex-grow">
-                      <h4 className="text-xl font-semibold text-white mb-2">{edu.degree}</h4>
-                      <div className="flex items-center gap-2 text-blue-400 mb-2">
+                      <h4 className="text-xl font-semibold text-navy-900 dark:text-white mb-2" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>{edu.degree}</h4>
+                      <div className="flex items-center gap-2 text-navy-700 dark:text-blue-400 mb-2" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
                         <MapPin size={16} className="animate-pulse" />
                         <span className="font-medium">{edu.institution}</span>
                       </div>
-                      <p className="text-gray-400 mb-3">{edu.location} • {edu.period}</p>
-                      <p className="text-gray-300 leading-relaxed">{edu.description}</p>
+                      <p className="text-slate-600 dark:text-gray-400 mb-3">{edu.location} • {edu.period}</p>
+                      <p className="text-slate-700 dark:text-gray-300 leading-relaxed">{edu.description}</p>
                     </div>
                   </div>
                 </div>
@@ -101,25 +103,25 @@ const Experience: React.FC = () => {
 
           {/* Experience */}
           <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in-right' : 'opacity-0 translate-x-10'}`}>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <Briefcase className="text-blue-400 animate-float animate-delay-100" size={28} />
+            <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-8 flex items-center gap-3" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
+              <Briefcase className="text-navy-700 dark:text-blue-400 animate-float animate-delay-100" style={theme === 'light' ? {color: '#1e3a8a'} : {}} size={28} />
               Experience
             </h3>
             <div className="space-y-6">
               {experience.map((exp, index) => (
-                <div key={index} className="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-blue-400 transition-colors duration-300 hover-lift animate-scale-in animate-delay-400">
+                <div key={index} className="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-400 transition-colors duration-300 hover-lift animate-scale-in animate-delay-400">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 animate-rotate-in animate-delay-500">
                       {exp.icon}
                     </div>
                     <div className="flex-grow">
-                      <h4 className="text-xl font-semibold text-white mb-2">{exp.role}</h4>
-                      <div className="flex items-center gap-2 text-blue-400 mb-2">
+                      <h4 className="text-xl font-semibold text-navy-900 dark:text-white mb-2" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>{exp.role}</h4>
+                      <div className="flex items-center gap-2 text-navy-700 dark:text-blue-400 mb-2" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
                         <MapPin size={16} className="animate-pulse" />
                         <span className="font-medium">{exp.company}</span>
                       </div>
-                      <p className="text-gray-400 mb-3">{exp.location} • {exp.period}</p>
-                      <p className="text-gray-300 leading-relaxed">{exp.description}</p>
+                      <p className="text-slate-600 dark:text-gray-400 mb-3">{exp.location} • {exp.period}</p>
+                      <p className="text-slate-700 dark:text-gray-300 leading-relaxed">{exp.description}</p>
                     </div>
                   </div>
                 </div>
@@ -130,15 +132,15 @@ const Experience: React.FC = () => {
 
         {/* Achievements */}
         <div>
-          <h3 className="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3 animate-fade-in-up animate-delay-600">
-            <Award className="text-blue-400 animate-float animate-delay-200" size={28} />
+          <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-8 text-center flex items-center justify-center gap-3 animate-fade-in-up animate-delay-600" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
+            <Award className="text-navy-700 dark:text-blue-400 animate-float animate-delay-200" style={theme === 'light' ? {color: '#1e3a8a'} : {}} size={28} />
             Key Achievements
           </h3>
           <div ref={achievementsRef} className="grid md:grid-cols-2 gap-6">
             {achievements.map((achievement, index) => (
               <div 
                 key={index} 
-                className={`bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-blue-400 transition-all duration-300 hover:transform hover:scale-105 hover-lift hover-glow ${
+                className={`bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-400 transition-all duration-300 hover:transform hover:scale-105 hover-lift hover-glow ${
                   visibleItems.includes(index) ? 'animate-scale-in' : 'opacity-0 scale-75'
                 }`}
                 style={{ animationDelay: `${(index + 8) * 100}ms` }}
@@ -148,13 +150,13 @@ const Experience: React.FC = () => {
                     {achievement.icon}
                   </div>
                   <div className="flex-grow">
-                    <h4 className="text-xl font-semibold text-white mb-2">{achievement.title}</h4>
-                    <p className="text-blue-400 font-medium mb-2">{achievement.organization}</p>
-                    <p className="text-gray-400 text-sm mb-3">{achievement.date}</p>
-                    <p className="text-gray-300 leading-relaxed mb-4">{achievement.description}</p>
+                    <h4 className="text-xl font-semibold text-navy-900 dark:text-white mb-2" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>{achievement.title}</h4>
+                    <p className="text-navy-700 dark:text-blue-400 font-medium mb-2" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>{achievement.organization}</p>
+                    <p className="text-slate-600 dark:text-gray-400 text-sm mb-3">{achievement.date}</p>
+                    <p className="text-slate-700 dark:text-gray-300 leading-relaxed mb-4">{achievement.description}</p>
                     
                     {/* Placeholder for achievement image */}
-                    <div className="w-full h-32 bg-slate-700 border-2 border-dashed border-slate-600 rounded-lg flex items-center justify-center hover-lift">
+                    <div className="w-full h-32 bg-slate-200 dark:bg-slate-700 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg flex items-center justify-center hover-lift">
                       <div className="text-center">
                         <div className="text-slate-500 mb-2 animate-bounce" style={{ animationDelay: `${index * 300}ms` }}>🖼️</div>
                         <p className="text-slate-500 text-sm">Certificate Image</p>
