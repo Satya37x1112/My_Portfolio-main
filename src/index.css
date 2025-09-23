@@ -565,25 +565,27 @@ section h3 {
 /* Responsive font sizes for ultra-modern name */
 @media (max-width: 768px) {
   .ultra-modern-name .name-first {
-    font-size: 3rem !important;
+    font-size: 2rem !important;
+    line-height: 1.1 !important;
   }
   .ultra-modern-name .name-middle {
     font-size: 2.5rem !important;
   }
   .ultra-modern-name .name-last {
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .ultra-modern-name .name-first {
-    font-size: 2.5rem !important;
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
   }
   .ultra-modern-name .name-middle {
     font-size: 2rem !important;
   }
   .ultra-modern-name .name-last {
-    font-size: 1.75rem !important;
+    font-size: 1.25rem !important;
   }
 }
 

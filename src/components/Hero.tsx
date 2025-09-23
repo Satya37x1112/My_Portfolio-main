@@ -57,15 +57,15 @@ const Hero: React.FC = () => {
               {/* The Name - Ultra Modern */}
               <span className="block relative overflow-hidden">
                 <span 
-                  className="name-first text-6xl md:text-8xl lg:text-9xl font-black leading-none gradient-text-cyber text-glow holographic glitch animate-scale-in"
-                  data-text="SATYA"
+                  className="name-first text-3xl md:text-5xl lg:text-6xl font-black leading-none gradient-text-cyber text-glow holographic glitch animate-scale-in"
+                  data-text="CYBER SECURITY"
                   style={{ 
                     fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
                     letterSpacing: '0.15em',
                     textTransform: 'uppercase'
                   }}
                 >
-                  SATYA
+                  CYBER SECURITY
                 </span>
                 <br />
                 <span 
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
                     fontWeight: '800'
                   }}
                 >
-                  SARTHAK
+                  ENTHUSIAST
                 </span>
                 <br />
                 <span 
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
                     letterSpacing: '0.05em'
                   }}
                 >
-                  MANOHARI
+                  SATYA SARTHAK MANOHARI
                 </span>
                 
                 {/* Code-style brackets */}
