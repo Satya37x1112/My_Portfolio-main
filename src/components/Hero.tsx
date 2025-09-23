@@ -21,13 +21,13 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen pt-24 md:pt-20 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center relative overflow-hidden scroll-mt-20">
-      {/* Subtle Professional Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%2364748b%22 fill-opacity=%220.03%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+    <section id="hero" className="min-h-screen pt-24 md:pt-20 bg-gradient-to-br from-white via-slate-50 to-blue-50 flex items-center justify-center relative overflow-hidden scroll-mt-20">
+      {/* Premium Navy Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%231e3a8a%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       
-      {/* Subtle geometric accents */}
-      <div className="absolute top-1/4 right-1/4 w-32 h-32 border border-blue-200 dark:border-blue-800 opacity-30 rounded-lg rotate-12"></div>
-      <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border border-slate-200 dark:border-slate-700 opacity-20 rounded-full"></div>
+      {/* Navy geometric accents */}
+      <div className="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-navy-200 opacity-20 rounded-lg rotate-12" style={{borderColor: '#1e3a8a33'}}></div>
+      <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border border-navy-300 opacity-15 rounded-full" style={{borderColor: '#1e3a8a22'}}></div>
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in-up">
