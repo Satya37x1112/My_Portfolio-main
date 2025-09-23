@@ -36,7 +36,7 @@ const About: React.FC = () => {
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 p-1">
                 <img 
                   src={profileImage} 
-                  alt="Satya Sarthak Manohari - BTech Student and Cybersecurity Enthusiast at Sri Sri University"
+                  alt="BTech Student and Cybersecurity Enthusiast at Sri Sri University"
                   className="w-full h-full rounded-full object-cover bg-slate-700"
                   loading="eager"
                   decoding="async"
@@ -56,10 +56,10 @@ const About: React.FC = () => {
           {/* About Content */}
           <div className="space-y-6 text-gray-300">
             <h3 className="text-2xl font-semibold text-white mb-4">
-              Satya Sarthak Manohari - BTech Student & Cybersecurity Professional
+              BTech Student & Cybersecurity Professional
             </h3>
             <p className="text-lg leading-relaxed">
-              Hi, I'm Satya Sarthak Manohari — a BTech student at Sri Sri University with a strong interest in robotics, innovation, and cybersecurity. I enjoy tackling security challenges, from penetration testing to network defense, and aim to contribute to building safer digital systems. Beyond academics, I thrive on problem-solving, exploring emerging technologies, and turning ideas into impactful projects. My goal is to grow as a researcher and engineer while contributing to the future of secure, intelligent technology.</p>
+              Hi, I'm a BTech student at Sri Sri University with a strong interest in robotics, innovation, and cybersecurity. I enjoy tackling security challenges, from penetration testing to network defense, and aim to contribute to building safer digital systems. Beyond academics, I thrive on problem-solving, exploring emerging technologies, and turning ideas into impactful projects. My goal is to grow as a researcher and engineer while contributing to the future of secure, intelligent technology.</p>
             <p className="text-lg leading-relaxed">
               I thrive on solving complex security puzzles, dissecting threats, and safeguarding digital landscapes. Whether it's penetration testing, network defense, or risk assessment, I'm in my element. As a TryHackMe Top 10% performer and ex-intern at NISER Bhubaneswar, I bring practical experience to cybersecurity challenges. When I'm not securing systems, you'll find me strategizing over chess or tackling algorithms on LeetCode.
             </p>
