@@ -1,7 +1,11 @@
 import React from 'react';
 import { Shield, Code, Database, Settings } from 'lucide-react';
+import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 
 const Skills: React.FC = () => {
+  const { elementRef: sectionRef, isVisible } = useScrollAnimation();
+  const { containerRef: skillsRef, visibleItems } = useStaggeredAnimation(4, 200);
+
   const skillCategories = [
     {
       title: "Cybersecurity",
@@ -50,21 +54,29 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-slate-900 scroll-mt-20">
+    <section ref={sectionRef} id="skills" className="py-20 bg-slate-900 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Technical Skills</h2>
-          <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-blue-400 mx-auto mb-8 animate-scale-in"></div>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             A comprehensive overview of my technical expertise across different domains
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div ref={skillsRef} className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-slate-800 rounded-lg p-8 border border-slate-700 hover:border-blue-500/50 transition-colors duration-300">
+            <div 
+              key={index} 
+              className={`bg-slate-800 rounded-lg p-8 border border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover-lift hover-glow ${
+                visibleItems.includes(index) ? 'animate-scale-in' : 'opacity-0 scale-75'
+              }`}
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
               <div className="flex items-center mb-6">
-                {category.icon}
+                <div className="animate-float" style={{ animationDelay: `${index * 100}ms` }}>
+                  {category.icon}
+                </div>
                 <h3 className="text-xl font-semibold text-white ml-3">{category.title}</h3>
               </div>
               
@@ -77,8 +89,11 @@ const Skills: React.FC = () => {
                     </div>
                     <div className="w-full bg-slate-700 rounded-full h-2">
                       <div 
-                        className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
+                        className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out hover-glow"
+                        style={{ 
+                          width: visibleItems.includes(index) ? `${skill.level}%` : '0%',
+                          transitionDelay: `${(index * 200) + (skillIndex * 100)}ms`
+                        }}
                       ></div>
                     </div>
                   </div>

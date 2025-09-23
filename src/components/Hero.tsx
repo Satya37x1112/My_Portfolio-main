@@ -22,18 +22,23 @@ const Hero: React.FC = () => {
 
   return (
   <section id="hero" className="min-h-screen pt-24 md:pt-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center relative overflow-hidden scroll-mt-20">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%234338ca%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%234338ca%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] animate-pulse"></div>
+      
+      {/* Floating shapes */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500 rounded-full opacity-10 animate-float"></div>
+      <div className="absolute top-40 right-20 w-16 h-16 bg-purple-500 rounded-full opacity-10 animate-float animate-delay-200"></div>
+      <div className="absolute bottom-32 left-1/4 w-12 h-12 bg-pink-500 rounded-full opacity-10 animate-float animate-delay-400"></div>
       
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Hi, I'm <span className="text-blue-400">Satya Sarthak Manohari</span>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-scale-in">
+            Hi, I'm <span className="text-blue-400 animate-pulse-glow">Satya Sarthak Manohari</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
             BTech Student | Cybersecurity Professional | Problem Solver
           </p>
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animate-delay-300">
             I'm passionate about cybersecurity and technology innovation. 
             Currently Exploring advanced penetration testing, network security, and cutting-edge cybersecurity solutions.
           </p>
@@ -42,27 +47,27 @@ const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
           <button
             onClick={scrollToProjects}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center gap-3"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center gap-3 animate-slide-in-bottom animate-delay-400 hover-lift"
           >
             View My Work
-            <ArrowDown size={20} />
+            <ArrowDown size={20} className="animate-bounce" />
           </button>
           <button 
             onClick={downloadResume}
-            className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+            className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3 animate-slide-in-bottom animate-delay-500 hover-glow"
           >
             Download Resume
-            <Download size={20} />
+            <Download size={20} className="group-hover:animate-bounce" />
           </button>
         </div>
 
         {/* Social Links */}
-  <div className="flex items-center justify-center gap-8 py-8">
+  <div className="flex items-center justify-center gap-8 py-8 animate-fade-in-up animate-delay-600">
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2"
+            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2 hover-lift hover-rotate"
             aria-label="GitHub"
           >
             <Github size={32} />
@@ -71,14 +76,14 @@ const Hero: React.FC = () => {
             href="https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2"
+            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2 hover-lift hover-rotate animate-delay-100"
             aria-label="LinkedIn"
           >
             <Linkedin size={32} />
           </a>
           <a
             href="mailto:manoharisatyasarthak@gmail.com"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2"
+            className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125 bg-slate-800 rounded-full p-4 shadow-md mx-2 hover-lift hover-rotate animate-delay-200"
             aria-label="Mail"
           >
             <Mail size={32} />

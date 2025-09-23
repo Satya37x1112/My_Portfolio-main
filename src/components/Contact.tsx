@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Contact: React.FC = () => {
+  const { elementRef: sectionRef, isVisible } = useScrollAnimation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -62,11 +64,11 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-slate-900 scroll-mt-20">
+    <section ref={sectionRef} id="contact" className="py-20 bg-slate-900 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
-          <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-blue-400 mx-auto mb-8 animate-scale-in"></div>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you.
           </p>
@@ -74,7 +76,7 @@ const Contact: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-10'}`}>
             <div>
               <h3 className="text-2xl font-semibold text-white mb-6">Let's Connect</h3>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
