@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import profileImage from '../assets/p.jpeg';
 
 const Hero: React.FC = () => {
   const { theme } = useTheme();
@@ -31,94 +32,128 @@ const Hero: React.FC = () => {
       <div className="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-navy-200 dark:border-blue-800 opacity-20 rounded-lg rotate-12" style={{borderColor: theme === 'light' ? '#1e3a8a33' : undefined}}></div>
       <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border border-navy-300 dark:border-slate-700 opacity-15 rounded-full" style={{borderColor: theme === 'light' ? '#1e3a8a22' : undefined}}></div>
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="animate-fade-in-up">
-          {/* Premium Navy Header */}
-          <div className="mb-8">
-            <div className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-6 font-medium tracking-wide">
-              Cybersecurity Professional & Developer
-            </div>
-            
-            {/* Premium Navy Blue Name */}
-            <h1 className="relative mb-6">
-              <span className="block text-2xl md:text-3xl text-slate-700 dark:text-slate-300 font-light mb-4">
-                Hello, I'm
-              </span>
-              
-              {/* Premium Navy Name Design */}
-              <div className="space-y-2">
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 dark:text-white leading-tight" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
-                  Satya Sarthak Manohari
-                </div>
-                <div className="text-xl md:text-2xl lg:text-3xl font-medium text-navy-700 dark:text-blue-400 mb-4" style={theme === 'light' ? {color: '#3730a3'} : {}}>
-                  Cybersecurity Enthusiast
-                </div>
-              </div>
-              
-              {/* Premium Navy accent line */}
-              <div className="relative mt-6">
-                <div className="w-24 h-0.5 bg-navy-600 dark:bg-blue-400 mx-auto" style={theme === 'light' ? {backgroundColor: '#1e3a8a'} : {}}></div>
-              </div>
-            </h1>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Two Column Layout - Text Left, Photo Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
-          <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8 max-w-3xl mx-auto font-medium">
-            <span className="text-navy-700 dark:text-blue-400 font-semibold" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>BTech Student</span> • 
-            <span className="text-slate-700 dark:text-slate-300 font-semibold"> Cybersecurity Professional</span> • 
-            <span className="text-slate-700 dark:text-slate-300 font-semibold"> Problem Solver</span>
-          </p>
-          <p className="text-lg text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Passionate about cybersecurity and technology innovation. 
-            Currently exploring advanced penetration testing, network security, and cutting-edge cybersecurity solutions.
-          </p>
-        </div>
+          {/* Left Column - Text Content */}
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            <div className="animate-fade-in-up">
+              {/* Premium Navy Header */}
+              <div className="mb-8">
+                <div className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-6 font-medium tracking-wide">
+                  Cybersecurity Professional & Developer
+                </div>
+                
+                {/* Premium Navy Blue Name */}
+                <h1 className="relative mb-6">
+                  <span className="block text-2xl md:text-3xl text-slate-700 dark:text-slate-300 font-light mb-4">
+                    Hello, I'm
+                  </span>
+                  
+                  {/* Premium Navy Name Design */}
+                  <div className="space-y-2">
+                    <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 dark:text-white leading-tight" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
+                      Satya Sarthak Manohari
+                    </div>
+                    <div className="text-xl md:text-2xl lg:text-3xl font-medium text-navy-700 dark:text-blue-400 mb-4" style={theme === 'light' ? {color: '#3730a3'} : {}}>
+                      Cybersecurity Enthusiast
+                    </div>
+                  </div>
+                  
+                  {/* Premium Navy accent line */}
+                  <div className="relative mt-6">
+                    <div className="w-24 h-0.5 bg-navy-600 dark:bg-blue-400 lg:mx-0 mx-auto" style={theme === 'light' ? {backgroundColor: '#1e3a8a'} : {}}></div>
+                  </div>
+                </h1>
+              </div>
+              
+              <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8 font-medium">
+                <span className="text-navy-700 dark:text-blue-400 font-semibold" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>BTech Student</span> • 
+                <span className="text-slate-700 dark:text-slate-300 font-semibold"> Cybersecurity Professional</span> • 
+                <span className="text-slate-700 dark:text-slate-300 font-semibold"> Problem Solver</span>
+              </p>
+              <p className="text-lg text-slate-600 dark:text-slate-400 mb-12 leading-relaxed">
+                Passionate about cybersecurity and technology innovation. 
+                Currently exploring advanced penetration testing, network security, and cutting-edge cybersecurity solutions.
+              </p>
+            </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
-          <button
-            onClick={scrollToProjects}
-            className="bg-navy-700 dark:bg-blue-600 hover:bg-navy-800 dark:hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-navy-500/25 dark:hover:shadow-blue-500/25 flex items-center gap-3"
-            style={theme === 'light' ? {backgroundColor: '#1e3a8a'} : {}}
-          >
-            View My Work
-            <ArrowDown size={20} />
-          </button>
-          <button 
-            onClick={downloadResume}
-            className="border-2 border-navy-700 dark:border-blue-400 text-navy-700 dark:text-blue-400 hover:bg-navy-700 dark:hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
-            style={theme === 'light' ? {borderColor: '#1e3a8a', color: '#1e3a8a'} : {}}
-          >
-            Download Resume
-            <Download size={20} />
-          </button>
-        </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-12">
+              <button
+                onClick={scrollToProjects}
+                className="bg-navy-700 dark:bg-blue-600 hover:bg-navy-800 dark:hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-navy-500/25 dark:hover:shadow-blue-500/25 flex items-center gap-3"
+                style={theme === 'light' ? {backgroundColor: '#1e3a8a'} : {}}
+              >
+                View My Work
+                <ArrowDown size={20} />
+              </button>
+              <button 
+                onClick={downloadResume}
+                className="border-2 border-navy-700 dark:border-blue-400 text-navy-700 dark:text-blue-400 hover:bg-navy-700 dark:hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+                style={theme === 'light' ? {borderColor: '#1e3a8a', color: '#1e3a8a'} : {}}
+              >
+                Download Resume
+                <Download size={20} />
+              </button>
+            </div>
 
-        {/* Premium Navy Social Links */}
-        <div className="flex items-center justify-center gap-6 py-8">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-600 dark:text-slate-400 hover:text-navy-700 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-lg border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-400"
-            aria-label="GitHub"
-          >
-            <Github size={28} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-600 dark:text-slate-400 hover:text-navy-700 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-lg border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-400"
-            aria-label="LinkedIn"
-          >
-            <Linkedin size={28} />
-          </a>
-          <a
-            href="mailto:manoharisatyasarthak@gmail.com"
-            className="text-slate-600 dark:text-slate-400 hover:text-navy-700 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-lg border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-400"
-            aria-label="Mail"
-          >
-            <Mail size={28} />
-          </a>
+            {/* Premium Navy Social Links */}
+            <div className="flex items-center justify-center lg:justify-start gap-6 py-8">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-600 dark:text-slate-400 hover:text-navy-700 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-lg border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-400"
+                aria-label="GitHub"
+              >
+                <Github size={28} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-600 dark:text-slate-400 hover:text-navy-700 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-lg border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-400"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={28} />
+              </a>
+              <a
+                href="mailto:manoharisatyasarthak@gmail.com"
+                className="text-slate-600 dark:text-slate-400 hover:text-navy-700 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-lg border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-400"
+                aria-label="Mail"
+              >
+                <Mail size={28} />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column - Profile Photo */}
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2 bg-red-200 min-h-[400px] border-4 border-red-500">
+            <div className="relative w-80 h-96 bg-green-200 border-4 border-green-500">
+              {/* Simple Photo Container */}
+              <div className="w-full h-full bg-blue-600 rounded-2xl p-2 shadow-2xl">
+                <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
+                  <img
+                    src={profileImage}
+                    alt="Satya Sarthak Manohari"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                    onError={(e) => {
+                      console.error('Image failed to load:', e);
+                      (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                    onLoad={() => console.log('Image loaded successfully')}
+                  />
+                </div>
+              </div>
+              
+              {/* Achievement Badge */}
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white rounded-full px-4 py-2 shadow-lg border border-blue-200">
+                <span className="text-sm font-bold text-blue-700">TryHackMe Top 10%</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

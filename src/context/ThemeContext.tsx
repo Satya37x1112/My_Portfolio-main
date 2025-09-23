@@ -25,8 +25,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>('light');
   const [isHydrated, setIsHydrated] = useState(false);
 
-  console.log('🎨 ThemeProvider rendered, current theme:', theme, 'hydrated:', isHydrated);
-
   // Simple client-side only theme detection
   useEffect(() => {
     // Only run on client side
@@ -37,20 +35,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     try {
       // Only use saved theme if explicitly set by user
       const saved = localStorage.getItem('theme');
-      console.log('💾 Saved theme from localStorage:', saved);
       if (saved === 'dark' || saved === 'light') {
         detectedTheme = saved;
       }
-      // Remove system preference detection to avoid unexpected dark mode
-      // } else if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
-      //   detectedTheme = 'dark';
-      // }
     } catch (e) {
       // Fallback to light theme if anything fails
       console.warn('Theme detection failed, using light theme');
     }
     
-    console.log('🔧 Setting detected theme to:', detectedTheme);
     setTheme(detectedTheme);
     setIsHydrated(true);
   }, []);
@@ -59,17 +51,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   useEffect(() => {
     if (typeof window === 'undefined' || !isHydrated) return;
     
-    console.log('🎯 Applying theme:', theme, 'to document');
-    
     try {
       localStorage.setItem('theme', theme);
       
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
-        console.log('🌙 Added dark class to html');
       } else {
         document.documentElement.classList.remove('dark');
-        console.log('☀️ Removed dark class from html');
       }
     } catch (e) {
       console.warn('Failed to apply theme:', e);
@@ -77,7 +65,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, [theme, isHydrated]);
 
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    console.log('🔄 Toggle theme called, current theme:', theme);
+    setTheme(prevTheme => {
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+      console.log('🔄 Theme changing from', prevTheme, 'to', newTheme);
+      return newTheme;
+    });
   };
 
   const value: ThemeContextType = {

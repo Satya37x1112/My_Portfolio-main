@@ -1,13 +1,11 @@
 import React from 'react';
 import { Code, Palette, Zap } from 'lucide-react';
-import profileImage from '../assets/p.jpeg';
 import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import { useTheme } from '../context/ThemeContext';
 
 const About: React.FC = () => {
   const { theme } = useTheme();
   const { elementRef: sectionRef, isVisible } = useScrollAnimation();
-  const { elementRef: imageRef, isVisible: imageVisible } = useScrollAnimation();
   const { containerRef: highlightsRef, visibleItems } = useStaggeredAnimation(3, 200);
 
   const highlights = [
@@ -36,32 +34,9 @@ const About: React.FC = () => {
           <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
         </div>
 
-        {/* Profile Image Section - Premium */}
-        <div ref={imageRef} className="text-center mb-12">
-          <div className="flex justify-center">
-            <div className={`relative transition-all duration-1000 ${imageVisible ? 'animate-scale-in' : 'opacity-0 scale-75'}`}>
-              <div className="w-80 h-80 rounded-full bg-white p-1 shadow-2xl">
-                <img 
-                  src={profileImage} 
-                  alt="BTech Student and Cybersecurity Enthusiast at Sri Sri University"
-                  className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-300"
-                  loading="eager"
-                  decoding="async"
-                  width="320"
-                  height="320"
-                  fetchPriority="high"
-                />
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-white text-navy-900 dark:bg-slate-800 dark:text-blue-400 rounded-full p-4 shadow-lg" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
-                <Code size={24} />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-1 gap-12 items-center mb-16">
           {/* About Content */}
-          <div className={`space-y-6 text-white transition-all duration-1000 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-10'}`}>
+          <div className={`space-y-6 text-white transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'} max-w-4xl mx-auto text-center`}>
             <h3 className="text-2xl font-semibold text-white mb-4">
               BTech Student & Cybersecurity Professional
             </h3>
