@@ -11,6 +11,15 @@ const Hero: React.FC = () => {
     }
   };
 
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/satya_sarthak_manohari_resume.pdf';
+    link.download = 'Satya_Sarthak_Manohari_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
   <section id="hero" className="min-h-screen pt-24 md:pt-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center relative overflow-hidden scroll-mt-20">
       {/* Background Pattern */}
@@ -38,7 +47,10 @@ const Hero: React.FC = () => {
             View My Work
             <ArrowDown size={20} />
           </button>
-          <button className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3">
+          <button 
+            onClick={downloadResume}
+            className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+          >
             Download Resume
             <Download size={20} />
           </button>
