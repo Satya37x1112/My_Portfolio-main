@@ -43,9 +43,7 @@ const About: React.FC = () => {
             <p className="text-lg leading-relaxed text-blue-100 dark:text-slate-300">
               Hi, I'm a BTech student at Sri Sri University with a strong interest in robotics, innovation, and cybersecurity. I enjoy tackling security challenges, from penetration testing to network defense, and aim to contribute to building safer digital systems. Beyond academics, I thrive on problem-solving, exploring emerging technologies, and turning ideas into impactful projects. My goal is to grow as a researcher and engineer while contributing to the future of secure, intelligent technology.
             </p>
-            <p className="text-lg leading-relaxed text-blue-100 dark:text-slate-300">
-              I thrive on solving complex security puzzles, dissecting threats, and safeguarding digital landscapes. Whether it's penetration testing, network defense, or risk assessment, I'm in my element. As a TryHackMe Top 10% performer and ex-intern at NISER Bhubaneswar, I bring practical experience to cybersecurity challenges. When I'm not securing systems, you'll find me strategizing over chess or tackling algorithms on LeetCode.
-            </p>
+
 
             <div ref={highlightsRef} className="grid md:grid-cols-3 gap-6 mt-8">
               {highlights.map((highlight, index) => (
