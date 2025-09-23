@@ -31,19 +31,19 @@ const Contact: React.FC = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="text-blue-400" size={24} />,
+      icon: <Mail className="text-navy-700" size={24} style={{color: '#1e3a8a'}} />,
       label: "Email",
       value: "manoharisatyasarthak@gmail.com",
       href: "mailto:manoharisatyasarthak@gmail.com"
     },
     {
-      icon: <MapPin className="text-blue-400" size={24} />,
+      icon: <MapPin className="text-navy-700" size={24} style={{color: '#1e3a8a'}} />,
       label: "Location",
       value: "India",
       href: "#"
     },
     {
-      icon: <Linkedin className="text-blue-400" size={24} />,
+      icon: <Linkedin className="text-navy-700" size={24} style={{color: '#1e3a8a'}} />,
       label: "LinkedIn",
       value: "Connect with me",
       href: "https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
@@ -64,12 +64,12 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="contact" className="py-20 bg-slate-900 scroll-mt-20">
+    <section ref={sectionRef} id="contact" className="py-20 bg-white scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
-          <div className="w-24 h-1 bg-blue-400 mx-auto mb-8 animate-scale-in"></div>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6" style={{color: '#1e3a8a'}}>Get In Touch</h2>
+          <div className="w-24 h-1 bg-navy-700 mx-auto mb-8" style={{backgroundColor: '#1e3a8a'}}></div>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you.
           </p>
         </div>

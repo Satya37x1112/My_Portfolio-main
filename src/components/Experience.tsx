@@ -13,7 +13,7 @@ const Experience: React.FC = () => {
       location: "India",
       period: "Present",
       description: "I am pursuing BTech at Sri Sri University with focus on engineering fundamentals, technology innovation, and cutting-edge advancements in robotics and cybersecurity.",
-      icon: <GraduationCap className="text-blue-400" size={24} />
+      icon: <GraduationCap className="text-white" size={24} />
     }
   ];
 
@@ -24,7 +24,7 @@ const Experience: React.FC = () => {
       location: "Bhubaneswar, India",
       period: "Previous",
       description: "I gained hands-on research experience at NISER Bhubaneswar, contributing to cutting-edge projects in technology and innovation.",
-      icon: <Briefcase className="text-blue-400" size={24} />
+      icon: <Briefcase className="text-white" size={24} />
     }
   ];
 
@@ -32,21 +32,21 @@ const Experience: React.FC = () => {
     {
       title: "🏆 Creaper 2.0 - 1st Prize",
       description: "Won 1st prize in corporate games at CyberDojo event, March 2025. Demonstrated exceptional cybersecurity skills and strategic thinking.",
-      icon: <Award className="text-yellow-400" size={24} />,
+      icon: <Award className="text-yellow-300" size={24} />,
       date: "March 2025",
       organization: "CyberDojo • Sri Sri University"
     },
     {
       title: "🌱 Sustainable Development Week",
       description: "Participated in Sustainable Development Week initiative at Sri Sri University, focusing on technology solutions for sustainability.",
-      icon: <Award className="text-green-400" size={24} />,
+      icon: <Award className="text-green-300" size={24} />,
       date: "March 2025", 
       organization: "Sri Sri University"
     },
     {
       title: "🔒 TryHackMe Top 10%",
       description: "Ranked in the top 10% of users on TryHackMe platform, demonstrating exceptional cybersecurity skills and knowledge.",
-      icon: <Award className="text-blue-400" size={24} />,
+      icon: <Award className="text-blue-300" size={24} />,
       date: "Ongoing",
       organization: "TryHackMe Platform"
     },
@@ -60,12 +60,12 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 bg-slate-900 scroll-mt-20">
+    <section ref={sectionRef} id="experience" className="py-20 bg-navy-900 scroll-mt-20" style={{backgroundColor: '#1e3a8a'}}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">My Experience & Education</h2>
-          <div className="w-24 h-1 bg-blue-400 mx-auto mb-8 animate-scale-in"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             My academic journey and professional experiences that have shaped my expertise in cybersecurity and technology innovation.
           </p>
         </div>
@@ -74,7 +74,7 @@ const Experience: React.FC = () => {
           {/* Education */}
           <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-10'}`}>
             <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <GraduationCap className="text-blue-400 animate-float" size={28} />
+              <GraduationCap className="text-white" size={28} />
               Education
             </h3>
             <div className="space-y-6">

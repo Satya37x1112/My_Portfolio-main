@@ -31,41 +31,41 @@ const Hero: React.FC = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in-up">
-          {/* Professional Header */}
+          {/* Premium Navy Header */}
           <div className="mb-8">
-            <div className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-6 font-medium tracking-wide">
+            <div className="text-sm md:text-base text-slate-600 mb-6 font-medium tracking-wide">
               Cybersecurity Professional & Developer
             </div>
             
-            {/* Clean Professional Name */}
+            {/* Premium Navy Blue Name */}
             <h1 className="relative mb-6">
-              <span className="block text-2xl md:text-3xl text-slate-700 dark:text-slate-300 font-light mb-4">
+              <span className="block text-2xl md:text-3xl text-slate-700 font-light mb-4">
                 Hello, I'm
               </span>
               
-              {/* Professional Name Design */}
+              {/* Premium Navy Name Design */}
               <div className="space-y-2">
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 leading-tight" style={{color: '#1e3a8a'}}>
                   Satya Sarthak Manohari
                 </div>
-                <div className="text-xl md:text-2xl lg:text-3xl font-medium text-blue-600 dark:text-blue-400 mb-4">
+                <div className="text-xl md:text-2xl lg:text-3xl font-medium text-navy-700 mb-4" style={{color: '#3730a3'}}>
                   Cybersecurity Enthusiast
                 </div>
               </div>
               
-              {/* Professional accent line */}
+              {/* Premium Navy accent line */}
               <div className="relative mt-6">
-                <div className="w-24 h-0.5 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
+                <div className="w-24 h-0.5 bg-navy-600 mx-auto" style={{backgroundColor: '#1e3a8a'}}></div>
               </div>
             </h1>
           </div>
           
-          <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8 max-w-3xl mx-auto font-medium">
-            <span className="text-blue-600 dark:text-blue-400 font-semibold">BTech Student</span> • 
-            <span className="text-slate-700 dark:text-slate-300 font-semibold"> Cybersecurity Professional</span> • 
-            <span className="text-slate-700 dark:text-slate-300 font-semibold"> Problem Solver</span>
+          <p className="text-xl md:text-2xl text-slate-700 mb-8 max-w-3xl mx-auto font-medium">
+            <span className="text-navy-700 font-semibold" style={{color: '#1e3a8a'}}>BTech Student</span> • 
+            <span className="text-slate-700 font-semibold"> Cybersecurity Professional</span> • 
+            <span className="text-slate-700 font-semibold"> Problem Solver</span>
           </p>
-          <p className="text-lg text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
             Passionate about cybersecurity and technology innovation. 
             Currently exploring advanced penetration testing, network security, and cutting-edge cybersecurity solutions.
           </p>
@@ -74,27 +74,29 @@ const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
           <button
             onClick={scrollToProjects}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center gap-3"
+            className="bg-navy-700 hover:bg-navy-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-navy-500/25 flex items-center gap-3"
+            style={{backgroundColor: '#1e3a8a'}}
           >
             View My Work
             <ArrowDown size={20} />
           </button>
           <button 
             onClick={downloadResume}
-            className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+            className="border-2 border-navy-700 text-navy-700 hover:bg-navy-700 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+            style={{borderColor: '#1e3a8a', color: '#1e3a8a'}}
           >
             Download Resume
             <Download size={20} />
           </button>
         </div>
 
-        {/* Professional Social Links */}
+        {/* Premium Navy Social Links */}
         <div className="flex items-center justify-center gap-6 py-8">
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md border border-slate-200 dark:border-slate-700"
+            className="text-slate-600 hover:text-navy-700 transition-colors duration-300 transform hover:scale-110 bg-white rounded-lg p-4 shadow-lg border border-slate-200 hover:border-navy-300"
             aria-label="GitHub"
           >
             <Github size={28} />
@@ -103,14 +105,14 @@ const Hero: React.FC = () => {
             href="https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md border border-slate-200 dark:border-slate-700"
+            className="text-slate-600 hover:text-navy-700 transition-colors duration-300 transform hover:scale-110 bg-white rounded-lg p-4 shadow-lg border border-slate-200 hover:border-navy-300"
             aria-label="LinkedIn"
           >
             <Linkedin size={28} />
           </a>
           <a
             href="mailto:manoharisatyasarthak@gmail.com"
-            className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110 bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md border border-slate-200 dark:border-slate-700"
+            className="text-slate-600 hover:text-navy-700 transition-colors duration-300 transform hover:scale-110 bg-white rounded-lg p-4 shadow-lg border border-slate-200 hover:border-navy-300"
             aria-label="Mail"
           >
             <Mail size={28} />
@@ -120,7 +122,7 @@ const Hero: React.FC = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <ArrowDown className="text-slate-400 dark:text-slate-500 animate-bounce" size={24} />
+        <ArrowDown className="text-slate-400 animate-bounce" size={24} />
       </div>
     </section>
   );
