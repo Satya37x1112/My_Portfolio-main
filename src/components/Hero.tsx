@@ -29,10 +29,10 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%231e3a8a%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] dark:bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%234338ca%22 fill-opacity=%220.1%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       
       {/* Circular Profile Photo - Top Right Corner */}
-      <div className="absolute top-20 right-8 z-20">
+      <div className="absolute top-24 right-4 md:top-20 md:right-8 z-20">
         <div className="relative">
           {/* Circular Photo Container */}
-          <div className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 dark:from-blue-500 dark:to-blue-700 p-1 shadow-2xl">
+          <div className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 dark:from-blue-500 dark:to-blue-700 p-1 shadow-2xl">
             <div className="w-full h-full bg-white dark:bg-slate-800 rounded-full overflow-hidden">
               <img
                 src={profileImage}
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
           </div>
           
           {/* Online Status Indicator */}
-          <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-3 border-white dark:border-slate-800 animate-pulse"></div>
+          <div className="absolute -bottom-1 -right-1 w-5 h-5 md:w-6 md:h-6 bg-green-500 rounded-full border-3 border-white dark:border-slate-800 animate-pulse"></div>
         </div>
       </div>
       
