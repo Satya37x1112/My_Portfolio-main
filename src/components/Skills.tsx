@@ -1,7 +1,7 @@
 import React from 'react';
 import { Shield, Code, Database, Settings } from 'lucide-react';
 import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '../context/ThemeContext';
 
 const Skills: React.FC = () => {
   const { theme } = useTheme();

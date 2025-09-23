@@ -2,7 +2,7 @@ import React from 'react';
 import { Code, Palette, Zap } from 'lucide-react';
 import profileImage from '../assets/p.jpeg';
 import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '../context/ThemeContext';
 
 const About: React.FC = () => {
   const { theme } = useTheme();
