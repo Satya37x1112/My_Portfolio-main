@@ -22,53 +22,49 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light'); // Always start with light theme
+  const [theme, setTheme] = useState<Theme>('light');
   const [isHydrated, setIsHydrated] = useState(false);
 
-  // Hydrate theme on client side
+  // Simple client-side only theme detection
   useEffect(() => {
+    // Only run on client side
     if (typeof window === 'undefined') return;
     
-    let initialTheme: Theme = 'light';
+    let detectedTheme: Theme = 'light';
     
-    // Check if there's a saved theme in localStorage
     try {
-      const savedTheme = localStorage.getItem('theme') as Theme;
-      if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
-        initialTheme = savedTheme;
-      } else {
-        // Check system preference
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          initialTheme = 'dark';
-        }
+      // Try to get saved theme
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') {
+        detectedTheme = saved;
+      } else if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+        detectedTheme = 'dark';
       }
-    } catch (error) {
-      console.warn('Failed to access localStorage or matchMedia:', error);
+    } catch (e) {
+      // Fallback to light theme if anything fails
+      console.warn('Theme detection failed, using light theme');
     }
     
-    setTheme(initialTheme);
+    setTheme(detectedTheme);
     setIsHydrated(true);
   }, []);
 
+  // Apply theme changes
   useEffect(() => {
-    // Only run in browser environment
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined' || !isHydrated) return;
     
-    // Save theme to localStorage
     try {
       localStorage.setItem('theme', theme);
-    } catch (error) {
-      console.warn('Failed to save theme to localStorage:', error);
+      
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } catch (e) {
+      console.warn('Failed to apply theme:', e);
     }
-    
-    // Apply theme to document
-    const root = document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  }, [theme]);
+  }, [theme, isHydrated]);
 
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
