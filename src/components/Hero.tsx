@@ -65,10 +65,6 @@ const Hero: React.FC = () => {
           <div className="animate-fade-in-up">
             {/* Premium Navy Header */}
             <div className="mb-8">
-              <div className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-6 font-medium tracking-wide">
-                Cybersecurity Professional & Developer
-              </div>
-              
               {/* Premium Navy Blue Name */}
               <h1 className="relative mb-6">
                 <span className="block text-2xl md:text-3xl text-slate-700 dark:text-slate-300 font-light mb-4">
