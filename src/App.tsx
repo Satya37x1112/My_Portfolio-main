@@ -1,6 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
+import ErrorBoundary from './components/ErrorBoundary';
 import { ThemeProvider } from './context/ThemeContext';
 
 // Lazy load components for better performance
@@ -47,27 +48,29 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-slate-900 font-inter transition-colors duration-300">
-        <Navigation activeSection={activeSection} />
-        <Hero />
-        <Suspense fallback={<LoadingSection />}>
-          <About />
-        </Suspense>
-        <Suspense fallback={<LoadingSection />}>
-          <Skills />
-        </Suspense>
-        <Suspense fallback={<LoadingSection />}>
-          <Experience />
-        </Suspense>
-        <Suspense fallback={<LoadingSection />}>
-          <Projects />
-        </Suspense>
-        <Suspense fallback={<LoadingSection />}>
-          <Contact />
-        </Suspense>
-      </div>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <div className="min-h-screen bg-white dark:bg-slate-900 font-inter transition-colors duration-300">
+          <Navigation activeSection={activeSection} />
+          <Hero />
+          <Suspense fallback={<LoadingSection />}>
+            <About />
+          </Suspense>
+          <Suspense fallback={<LoadingSection />}>
+            <Skills />
+          </Suspense>
+          <Suspense fallback={<LoadingSection />}>
+            <Experience />
+          </Suspense>
+          <Suspense fallback={<LoadingSection />}>
+            <Projects />
+          </Suspense>
+          <Suspense fallback={<LoadingSection />}>
+            <Contact />
+          </Suspense>
+        </div>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 

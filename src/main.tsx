@@ -7,9 +7,20 @@ import './index.css';
 performance.mark('app-start');
 
 const rootElement = document.getElementById('root');
-if (!rootElement) throw new Error('Root element not found');
+if (!rootElement) {
+  // Create root element if it doesn't exist
+  const newRoot = document.createElement('div');
+  newRoot.id = 'root';
+  document.body.appendChild(newRoot);
+  console.warn('Root element not found, created a new one');
+}
 
-createRoot(rootElement).render(
+const finalRoot = document.getElementById('root');
+if (!finalRoot) {
+  throw new Error('Failed to create or find root element');
+}
+
+createRoot(finalRoot).render(
   <StrictMode>
     <App />
   </StrictMode>

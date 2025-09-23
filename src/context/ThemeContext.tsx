@@ -22,24 +22,44 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
+  const [theme, setTheme] = useState<Theme>('light'); // Always start with light theme
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  // Hydrate theme on client side
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    let initialTheme: Theme = 'light';
+    
     // Check if there's a saved theme in localStorage
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme) {
-      return savedTheme;
+    try {
+      const savedTheme = localStorage.getItem('theme') as Theme;
+      if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+        initialTheme = savedTheme;
+      } else {
+        // Check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          initialTheme = 'dark';
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to access localStorage or matchMedia:', error);
     }
     
-    // Check system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
-    
-    return 'light';
-  });
+    setTheme(initialTheme);
+    setIsHydrated(true);
+  }, []);
 
   useEffect(() => {
+    // Only run in browser environment
+    if (typeof window === 'undefined') return;
+    
     // Save theme to localStorage
-    localStorage.setItem('theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch (error) {
+      console.warn('Failed to save theme to localStorage:', error);
+    }
     
     // Apply theme to document
     const root = document.documentElement;
