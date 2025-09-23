@@ -34,7 +34,7 @@ const About: React.FC = () => {
           <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
         </div>
 
-        <div className="grid lg:grid-cols-1 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-1 gap-12 items-center">
           {/* About Content */}
           <div className={`space-y-6 text-white transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'} max-w-4xl mx-auto text-center`}>
             <h3 className="text-2xl font-semibold text-white mb-4">
@@ -64,49 +64,6 @@ const About: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Additional Images Placeholder */}
-          <div className={`space-y-6 transition-all duration-1000 ${isVisible ? 'animate-fade-in-right' : 'opacity-0 translate-x-10'}`}>
-            <h4 className="text-xl font-semibold text-white text-center mb-4 animate-fade-in-up animate-delay-600">Gallery</h4>
-            <div className="grid grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((num) => (
-                <div 
-                  key={num} 
-                  className={`aspect-square bg-slate-700 border-2 border-dashed border-slate-600 rounded-lg flex items-center justify-center hover-lift transition-all duration-300 animate-scale-in`}
-                  style={{ animationDelay: `${(num + 6) * 100}ms` }}
-                >
-                  <div className="text-center">
-                    <div className="text-slate-500 mb-2 text-2xl animate-bounce" style={{ animationDelay: `${num * 200}ms` }}>📸</div>
-                    <p className="text-slate-500 text-sm">Image {num}</p>
-                    <p className="text-slate-600 text-xs">(To be added)</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Image Placeholders Section */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-white text-center mb-8">More About Me</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {['University Life', 'Cybersecurity Journey', 'Achievements'].map((category, index) => (
-              <div key={index} className="bg-slate-900 rounded-lg p-6 border border-slate-700">
-                <h4 className="text-lg font-semibold text-white mb-4 text-center">{category}</h4>
-                <div className="space-y-3">
-                  {[1, 2].map((imgNum) => (
-                    <div key={imgNum} className="w-full h-32 bg-slate-700 border-2 border-dashed border-slate-600 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-slate-500 mb-1">🖼️</div>
-                        <p className="text-slate-500 text-xs">{category} Photo {imgNum}</p>
-                        <p className="text-slate-600 text-xs">(Coming Soon)</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
