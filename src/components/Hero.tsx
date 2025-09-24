@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen relative overflow-hidden">
+    <section id="hero" className="min-h-screen relative overflow-hidden bg-gray-900">
       <div 
         className="absolute inset-0 bg-no-repeat bg-center"
         style={{
@@ -30,14 +30,14 @@ const Hero: React.FC = () => {
           backgroundSize: 'contain',
           backgroundPosition: 'center center',
           imageRendering: 'crisp-edges',
-          filter: 'brightness(1.5) contrast(1.15) saturate(1.3) hue-rotate(5deg)'
+          filter: 'brightness(1.1) contrast(1.1) saturate(1.2) hue-rotate(5deg)'
         }}
       ></div>
       
-      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/70 dark:from-black/75 dark:via-black/55 dark:to-black/85"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/70 via-gray-800/60 to-black/80"></div>
       
       {/* Subtle glow effect around the image */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-blue-900/20"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-gray-900/30"></div>
       
       <div className="min-h-screen relative z-10 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
