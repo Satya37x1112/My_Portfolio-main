@@ -29,7 +29,8 @@ const Hero: React.FC = () => {
           backgroundImage: `url(${profileImage})`,
           backgroundSize: 'contain',
           backgroundPosition: 'center center',
-          imageRendering: 'crisp-edges'
+          imageRendering: 'crisp-edges',
+          filter: 'brightness(1.3) contrast(1.1) saturate(1.2)'
         }}
       ></div>
       
