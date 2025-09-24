@@ -22,22 +22,19 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen relative overflow-hidden bg-white dark:bg-gray-900">
+    <section id="hero" className="min-h-screen relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-no-repeat bg-center"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url(${profileImage})`,
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundPosition: 'center center',
           imageRendering: 'crisp-edges',
           filter: 'brightness(1.1) contrast(1.1) saturate(1.2) hue-rotate(5deg)'
         }}
       ></div>
       
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-100/70 via-gray-200/60 to-gray-300/80 dark:from-gray-900/70 dark:via-gray-800/60 dark:to-black/80"></div>
-      
-      {/* Subtle glow effect around the image */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-gray-200/30 dark:to-gray-900/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-gray-100/50 dark:from-black/50 dark:via-black/30 dark:to-gray-900/70"></div>
       
       <div className="min-h-screen relative z-10 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -49,7 +46,7 @@ const Hero: React.FC = () => {
             
             {/* Content - spans full width on mobile, right column on desktop */}
             <div className="col-span-1 text-center lg:text-left">
-              <div className="animate-fade-in-up space-y-6 backdrop-blur-sm bg-white/10 dark:bg-black/10 rounded-2xl p-6 lg:p-8 border border-gray-300/10 dark:border-white/10">
+              <div className="animate-fade-in-up space-y-6 backdrop-blur-md bg-white/20 dark:bg-black/30 rounded-2xl p-6 lg:p-8 border border-gray-300/30 dark:border-white/20 shadow-2xl">
                 <div className="mb-8">
                   <h1 className="relative mb-6">
                     <span className="block text-lg sm:text-xl md:text-2xl text-gray-800 dark:text-gray-100 font-light mb-4 text-shadow-lg">
