@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
                 
                 <p className="text-lg md:text-xl text-white mb-4 font-medium drop-shadow-lg">
                   <span className="text-blue-200 font-semibold">BTech Student</span> • 
-                  <span className="text-white font-semibold"> Cybersecurity Professional</span>
+                  <span className="text-white font-semibold"> Learner and Performer</span>
                 </p>
 
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500 bg-opacity-20 backdrop-blur-sm border border-green-400 border-opacity-30 mb-6">
