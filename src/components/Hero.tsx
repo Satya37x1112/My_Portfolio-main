@@ -22,14 +22,27 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-blue-900 dark:from-gray-900 dark:via-gray-800 dark:to-navy-900">
+    <section id="hero" className="min-h-screen relative overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: `url(${profileImage})`,
+          backgroundPosition: 'center 20%'
+        }}
+      ></div>
+      
+      <div className="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-70"></div>
       
       <div className="min-h-screen relative z-10 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-20 lg:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-screen py-20 lg:py-0">
             
-            {/* Content Column */}
-            <div className="order-2 lg:order-1 text-center lg:text-left">
+            {/* Empty columns on desktop for spacing */}
+            <div className="hidden lg:block"></div>
+            <div className="hidden lg:block"></div>
+            
+            {/* Content - spans full width on mobile, right column on desktop */}
+            <div className="col-span-1 text-center lg:text-left">
               <div className="animate-fade-in-up space-y-6">
                 <div className="mb-8">
                   <h1 className="relative mb-6">
@@ -111,18 +124,6 @@ const Hero: React.FC = () => {
                     <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                   </a>
                 </div>
-              </div>
-            </div>
-
-            {/* Image Column */}
-            <div className="order-1 lg:order-2 flex items-center justify-center">
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 animate-fade-in-up animation-delay-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-20 blur-xl"></div>
-                <img 
-                  src={profileImage} 
-                  alt="Satya Sarthak Manohari"
-                  className="relative z-10 w-full h-full object-contain filter drop-shadow-2xl"
-                />
               </div>
             </div>
           </div>
