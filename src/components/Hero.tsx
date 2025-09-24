@@ -24,17 +24,14 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="min-h-screen relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage: `url(${profileImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          imageRendering: 'crisp-edges',
-          filter: 'brightness(1.1) contrast(1.1) saturate(1.2) hue-rotate(5deg)'
+          backgroundPosition: 'center 20%'
         }}
       ></div>
       
-      <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-gray-100/50 dark:from-black/50 dark:via-black/30 dark:to-gray-900/70"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-60"></div>
       
       <div className="min-h-screen relative z-10 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -46,38 +43,41 @@ const Hero: React.FC = () => {
             
             {/* Content - spans full width on mobile, right column on desktop */}
             <div className="col-span-1 text-center lg:text-left">
-              <div className="animate-fade-in-up space-y-6 backdrop-blur-md bg-white/20 dark:bg-black/30 rounded-2xl p-6 lg:p-8 border border-gray-300/30 dark:border-white/20 shadow-2xl">
+              <div className="animate-fade-in-up space-y-6">
                 <div className="mb-8">
                   <h1 className="relative mb-6">
-                    <span className="block text-lg sm:text-xl md:text-2xl text-gray-800 dark:text-gray-100 font-light mb-4 text-shadow-lg">
+                    <span className="block text-lg sm:text-xl md:text-2xl text-white font-light mb-4">
                       Hello, I'm
                     </span>
                     
                     <div className="space-y-3">
-                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight drop-shadow-2xl text-shadow-glow">
+                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-2xl">
                         Satya Sarthak Manohari
                       </div>
-                      <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-blue-600 dark:text-blue-200 drop-shadow-lg text-shadow-md">
+                      <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-blue-300 drop-shadow-lg">
                         Cybersecurity Enthusiast
                       </div>
                     </div>
                     
                     <div className="relative mt-6">
-                      <div className="w-20 h-0.5 bg-gradient-to-r from-blue-600 to-gray-800 dark:from-blue-400 dark:to-white mx-auto lg:mx-0 shadow-lg"></div>
+                      <div className="w-20 h-0.5 bg-white mx-auto lg:mx-0"></div>
                     </div>
                   </h1>
                 
-                <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-100 font-medium drop-shadow-lg text-shadow-md">
-                  <span className="text-blue-600 dark:text-blue-200 font-semibold glow-text">BTech Student</span> • 
-                  <span className="text-gray-800 dark:text-white font-semibold"> Learner and Performer</span>
-                </p>
-
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/30 backdrop-blur-md border border-green-400/50 shadow-lg hover:shadow-green-400/25 transition-all duration-300">
-                  <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse shadow-sm"></div>
-                  <span className="text-xs sm:text-sm font-bold text-green-100 text-shadow-sm">🏆 TryHackMe Top 10%</span>
+                                  </h1>
                 </div>
                 
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-200 leading-relaxed max-w-md mx-auto lg:mx-0 drop-shadow-lg text-shadow-sm">
+                <p className="text-base sm:text-lg md:text-xl text-white font-medium drop-shadow-lg">
+                  <span className="text-blue-200 font-semibold">BTech Student</span> • 
+                  <span className="text-white font-semibold"> Learner and Performer</span>
+                </p>
+
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500 bg-opacity-20 backdrop-blur-sm border border-green-400 border-opacity-30">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                  <span className="text-xs sm:text-sm font-bold text-green-100">🏆 TryHackMe Top 10%</span>
+                </div>
+                
+                <p className="text-sm sm:text-base text-white text-opacity-90 leading-relaxed max-w-md mx-auto lg:mx-0 drop-shadow-lg">
                   Passionate about cybersecurity and technology innovation. 
                   Exploring advanced penetration testing and network security.
                 </p>
@@ -85,14 +85,14 @@ const Hero: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mt-8">
                   <button
                     onClick={scrollToProjects}
-                    className="w-full sm:w-auto bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
                   >
                     View My Work
                     <ArrowDown size={16} />
                   </button>
                   <button 
                     onClick={downloadResume}
-                    className="w-full sm:w-auto bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
                   >
                     Download Resume
                     <ArrowDown size={16} />
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-200 transition-all duration-300 transform hover:scale-110 bg-gray-200/30 dark:bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 hover:bg-gray-300/40 dark:hover:bg-white/30 hover:shadow-lg hover:shadow-blue-500/25 border border-gray-400/20 dark:border-white/10"
+                    className="text-white hover:text-blue-200 transition-colors duration-300 transform hover:scale-110 bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-2 sm:p-3 hover:bg-opacity-20"
                     aria-label="GitHub"
                   >
                     <Github className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -113,14 +113,14 @@ const Hero: React.FC = () => {
                     href="https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-200 transition-all duration-300 transform hover:scale-110 bg-gray-200/30 dark:bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 hover:bg-gray-300/40 dark:hover:bg-white/30 hover:shadow-lg hover:shadow-blue-500/25 border border-gray-400/20 dark:border-white/10"
+                    className="text-white hover:text-blue-200 transition-colors duration-300 transform hover:scale-110 bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-2 sm:p-3 hover:bg-opacity-20"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
                   </a>
                   <a
                     href="mailto:manoharisatyasarthak@gmail.com"
-                    className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-200 transition-all duration-300 transform hover:scale-110 bg-gray-200/30 dark:bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 hover:bg-gray-300/40 dark:hover:bg-white/30 hover:shadow-lg hover:shadow-blue-500/25 border border-gray-400/20 dark:border-white/10"
+                    className="text-white hover:text-blue-200 transition-colors duration-300 transform hover:scale-110 bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-2 sm:p-3 hover:bg-opacity-20"
                     aria-label="Mail"
                   >
                     <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
