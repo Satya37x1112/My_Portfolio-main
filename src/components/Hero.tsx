@@ -39,16 +39,7 @@ const Hero: React.FC = () => {
             
             <div className="hidden lg:block"></div>
             
-            <div className="flex flex-col items-center lg:items-start lg:justify-start">
-              <div className="relative mb-8 lg:mb-4 lg:mt-20">
-                <div className="flex items-center animate-bounce">
-                  <span className="text-4xl md:text-6xl animate-pulse">????</span>
-                  <div className="ml-4 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2">
-                    <span className="text-white font-bold text-sm md:text-base">That's me!</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className="hidden lg:block"></div>
             
             <div className="lg:col-span-1 text-center lg:text-left">
               <div className="animate-fade-in-up">
@@ -74,13 +65,13 @@ const Hero: React.FC = () => {
                 </div>
                 
                 <p className="text-lg md:text-xl text-white mb-4 font-medium drop-shadow-lg">
-                  <span className="text-blue-200 font-semibold">BTech Student</span> ??? 
+                  <span className="text-blue-200 font-semibold">BTech Student</span> • 
                   <span className="text-white font-semibold"> Cybersecurity Professional</span>
                 </p>
 
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500 bg-opacity-20 backdrop-blur-sm border border-green-400 border-opacity-30 mb-6">
                   <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                  <span className="text-xs font-bold text-green-100">???? TryHackMe Top 10%</span>
+                  <span className="text-xs font-bold text-green-100">🏆 TryHackMe Top 10%</span>
                 </div>
                 
                 <p className="text-sm md:text-base text-white text-opacity-90 mb-6 leading-relaxed max-w-sm mx-auto lg:mx-0 drop-shadow-lg">
@@ -98,10 +89,10 @@ const Hero: React.FC = () => {
                   </button>
                   <button 
                     onClick={downloadResume}
-                    className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                    className="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-2"
                   >
                     Download Resume
-                    <Download size={18} />
+                    <ArrowDown size={18} />
                   </button>
                 </div>
 
