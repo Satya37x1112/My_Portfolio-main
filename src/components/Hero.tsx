@@ -24,9 +24,10 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="min-h-screen relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url(${profileImage})`,
+          backgroundPosition: 'center 20%'
         }}
       ></div>
       
