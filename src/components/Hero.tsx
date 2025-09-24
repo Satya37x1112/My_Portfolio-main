@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
-import profileImage from '../assets/p-removebg-preview.png';
+import profileImage from '../assets/p-removebg-preview-Picsart-AiImageEnhancer.png';
 
 const Hero: React.FC = () => {
   const scrollToProjects = () => {
@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
         }}
       ></div>
       
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60 dark:from-black/60 dark:via-black/30 dark:to-black/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/80 dark:from-black/80 dark:via-black/60 dark:to-black/90"></div>
       
       <div className="min-h-screen relative z-10 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
