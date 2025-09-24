@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import profileImage from '../assets/image (1).png';
+import profileImage from '../assets/image1.png';
 
 const Hero: React.FC = () => {
   const scrollToProjects = () => {
