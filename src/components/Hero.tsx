@@ -64,13 +64,13 @@ const Hero: React.FC = () => {
                 </div>
                 
                 <p className="text-base sm:text-lg md:text-xl text-white font-medium drop-shadow-lg">
-                  <span className="text-blue-200 font-semibold">BTech Student</span> ??? 
+                  <span className="text-blue-200 font-semibold">BTech Student</span> • 
                   <span className="text-white font-semibold"> Learner and Performer</span>
                 </p>
 
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500 bg-opacity-20 backdrop-blur-sm border border-green-400 border-opacity-30">
                   <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                  <span className="text-xs sm:text-sm font-bold text-green-100">???? TryHackMe Top 10%</span>
+                  <span className="text-xs sm:text-sm font-bold text-green-100">🚀 TryHackMe Top 10%</span>
                 </div>
                 
                 <p className="text-sm sm:text-base text-white text-opacity-90 leading-relaxed max-w-md mx-auto lg:mx-0 drop-shadow-lg">
