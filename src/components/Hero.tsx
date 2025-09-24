@@ -24,14 +24,16 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="min-h-screen relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-no-repeat"
+        className="absolute inset-0 bg-no-repeat bg-center"
         style={{
           backgroundImage: `url(${profileImage})`,
-          backgroundPosition: 'center 20%'
+          backgroundSize: 'contain',
+          backgroundPosition: 'center center',
+          imageRendering: 'crisp-edges'
         }}
       ></div>
       
-      <div className="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-70"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60 dark:from-black/60 dark:via-black/30 dark:to-black/70"></div>
       
       <div className="min-h-screen relative z-10 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
