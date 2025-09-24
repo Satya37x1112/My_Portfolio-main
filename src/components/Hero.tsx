@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import profileImage from '../assets/p-removebg-preview-Picsart-AiImageEnhancer.png';
+import profileImage from '../assets/image.png';
 
 const Hero: React.FC = () => {
   const scrollToProjects = () => {
