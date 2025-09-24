@@ -49,31 +49,30 @@ const Hero: React.FC = () => {
             
             {/* Content - spans full width on mobile, right column on desktop */}
             <div className="col-span-1 text-center lg:text-left">
-              <div className="animate-fade-in-up space-y-6 backdrop-blur-sm bg-black/10 rounded-2xl p-6 lg:p-8 border border-white/10">
+              <div className="animate-fade-in-up space-y-6 backdrop-blur-sm bg-white/10 dark:bg-black/10 rounded-2xl p-6 lg:p-8 border border-gray-300/10 dark:border-white/10">
                 <div className="mb-8">
                   <h1 className="relative mb-6">
-                    <span className="block text-lg sm:text-xl md:text-2xl text-gray-100 font-light mb-4 text-shadow-lg">
+                    <span className="block text-lg sm:text-xl md:text-2xl text-gray-800 dark:text-gray-100 font-light mb-4 text-shadow-lg">
                       Hello, I'm
                     </span>
                     
                     <div className="space-y-3">
-                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-2xl text-shadow-glow">
+                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight drop-shadow-2xl text-shadow-glow">
                         Satya Sarthak Manohari
                       </div>
-                      <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-blue-200 drop-shadow-lg text-shadow-md">
+                      <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-blue-600 dark:text-blue-200 drop-shadow-lg text-shadow-md">
                         Cybersecurity Enthusiast
                       </div>
                     </div>
                     
                     <div className="relative mt-6">
-                      <div className="w-20 h-0.5 bg-gradient-to-r from-blue-400 to-white mx-auto lg:mx-0 shadow-lg"></div>
+                      <div className="w-20 h-0.5 bg-gradient-to-r from-blue-600 to-gray-800 dark:from-blue-400 dark:to-white mx-auto lg:mx-0 shadow-lg"></div>
                     </div>
                   </h1>
-                </div>
                 
-                <p className="text-base sm:text-lg md:text-xl text-gray-100 font-medium drop-shadow-lg text-shadow-md">
-                  <span className="text-blue-200 font-semibold glow-text">BTech Student</span> • 
-                  <span className="text-white font-semibold"> Learner and Performer</span>
+                <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-100 font-medium drop-shadow-lg text-shadow-md">
+                  <span className="text-blue-600 dark:text-blue-200 font-semibold glow-text">BTech Student</span> • 
+                  <span className="text-gray-800 dark:text-white font-semibold"> Learner and Performer</span>
                 </p>
 
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/30 backdrop-blur-md border border-green-400/50 shadow-lg hover:shadow-green-400/25 transition-all duration-300">
@@ -81,7 +80,7 @@ const Hero: React.FC = () => {
                   <span className="text-xs sm:text-sm font-bold text-green-100 text-shadow-sm">🏆 TryHackMe Top 10%</span>
                 </div>
                 
-                <p className="text-sm sm:text-base text-gray-200 leading-relaxed max-w-md mx-auto lg:mx-0 drop-shadow-lg text-shadow-sm">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-200 leading-relaxed max-w-md mx-auto lg:mx-0 drop-shadow-lg text-shadow-sm">
                   Passionate about cybersecurity and technology innovation. 
                   Exploring advanced penetration testing and network security.
                 </p>
@@ -89,14 +88,14 @@ const Hero: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mt-8">
                   <button
                     onClick={scrollToProjects}
-                    className="w-full sm:w-auto bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
                   >
                     View My Work
                     <ArrowDown size={16} />
                   </button>
                   <button 
                     onClick={downloadResume}
-                    className="w-full sm:w-auto bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
                   >
                     Download Resume
                     <ArrowDown size={16} />
@@ -108,7 +107,7 @@ const Hero: React.FC = () => {
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-200 transition-all duration-300 transform hover:scale-110 bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 hover:bg-white/30 hover:shadow-lg hover:shadow-blue-500/25 border border-white/10"
+                    className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-200 transition-all duration-300 transform hover:scale-110 bg-gray-200/30 dark:bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 hover:bg-gray-300/40 dark:hover:bg-white/30 hover:shadow-lg hover:shadow-blue-500/25 border border-gray-400/20 dark:border-white/10"
                     aria-label="GitHub"
                   >
                     <Github className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -117,14 +116,14 @@ const Hero: React.FC = () => {
                     href="https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-200 transition-all duration-300 transform hover:scale-110 bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 hover:bg-white/30 hover:shadow-lg hover:shadow-blue-500/25 border border-white/10"
+                    className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-200 transition-all duration-300 transform hover:scale-110 bg-gray-200/30 dark:bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 hover:bg-gray-300/40 dark:hover:bg-white/30 hover:shadow-lg hover:shadow-blue-500/25 border border-gray-400/20 dark:border-white/10"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
                   </a>
                   <a
                     href="mailto:manoharisatyasarthak@gmail.com"
-                    className="text-white hover:text-blue-200 transition-all duration-300 transform hover:scale-110 bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 hover:bg-white/30 hover:shadow-lg hover:shadow-blue-500/25 border border-white/10"
+                    className="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-200 transition-all duration-300 transform hover:scale-110 bg-gray-200/30 dark:bg-white/20 backdrop-blur-md rounded-xl p-2 sm:p-3 hover:bg-gray-300/40 dark:hover:bg-white/30 hover:shadow-lg hover:shadow-blue-500/25 border border-gray-400/20 dark:border-white/10"
                     aria-label="Mail"
                   >
                     <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
