@@ -76,6 +76,7 @@ const Hero: React.FC = () => {
                 <p className="text-sm sm:text-base text-white text-opacity-90 leading-relaxed max-w-md mx-auto lg:mx-0 drop-shadow-lg">
                   Passionate about cybersecurity and technology innovation. 
                   Exploring advanced penetration testing and network security.
+                  Aspiring for DevSecOps and system design roles.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mt-8">

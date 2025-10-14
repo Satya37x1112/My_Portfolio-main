@@ -68,7 +68,8 @@ const Experience: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-navy-900 dark:text-white mb-6" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>My Experience & Education</h2>
           <div className="w-24 h-1 bg-navy-700 dark:bg-white mx-auto mb-8" style={theme === 'light' ? {backgroundColor: '#1e3a8a'} : {}}></div>
           <p className="text-xl text-slate-600 dark:text-blue-100 max-w-3xl mx-auto">
-            My academic journey and professional experiences that have shaped my expertise in cybersecurity and technology innovation.
+            My academic journey and professional experiences that have shaped my expertise in cybersecurity and technology innovation. 
+            Focused on developing skills for DevSecOps and system design roles.
           </p>
         </div>
 

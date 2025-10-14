@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
             <p className="text-lg text-blue-200 mb-8 leading-relaxed">
               While I'm busy securing the digital world and solving complex cybersecurity challenges, 
               my coding projects are brewing in the background. Think of it as the calm before the 
-              coding storm! ⚡🌪️
+              coding storm! ⚡🌪️ Currently focusing on DevSecOps and system design projects.
             </p>
             
             <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-white border-opacity-20">
@@ -44,8 +44,8 @@ const Projects: React.FC = () => {
                 🚀 Coming Soon:
               </p>
               <p className="text-blue-100">
-                Cybersecurity tools, penetration testing frameworks, and innovative solutions 
-                that would make even the most secure systems say "Hello World!" 🌍
+                Cybersecurity tools, penetration testing frameworks, DevSecOps automation, 
+                and innovative system design solutions that would make even the most secure systems say "Hello World!" 🌍
               </p>
             </div>
             

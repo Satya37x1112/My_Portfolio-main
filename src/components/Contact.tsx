@@ -61,6 +61,9 @@ const Contact: React.FC = () => {
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you.
           </p>
+          <p className="text-lg text-slate-500 dark:text-slate-500 max-w-3xl mx-auto mt-4">
+            I'm aspiring for DevSecOps and system design - always eager to learn and contribute to innovative solutions.
+          </p>
         </div>
 
         <div className="max-w-2xl mx-auto">

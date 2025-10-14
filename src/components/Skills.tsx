@@ -62,7 +62,8 @@ const Skills: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-navy-900 dark:text-white mb-6" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>Technical Skills</h2>
           <div className="w-24 h-1 bg-navy-700 dark:bg-blue-400 mx-auto mb-8" style={theme === 'light' ? {backgroundColor: '#1e3a8a'} : {}}></div>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-            A comprehensive overview of my technical expertise across different domains
+            A comprehensive overview of my technical expertise across different domains, 
+            with focus on DevSecOps and system design capabilities
           </p>
         </div>
 
