@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useTheme } from '../context/ThemeContext';
 
@@ -52,40 +52,6 @@ const Contact: React.FC = () => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <Mail className="text-navy-700 dark:text-blue-400" style={theme === 'light' ? {color: '#1e3a8a'} : {}} size={24} />,
-      label: "Email",
-      value: "manoharisatyasarthak@gmail.com",
-      href: "mailto:manoharisatyasarthak@gmail.com"
-    },
-    {
-      icon: <MapPin className="text-navy-700 dark:text-blue-400" style={theme === 'light' ? {color: '#1e3a8a'} : {}} size={24} />,
-      label: "Location",
-      value: "India",
-      href: "#"
-    },
-    {
-      icon: <Linkedin className="text-navy-700 dark:text-blue-400" style={theme === 'light' ? {color: '#1e3a8a'} : {}} size={24} />,
-      label: "LinkedIn",
-      value: "Connect with me",
-      href: "https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
-    }
-  ];
-
-  const socialLinks = [
-    {
-      icon: <Github size={24} />,
-      label: "GitHub",
-      href: "https://github.com"
-    },
-    {
-      icon: <Linkedin size={24} />,
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297"
-    }
-  ];
-
   return (
     <section ref={sectionRef} id="contact" className="py-20 bg-white dark:bg-slate-900 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,57 +63,7 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-10'}`}>
-            <div>
-              <h3 className="text-2xl font-semibold text-navy-900 dark:text-white mb-6" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>Let's Connect</h3>
-              <p className="text-slate-600 dark:text-gray-400 text-lg mb-8 leading-relaxed">
-                I'm always interested in new opportunities and exciting projects. 
-                Whether you're looking for a developer, have a question, or just want to say hi, 
-                feel free to reach out!
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <a
-                  key={index}
-                  href={info.href}
-                  className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-navy-300 dark:hover:border-blue-500 transition-colors duration-300 group"
-                >
-                  <div className="flex-shrink-0">
-                    {info.icon}
-                  </div>
-                  <div>
-                    <div className="text-sm text-slate-500 dark:text-gray-400">{info.label}</div>
-                    <div className="text-navy-900 dark:text-white font-medium group-hover:text-navy-700 dark:group-hover:text-blue-400 transition-colors duration-300" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
-                      {info.value}
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            <div className="pt-6">
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white mb-4" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>Follow Me</h4>
-              <div className="flex gap-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-600 dark:text-gray-400 hover:text-navy-700 dark:hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
-                    title={social.label}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
+        <div className="max-w-2xl mx-auto">
           {/* Contact Form */}
           <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-8 border border-slate-200 dark:border-slate-700">
             {submitStatus === 'success' && (
