@@ -91,7 +91,7 @@ export const ModernHero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen relative overflow-hidden mesh-gradient circuit-pattern">
+    <section id="hero" className="min-h-screen relative overflow-hidden mesh-gradient circuit-pattern bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
       {/* Floating 3D Icons */}
       <div className="hidden lg:block">
         <FloatingIcon icon={<Shield size={40} />} delay={0} />
@@ -120,11 +120,11 @@ export const ModernHero: React.FC = () => {
               className="mb-8"
             >
               <div className="inline-block glass-card px-6 py-3 text-left">
-                <p className="text-cyan-400 text-sm md:text-base font-mono">
+                <p className="text-cyan-600 dark:text-cyan-400 text-sm md:text-base font-mono transition-colors duration-300">
                   $ whoami
                 </p>
                 {showContent && (
-                  <p className="text-cyan-300 text-sm md:text-base font-mono mt-1">
+                  <p className="text-cyan-700 dark:text-cyan-300 text-sm md:text-base font-mono mt-1 transition-colors duration-300">
                     <TypewriterText texts={[
                       "cybersecurity_enthusiast",
                       "aspiring_devsecops_engineer",
@@ -143,11 +143,11 @@ export const ModernHero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
             >
-              <span className="text-white">
+              <span className="text-slate-900 dark:text-white transition-colors duration-300">
                 Satya Sarthak
               </span>
               <br />
-              <span className="text-white">
+              <span className="text-slate-900 dark:text-white transition-colors duration-300">
                 Manohari
               </span>
             </motion.h1>
@@ -159,7 +159,7 @@ export const ModernHero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="mb-8"
             >
-              <h2 className="text-2xl md:text-3xl lg:text-4xl text-cyan-300 font-semibold mb-2">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl text-cyan-600 dark:text-cyan-300 font-semibold mb-2 transition-colors duration-300">
                 Cybersecurity Enthusiast
               </h2>
               <div className="flex justify-center">
@@ -181,20 +181,20 @@ export const ModernHero: React.FC = () => {
             >
               <div className="glass-card p-6 hover:scale-105 transition-transform">
                 <div className="text-4xl mb-2">🎓</div>
-                <p className="text-lg font-semibold text-white">BTech Student</p>
-                <p className="text-sm text-slate-400">Sri Sri University, Odisha</p>
+                <p className="text-lg font-semibold text-slate-900 dark:text-white transition-colors duration-300">BTech Student</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">Sri Sri University, Odisha</p>
               </div>
 
               <div className="glass-card p-6 hover:scale-105 transition-transform neon-glow-cyan">
                 <div className="text-4xl mb-2">🚀</div>
-                <p className="text-lg font-semibold text-cyan-300">Top 10%</p>
-                <p className="text-sm text-slate-400">TryHackMe Platform</p>
+                <p className="text-lg font-semibold text-cyan-600 dark:text-cyan-300 transition-colors duration-300">Top 10%</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">TryHackMe Platform</p>
               </div>
 
               <div className="glass-card p-6 hover:scale-105 transition-transform">
                 <div className="text-4xl mb-2">🏆</div>
-                <p className="text-lg font-semibold text-white">Award Winner</p>
-                <p className="text-sm text-slate-400">Creaper 2.0 Competition</p>
+                <p className="text-lg font-semibold text-slate-900 dark:text-white transition-colors duration-300">Award Winner</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">Creaper 2.0 Competition</p>
               </div>
             </motion.div>
 
@@ -247,16 +247,27 @@ export const ModernHero: React.FC = () => {
               {[
                 { icon: Github, url: 'https://github.com/Satya37x1112', label: 'GitHub', external: true },
                 { icon: Linkedin, url: 'https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297', label: 'LinkedIn', external: true },
-                { icon: Mail, url: 'mailto:manoharisatyasarthak@gmail.com', label: 'Email', external: false },
+                { icon: Mail, url: '#contact', label: 'Email', external: false },
               ].map(({ icon: Icon, url, label, external }) => (
                 <a
                   key={label}
                   href={url}
                   {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+                  onClick={(e) => {
+                    if (!external) {
+                      e.preventDefault();
+                      const element = document.getElementById('contact');
+                      if (element) {
+                        const yOffset = -80;
+                        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                      }
+                    }
+                  }}
                   className="glass-card p-4 rounded-full hover:neon-glow-purple transition-all hover:scale-110 group"
                   aria-label={label}
                 >
-                  <Icon className="text-slate-300 group-hover:text-purple-400 transition-colors" size={24} />
+                  <Icon className="text-slate-600 dark:text-slate-300 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors duration-300" size={24} />
                 </a>
               ))}
             </motion.div>
