@@ -53,7 +53,7 @@ export const LoadingScreen: React.FC = () => {
                 />
                 
                 {/* Profile Image */}
-                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 shadow-2xl">
+                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 shadow-2xl">
                   <img
                     src={profileImage}
                     alt="Satya Sarthak Manohari"

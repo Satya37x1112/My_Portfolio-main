@@ -95,7 +95,7 @@ export const ModernAbout: React.FC = () => {
     <section 
       id="about" 
       ref={ref}
-      className="min-h-screen py-20 px-4 relative overflow-hidden"
+      className="min-h-screen py-20 px-4 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
     >
       {/* Background Decoration */}
       <div className="absolute inset-0 mesh-gradient opacity-30" />
