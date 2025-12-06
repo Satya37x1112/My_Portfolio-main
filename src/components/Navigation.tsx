@@ -31,19 +31,17 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         background: theme === 'light' 
-          ? 'rgba(249, 250, 251, 0.72)' 
-          : 'rgba(17, 24, 39, 0.72)',
-        backdropFilter: 'blur(16px) saturate(180%)',
-        WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+          ? 'rgba(255, 255, 255, 0.7)' 
+          : 'rgba(30, 41, 59, 0.7)',
+        backdropFilter: 'blur(12px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(12px) saturate(180%)',
         borderBottom: theme === 'light' 
-          ? '0.5px solid rgba(209, 213, 219, 0.3)' 
-          : '0.5px solid rgba(55, 65, 81, 0.3)',
-        boxShadow: theme === 'light'
-          ? '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03)'
-          : '0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2)',
+          ? '1px solid rgba(229, 231, 235, 0.4)' 
+          : '1px solid rgba(51, 65, 85, 0.4)',
+        boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
       }}
       role="navigation"
       aria-label="Main navigation"
@@ -119,13 +117,13 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
             className="md:hidden"
             style={{
               background: theme === 'light' 
-                ? 'rgba(249, 250, 251, 0.72)' 
-                : 'rgba(17, 24, 39, 0.72)',
-              backdropFilter: 'blur(16px) saturate(180%)',
-              WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+                ? 'rgba(255, 255, 255, 0.7)' 
+                : 'rgba(30, 41, 59, 0.7)',
+              backdropFilter: 'blur(12px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(12px) saturate(180%)',
               borderTop: theme === 'light' 
-                ? '0.5px solid rgba(209, 213, 219, 0.3)' 
-                : '0.5px solid rgba(55, 65, 81, 0.3)',
+                ? '1px solid rgba(229, 231, 235, 0.4)' 
+                : '1px solid rgba(51, 65, 85, 0.4)',
             }}
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
