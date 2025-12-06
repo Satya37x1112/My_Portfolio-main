@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} id="contact" className="py-20 bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 scroll-mt-20 relative overflow-hidden transition-colors duration-300">
+    <section ref={sectionRef} id="contact" className="py-20 scroll-mt-20 relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute inset-0 mesh-gradient opacity-30" />
       <div className="absolute inset-0 circuit-pattern opacity-10" />

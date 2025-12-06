@@ -91,7 +91,7 @@ export const ModernHero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen relative overflow-hidden mesh-gradient circuit-pattern bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
+    <section id="hero" className="min-h-screen relative overflow-hidden">
       {/* Floating 3D Icons */}
       <div className="hidden lg:block">
         <FloatingIcon icon={<Shield size={40} />} delay={0} />

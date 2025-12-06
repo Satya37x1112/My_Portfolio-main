@@ -1049,3 +1049,208 @@ textarea:focus-visible {
     background: rgba(15, 23, 42, 0.95) !important;
   }
 }
+
+/* ============================================
+   SPACE THEME - Modern Cosmic Background
+   ============================================ */
+
+/* Animated Starfield Background */
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+
+/* Twinkling Stars Layers */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.stars::before,
+.stars::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 
+    /* Small stars */
+    100px 200px white, 300px 400px white, 500px 150px white,
+    700px 350px white, 900px 100px white, 200px 500px white,
+    400px 300px white, 600px 450px white, 800px 250px white,
+    150px 350px white, 350px 150px white, 550px 400px white,
+    /* Medium stars */
+    250px 100px 1px 0.5px rgba(255, 255, 255, 0.8),
+    450px 250px 1px 0.5px rgba(255, 255, 255, 0.8),
+    650px 180px 1px 0.5px rgba(255, 255, 255, 0.8),
+    /* Bright stars */
+    175px 275px 2px 1px rgba(100, 200, 255, 0.9),
+    475px 375px 2px 1px rgba(150, 150, 255, 0.9),
+    775px 175px 2px 1px rgba(200, 150, 255, 0.9);
+  animation: twinkle 3s infinite alternate;
+}
+
+.stars::after {
+  animation-delay: 1.5s;
+  box-shadow: 
+    120px 220px white, 320px 420px white, 520px 170px white,
+    720px 370px white, 920px 120px white, 220px 520px white,
+    420px 320px white, 620px 470px white, 820px 270px white,
+    170px 370px white, 370px 170px white, 570px 420px white,
+    /* Different positions for second layer */
+    270px 120px 1px 0.5px rgba(255, 255, 255, 0.7),
+    470px 270px 1px 0.5px rgba(255, 255, 255, 0.7),
+    670px 200px 1px 0.5px rgba(255, 255, 255, 0.7);
+}
+
+/* Nebula Effect */
+.nebula {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 50%);
+  animation: nebulaPulse 20s ease-in-out infinite;
+}
+
+/* Shooting Stars */
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1000px) translateY(1000px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.8);
+  animation: shootingStar 3s linear infinite;
+}
+
+.shooting-star:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+  animation-duration: 2s;
+}
+
+.shooting-star:nth-child(2) {
+  top: 30%;
+  left: 60%;
+  animation-delay: 1.5s;
+  animation-duration: 2.5s;
+}
+
+.shooting-star:nth-child(3) {
+  top: 60%;
+  left: 80%;
+  animation-delay: 3s;
+  animation-duration: 3s;
+}
+
+/* Cosmic Dust/Particles */
+.cosmic-dust {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 60px 70px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 50px 50px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(2px 2px at 90px 10px, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 200px 200px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, 150px 50px;
+  animation: cosmicFloat 60s linear infinite;
+}
+
+/* Animated Planet/Moon */
+.space-orb {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(147, 197, 253, 0.3), rgba(59, 130, 246, 0.1));
+  box-shadow: 
+    inset 0 0 50px rgba(59, 130, 246, 0.2),
+    0 0 80px rgba(59, 130, 246, 0.3);
+  top: 10%;
+  right: 10%;
+  animation: orbFloat 20s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+/* Keyframe Animations */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes nebulaPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes cosmicFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(0) translateX(20px); }
+  75% { transform: translateY(20px) translateX(10px); }
+}
+
+/* Light Mode Space Theme */
+.light-space-background {
+  background: 
+    radial-gradient(ellipse at top, #e0f2fe 0%, #dbeafe 50%, #bfdbfe 100%);
+}
+
+.light-space-background .stars::before,
+.light-space-background .stars::after {
+  opacity: 0.4;
+  filter: brightness(0.6);
+}
+
+.light-space-background .nebula {
+  opacity: 0.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .space-orb {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .stars::before,
+  .stars::after {
+    box-shadow: 
+      100px 200px white, 300px 400px white,
+      200px 500px white, 400px 300px white;
+  }
+}
