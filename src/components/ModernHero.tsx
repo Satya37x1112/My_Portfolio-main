@@ -245,9 +245,9 @@ export const ModernHero: React.FC = () => {
               className="flex justify-center gap-6"
             >
               {[
-                { icon: Github, url: 'https://github.com', label: 'GitHub' },
-                { icon: Linkedin, url: 'https://linkedin.com', label: 'LinkedIn' },
-                { icon: Mail, url: 'mailto:satya@example.com', label: 'Email' },
+                { icon: Github, url: 'https://github.com/Satya37x1112', label: 'GitHub' },
+                { icon: Linkedin, url: 'https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297', label: 'LinkedIn' },
+                { icon: Mail, url: 'mailto:manoharisatyasarthak@gmail.com', label: 'Email' },
               ].map(({ icon: Icon, url, label }) => (
                 <a
                   key={label}
