@@ -30,55 +30,18 @@ export const LoadingScreen: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="text-center space-y-8">
-            {/* Profile Image with Glow Effect */}
+            {/* Profile Image - Simple and Clean */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
+              initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="flex justify-center mb-8"
             >
-              <div className="relative">
-                {/* Glowing rings */}
-                <motion.div
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.5, 0.2, 0.5],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 blur-2xl"
-                />
-                
-                {/* Profile Image */}
-                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 shadow-2xl">
-                  <img
-                    src={profileImage}
-                    alt="Satya Sarthak Manohari"
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
-                </div>
-                
-                {/* Animated border */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute -inset-2 rounded-full"
-                  style={{
-                    background: "conic-gradient(from 0deg, #22d3ee, #a855f7, #ec4899, #22d3ee)",
-                    padding: "2px",
-                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    WebkitMaskComposite: "xor",
-                    maskComposite: "exclude",
-                  }}
+              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-slate-700 shadow-xl">
+                <img
+                  src={profileImage}
+                  alt="Satya Sarthak Manohari"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </motion.div>
