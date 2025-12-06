@@ -245,15 +245,14 @@ export const ModernHero: React.FC = () => {
               className="flex justify-center gap-6"
             >
               {[
-                { icon: Github, url: 'https://github.com/Satya37x1112', label: 'GitHub' },
-                { icon: Linkedin, url: 'https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297', label: 'LinkedIn' },
-                { icon: Mail, url: 'mailto:manoharisatyasarthak@gmail.com', label: 'Email' },
-              ].map(({ icon: Icon, url, label }) => (
+                { icon: Github, url: 'https://github.com/Satya37x1112', label: 'GitHub', external: true },
+                { icon: Linkedin, url: 'https://www.linkedin.com/in/satya-sarthak-manohari-b2a609297', label: 'LinkedIn', external: true },
+                { icon: Mail, url: 'mailto:manoharisatyasarthak@gmail.com', label: 'Email', external: false },
+              ].map(({ icon: Icon, url, label, external }) => (
                 <a
                   key={label}
                   href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(external && { target: "_blank", rel: "noopener noreferrer" })}
                   className="glass-card p-4 rounded-full hover:neon-glow-purple transition-all hover:scale-110 group"
                   aria-label={label}
                 >
