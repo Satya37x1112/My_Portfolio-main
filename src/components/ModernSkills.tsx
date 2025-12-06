@@ -55,15 +55,15 @@ const TiltCard: React.FC<SkillCardProps> = ({ icon: Icon, name, level, category,
       <div className="glass-card p-6 hover:neon-glow-cyan transition-all duration-300">
         {/* Icon */}
         <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br from-${color}-500/20 to-${color}-600/20 mb-4`}>
-          <Icon className={`text-${color}-400`} size={32} />
+          <Icon className={`text-${color}-600 dark:text-${color}-400 transition-colors duration-300`} size={32} />
         </div>
 
         {/* Name & Category */}
-        <h3 className="text-xl font-bold text-white mb-1">{name}</h3>
-        <p className="text-sm text-slate-400 mb-4">{category}</p>
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1 transition-colors duration-300">{name}</h3>
+        <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 transition-colors duration-300">{category}</p>
 
         {/* Progress Bar */}
-        <div className="relative h-2 bg-slate-800 rounded-full overflow-hidden">
+        <div className="relative h-2 bg-slate-300 dark:bg-slate-800 rounded-full overflow-hidden transition-colors duration-300">
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: `${level}%` }}
@@ -73,8 +73,8 @@ const TiltCard: React.FC<SkillCardProps> = ({ icon: Icon, name, level, category,
           />
         </div>
         <div className="flex justify-between mt-2">
-          <span className="text-xs text-slate-500">Proficiency</span>
-          <span className={`text-xs font-semibold text-${color}-400`}>{level}%</span>
+          <span className="text-xs text-slate-500 dark:text-slate-500 transition-colors duration-300">Proficiency</span>
+          <span className={`text-xs font-semibold text-${color}-600 dark:text-${color}-400 transition-colors duration-300`}>{level}%</span>
         </div>
 
         {/* Glow Effect */}
@@ -142,7 +142,7 @@ export const ModernSkills: React.FC = () => {
           <h2 className="text-5xl md:text-6xl font-bold mb-4">
             <span className="gradient-text">Skills & Expertise</span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto transition-colors duration-300">
             A comprehensive arsenal of technical skills across security, development, and infrastructure
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 mx-auto rounded-full mt-6" />
@@ -157,7 +157,7 @@ export const ModernSkills: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="text-3xl font-bold text-white mb-8 flex items-center"
+                className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center transition-colors duration-300"
               >
                 <span className="gradient-text">{category.title}</span>
                 <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/50 to-transparent ml-6" />

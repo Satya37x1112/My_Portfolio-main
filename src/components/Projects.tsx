@@ -24,42 +24,42 @@ const Projects: React.FC = () => {
             <div className="flex justify-center mb-6">
               <div className="flex items-center gap-4">
                 <div className="p-4 rounded-full bg-cyan-500/20">
-                  <Code className="text-cyan-400" size={48} />
+                  <Code className="text-cyan-600 dark:text-cyan-400 transition-colors duration-300" size={48} />
                 </div>
                 <div className="p-4 rounded-full bg-purple-500/20">
-                  <Coffee className="text-purple-400" size={48} />
+                  <Coffee className="text-purple-600 dark:text-purple-400 transition-colors duration-300" size={48} />
                 </div>
                 <div className="p-4 rounded-full bg-pink-500/20">
-                  <Clock className="text-pink-400" size={48} />
+                  <Clock className="text-pink-600 dark:text-pink-400 transition-colors duration-300" size={48} />
                 </div>
               </div>
             </div>
             
-            <h3 className="text-3xl font-bold text-white mb-6">
+            <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 transition-colors duration-300">
               🔧 Projects Loading... 
             </h3>
             
-            <p className="text-xl text-cyan-300 mb-6 leading-relaxed">
+            <p className="text-xl text-cyan-600 dark:text-cyan-300 mb-6 leading-relaxed transition-colors duration-300">
               My projects are currently in stealth mode! 🕵️‍♂️🔒
             </p>
             
-            <p className="text-lg text-slate-300 mb-8 leading-relaxed">
+            <p className="text-lg text-slate-700 dark:text-slate-300 mb-8 leading-relaxed transition-colors duration-300">
               While I'm busy securing the digital world and solving complex cybersecurity challenges, 
               my coding projects are brewing in the background. Think of it as the calm before the 
               coding storm! ⚡🌪️ Currently focusing on DevSecOps and system design projects.
             </p>
             
             <div className="glass-card p-6 border border-cyan-500/30 mb-6">
-              <p className="text-white font-semibold mb-2">
+              <p className="text-slate-900 dark:text-white font-semibold mb-2 transition-colors duration-300">
                 🚀 Coming Soon:
               </p>
-              <p className="text-slate-300">
+              <p className="text-slate-700 dark:text-slate-300 transition-colors duration-300">
                 Cybersecurity tools, penetration testing frameworks, DevSecOps automation, 
                 and innovative system design solutions that would make even the most secure systems say "Hello World!" 🌍
               </p>
             </div>
             
-            <div className="mt-8 text-cyan-300">
+            <div className="mt-8 text-cyan-600 dark:text-cyan-300 transition-colors duration-300">
               <p className="italic">
                 "The best projects are worth the wait... and a few cups of coffee ☕"
               </p>

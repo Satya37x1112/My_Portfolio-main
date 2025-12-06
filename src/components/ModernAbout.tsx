@@ -120,29 +120,29 @@ export const ModernAbout: React.FC = () => {
             {/* Left: Bio Card */}
             <motion.div variants={itemVariants}>
               <div className="glass-card p-8 h-full">
-                <h3 className="text-3xl font-bold text-white mb-6">
+                <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 transition-colors duration-300">
                   Cybersecurity Enthusiast & Developer
                 </h3>
-                <div className="space-y-4 text-slate-300 leading-relaxed">
+                <div className="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed transition-colors duration-300">
                   <p>
-                    I'm <span className="text-cyan-400 font-semibold">Satya Sarthak Manohari</span>, 
-                    a passionate BTech student at <span className="text-purple-400 font-semibold">Sri Sri University, Odisha</span>, 
+                    I'm <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition-colors duration-300">Satya Sarthak Manohari</span>, 
+                    a passionate BTech student at <span className="text-purple-600 dark:text-purple-400 font-semibold transition-colors duration-300">Sri Sri University, Odisha</span>, 
                     specializing in cybersecurity and software development.
                   </p>
                   <p>
-                    With a strong foundation in <span className="text-cyan-400 font-semibold">penetration testing</span> and{' '}
-                    <span className="text-purple-400 font-semibold">network security</span>, I've earned a spot in the{' '}
-                    <span className="text-pink-400 font-semibold">top 10% on TryHackMe</span> and won the{' '}
-                    <span className="text-cyan-400 font-semibold">Creaper 2.0 competition</span>.
+                    With a strong foundation in <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition-colors duration-300">penetration testing</span> and{' '}
+                    <span className="text-purple-600 dark:text-purple-400 font-semibold transition-colors duration-300">network security</span>, I've earned a spot in the{' '}
+                    <span className="text-pink-600 dark:text-pink-400 font-semibold transition-colors duration-300">top 10% on TryHackMe</span> and won the{' '}
+                    <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition-colors duration-300">Creaper 2.0 competition</span>.
                   </p>
                   <p>
-                    I'm deeply interested in <span className="text-purple-400 font-semibold">DevSecOps</span> practices 
-                    and <span className="text-cyan-400 font-semibold">system design</span>, always striving to build 
+                    I'm deeply interested in <span className="text-purple-600 dark:text-purple-400 font-semibold transition-colors duration-300">DevSecOps</span> practices 
+                    and <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition-colors duration-300">system design</span>, always striving to build 
                     secure, scalable, and efficient solutions.
                   </p>
                   <p>
                     My experience includes an internship at{' '}
-                    <span className="text-pink-400 font-semibold">NISER Bhubaneswar</span>, where I worked on 
+                    <span className="text-pink-600 dark:text-pink-400 font-semibold transition-colors duration-300">NISER Bhubaneswar</span>, where I worked on 
                     cutting-edge security research and implementations.
                   </p>
                 </div>
@@ -161,13 +161,13 @@ export const ModernAbout: React.FC = () => {
                   >
                     <div className="flex justify-center mb-4">
                       <div className={`p-4 rounded-full bg-gradient-to-br from-${stat.color}-500/20 to-${stat.color}-600/20`}>
-                        <stat.icon className={`text-${stat.color}-400`} size={32} />
+                        <stat.icon className={`text-${stat.color}-600 dark:text-${stat.color}-400 transition-colors duration-300`} size={32} />
                       </div>
                     </div>
-                    <div className={`text-4xl font-bold text-${stat.color}-400 mb-2`}>
+                    <div className={`text-4xl font-bold text-${stat.color}-600 dark:text-${stat.color}-400 mb-2 transition-colors duration-300`}>
                       <CounterAnimation end={stat.value} suffix={stat.suffix} />
                     </div>
-                    <p className="text-sm text-slate-400">{stat.label}</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -192,9 +192,9 @@ export const ModernAbout: React.FC = () => {
                       <div className={`p-3 rounded-xl bg-gradient-to-br ${highlight.gradient} mr-4`}>
                         <highlight.icon className="text-white" size={28} />
                       </div>
-                      <h4 className="text-2xl font-bold text-white">{highlight.title}</h4>
+                      <h4 className="text-2xl font-bold text-slate-900 dark:text-white transition-colors duration-300">{highlight.title}</h4>
                     </div>
-                    <p className="text-slate-300 leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed transition-colors duration-300">
                       {highlight.description}
                     </p>
                   </div>
@@ -220,7 +220,7 @@ export const ModernAbout: React.FC = () => {
                   NB
                 </div>
               </div>
-              <span className="text-slate-300">
+              <span className="text-slate-700 dark:text-slate-300 transition-colors duration-300">
                 TryHackMe Top 10% • Creaper 2.0 Winner • NISER Intern
               </span>
             </div>

@@ -13,7 +13,7 @@ const Experience: React.FC = () => {
       location: "India",
       period: "Present",
       description: "I am pursuing BTech at Sri Sri University with focus on engineering fundamentals, technology innovation, and cutting-edge advancements in robotics and cybersecurity.",
-      icon: <GraduationCap className="text-white" size={24} />
+      icon: <GraduationCap className="text-slate-900 dark:text-white transition-colors duration-300" size={24} />
     }
   ];
 
@@ -24,7 +24,7 @@ const Experience: React.FC = () => {
       location: "Bhubaneswar, India",
       period: "Previous",
       description: "I gained hands-on research experience at NISER Bhubaneswar, contributing to cutting-edge projects in technology and innovation.",
-      icon: <Briefcase className="text-white" size={24} />
+      icon: <Briefcase className="text-slate-900 dark:text-white transition-colors duration-300" size={24} />
     }
   ];
 
@@ -71,7 +71,7 @@ const Experience: React.FC = () => {
             <span className="gradient-text">My Experience & Education</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto transition-colors duration-300">
             My academic journey and professional experiences that have shaped my expertise in cybersecurity and technology innovation. 
             Focused on developing skills for DevSecOps and system design roles.
           </p>
@@ -80,8 +80,8 @@ const Experience: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Education */}
           <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-10'}`}>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <GraduationCap className="text-cyan-400" size={28} />
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3 transition-colors duration-300">
+              <GraduationCap className="text-cyan-600 dark:text-cyan-400 transition-colors duration-300" size={28} />
               Education
             </h3>
             <div className="space-y-6">
@@ -94,13 +94,13 @@ const Experience: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <h4 className="text-xl font-semibold text-white mb-2">{edu.degree}</h4>
-                      <div className="flex items-center gap-2 text-cyan-400 mb-2">
+                      <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">{edu.degree}</h4>
+                      <div className="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 mb-2 transition-colors duration-300">
                         <MapPin size={16} className="animate-pulse" />
                         <span className="font-medium">{edu.institution}</span>
                       </div>
-                      <p className="text-slate-400 mb-3">{edu.location} • {edu.period}</p>
-                      <p className="text-slate-300 leading-relaxed">{edu.description}</p>
+                      <p className="text-slate-600 dark:text-slate-400 mb-3 transition-colors duration-300">{edu.location} • {edu.period}</p>
+                      <p className="text-slate-700 dark:text-slate-300 leading-relaxed transition-colors duration-300">{edu.description}</p>
                     </div>
                   </div>
                 </div>
@@ -110,8 +110,8 @@ const Experience: React.FC = () => {
 
           {/* Experience */}
           <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in-right' : 'opacity-0 translate-x-10'}`}>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <Briefcase className="text-purple-400 animate-float animate-delay-100" size={28} />
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3 transition-colors duration-300">
+              <Briefcase className="text-purple-600 dark:text-purple-400 animate-float animate-delay-100 transition-colors duration-300" size={28} />
               Experience
             </h3>
             <div className="space-y-6">
@@ -124,13 +124,13 @@ const Experience: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <h4 className="text-xl font-semibold text-white mb-2">{exp.role}</h4>
-                      <div className="flex items-center gap-2 text-purple-400 mb-2">
+                      <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">{exp.role}</h4>
+                      <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 mb-2 transition-colors duration-300">
                         <MapPin size={16} className="animate-pulse" />
                         <span className="font-medium">{exp.company}</span>
                       </div>
-                      <p className="text-slate-400 mb-3">{exp.location} • {exp.period}</p>
-                      <p className="text-slate-300 leading-relaxed">{exp.description}</p>
+                      <p className="text-slate-600 dark:text-slate-400 mb-3 transition-colors duration-300">{exp.location} • {exp.period}</p>
+                      <p className="text-slate-700 dark:text-slate-300 leading-relaxed transition-colors duration-300">{exp.description}</p>
                     </div>
                   </div>
                 </div>
@@ -141,8 +141,8 @@ const Experience: React.FC = () => {
 
         {/* Achievements */}
         <div>
-          <h3 className="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3 animate-fade-in-up animate-delay-600">
-            <Award className="text-pink-400 animate-float animate-delay-200" size={28} />
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 text-center flex items-center justify-center gap-3 animate-fade-in-up animate-delay-600 transition-colors duration-300">
+            <Award className="text-pink-600 dark:text-pink-400 animate-float animate-delay-200 transition-colors duration-300" size={28} />
             Key Achievements
           </h3>
           <div ref={achievementsRef} className="grid md:grid-cols-2 gap-6">
@@ -161,16 +161,16 @@ const Experience: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex-grow">
-                    <h4 className="text-xl font-semibold text-white mb-2">{achievement.title}</h4>
-                    <p className="text-pink-400 font-medium mb-2">{achievement.organization}</p>
-                    <p className="text-slate-400 text-sm mb-3">{achievement.date}</p>
-                    <p className="text-slate-300 leading-relaxed mb-4">{achievement.description}</p>
+                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">{achievement.title}</h4>
+                    <p className="text-pink-600 dark:text-pink-400 font-medium mb-2 transition-colors duration-300">{achievement.organization}</p>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm mb-3 transition-colors duration-300">{achievement.date}</p>
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4 transition-colors duration-300">{achievement.description}</p>
                     
                     {/* Placeholder for achievement image */}
-                    <div className="w-full h-32 bg-slate-800/50 border-2 border-dashed border-slate-600 rounded-lg flex items-center justify-center hover-lift">
+                    <div className="w-full h-32 bg-slate-200 dark:bg-slate-800/50 border-2 border-dashed border-slate-400 dark:border-slate-600 rounded-lg flex items-center justify-center hover-lift transition-colors duration-300">
                       <div className="text-center">
                         <div className="text-slate-500 mb-2 animate-bounce" style={{ animationDelay: `${index * 300}ms` }}>🖼️</div>
-                        <p className="text-slate-400 text-sm">Certificate Image</p>
+                        <p className="text-slate-600 dark:text-slate-400 text-sm transition-colors duration-300">Certificate Image</p>
                         <p className="text-slate-500 text-xs">(To be added)</p>
                       </div>
                     </div>

@@ -62,10 +62,10 @@ const Contact: React.FC = () => {
             <span className="gradient-text">Get In Touch</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto transition-colors duration-300">
             Have a project in mind or want to collaborate? I'd love to hear from you.
           </p>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto mt-4">
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mt-4 transition-colors duration-300">
             I'm aspiring for DevSecOps and system design - always eager to learn and contribute to innovative solutions.
           </p>
         </div>
@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors duration-300">
                   Full Name
                 </label>
                 <input
@@ -101,13 +101,13 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-slate-200 dark:bg-slate-800/50 border border-slate-400 dark:border-slate-600 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors duration-200"
                   placeholder="Your full name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors duration-300">
                   Email Address
                 </label>
                 <input
@@ -117,13 +117,13 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-slate-200 dark:bg-slate-800/50 border border-slate-400 dark:border-slate-600 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors duration-200"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 transition-colors duration-300">
                   Message
                 </label>
                 <textarea
@@ -133,7 +133,7 @@ const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 bg-slate-200 dark:bg-slate-800/50 border border-slate-400 dark:border-slate-600 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors duration-200 resize-none"
                   placeholder="Tell me about your project or just say hello..."
                 />
               </div>
@@ -157,8 +157,8 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-slate-700 text-center">
-          <p className="text-slate-400">
+        <div className="mt-20 pt-8 border-t border-slate-400 dark:border-slate-700 text-center transition-colors duration-300">
+          <p className="text-slate-600 dark:text-slate-400 transition-colors duration-300">
             Made with ❤️ | Built with React & Tailwind CSS.
           </p>
         </div>
