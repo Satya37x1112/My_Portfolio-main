@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
+import { ModernNavigation } from './components/ModernNavigation';
+import { ModernHero } from './components/ModernHero';
+import { ModernAbout } from './components/ModernAbout';
+import { ModernSkills } from './components/ModernSkills';
+import { ParticleBackground } from './components/ParticleBackground';
+import { CustomCursor } from './components/CustomCursor';
+import { ScrollProgress } from './components/ScrollProgress';
+import { LoadingScreen } from './components/LoadingScreen';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -41,11 +45,26 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider>
-        <div className="min-h-screen bg-white dark:bg-slate-900 font-inter transition-colors duration-300">
-          <Navigation activeSection={activeSection} />
-          <Hero />
-          <About />
-          <Skills />
+        <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+          {/* Loading Screen */}
+          <LoadingScreen />
+          
+          {/* Custom Cursor */}
+          <CustomCursor />
+          
+          {/* Scroll Progress */}
+          <ScrollProgress />
+          
+          {/* 3D Particle Background */}
+          <ParticleBackground />
+          
+          {/* Navigation */}
+          <ModernNavigation activeSection={activeSection} />
+          
+          {/* Content */}
+          <ModernHero />
+          <ModernAbout />
+          <ModernSkills />
           <Experience />
           <Projects />
           <Contact />
