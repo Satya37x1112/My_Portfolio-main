@@ -33,9 +33,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
     <nav 
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: theme === 'light' 
-          ? 'rgba(255, 255, 255, 0.25)' 
-          : 'rgba(30, 41, 59, 0.25)',
+        background: 'transparent',
         backdropFilter: 'blur(10px) saturate(180%)',
         WebkitBackdropFilter: 'blur(10px) saturate(180%)',
         borderBottom: theme === 'light' 
@@ -116,9 +114,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
           <div 
             className="md:hidden"
             style={{
-              background: theme === 'light' 
-                ? 'rgba(255, 255, 255, 0.25)' 
-                : 'rgba(30, 41, 59, 0.25)',
+              background: 'transparent',
               backdropFilter: 'blur(10px) saturate(180%)',
               WebkitBackdropFilter: 'blur(10px) saturate(180%)',
               borderTop: theme === 'light' 
