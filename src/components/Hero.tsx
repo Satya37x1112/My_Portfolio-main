@@ -27,11 +27,12 @@ const Hero: React.FC = () => {
         className="absolute inset-0 bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage: `url(${profileImage})`,
-          backgroundPosition: 'center 20%'
+          backgroundPosition: 'center 20%',
+          filter: 'brightness(1.2)'
         }}
       ></div>
       
-      <div className="absolute inset-0 bg-black bg-opacity-40 dark:bg-opacity-60"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-20 dark:bg-opacity-40"></div>
       
       <div className="min-h-screen relative z-10 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
