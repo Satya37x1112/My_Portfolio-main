@@ -41,52 +41,43 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass-nav"
       style={{
         background: isScrolled 
           ? (theme === 'light' 
-            ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%)' 
-            : 'linear-gradient(to bottom, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.85) 100%)')
+            ? 'rgba(255, 255, 255, 0.7)' 
+            : 'rgba(15, 23, 42, 0.7)')
           : (theme === 'light' 
-            ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%)' 
-            : 'linear-gradient(to bottom, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.5) 100%)'),
-        backdropFilter: isScrolled ? 'blur(40px) saturate(200%)' : 'blur(20px) saturate(180%)',
-        WebkitBackdropFilter: isScrolled ? 'blur(40px) saturate(200%)' : 'blur(20px) saturate(180%)',
-        borderBottom: isScrolled 
-          ? (theme === 'light' 
-            ? '1px solid rgba(226, 232, 240, 0.5)' 
-            : '1px solid rgba(255, 255, 255, 0.1)')
-          : (theme === 'light' 
-            ? '1px solid rgba(255, 255, 255, 0.18)' 
-            : '1px solid rgba(255, 255, 255, 0.05)'),
+            ? 'rgba(255, 255, 255, 0.5)' 
+            : 'rgba(15, 23, 42, 0.5)'),
+        backdropFilter: 'blur(30px) saturate(200%)',
+        WebkitBackdropFilter: 'blur(30px) saturate(200%)',
+        borderBottom: theme === 'light' 
+          ? '1px solid rgba(255, 255, 255, 0.5)' 
+          : '1px solid rgba(255, 255, 255, 0.1)',
         boxShadow: isScrolled
           ? (theme === 'light'
-            ? '0 10px 40px 0 rgba(31, 38, 135, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.6)'
-            : '0 10px 40px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.15)')
+            ? '0 8px 32px 0 rgba(31, 38, 135, 0.15)'
+            : '0 8px 32px 0 rgba(0, 0, 0, 0.6)')
           : (theme === 'light'
-            ? '0 4px 16px 0 rgba(31, 38, 135, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
-            : '0 4px 16px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)'),
-        position: 'relative',
-        paddingTop: isScrolled ? '0.5rem' : '0.75rem',
-        paddingBottom: isScrolled ? '0.5rem' : '0.75rem',
+            ? '0 4px 20px 0 rgba(31, 38, 135, 0.1)'
+            : '0 4px 20px 0 rgba(0, 0, 0, 0.4)'),
       }}
       role="navigation"
       aria-label="Main navigation"
     >
-      {/* Glass reflection overlay */}
+      {/* Glass highlight */}
       <div 
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          height: '50%',
+          height: '2px',
           background: theme === 'light'
-            ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%)'
-            : 'linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)',
+            ? 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9) 50%, transparent)'
+            : 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3) 50%, transparent)',
           pointerEvents: 'none',
-          borderTopLeftRadius: '0px',
-          borderTopRightRadius: '0px',
         }}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ position: 'relative', zIndex: 1 }}>
