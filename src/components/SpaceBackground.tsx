@@ -9,145 +9,120 @@ export const SpaceBackground: React.FC = () => {
 
   if (!mounted) return null;
 
+  // Generate random stars
+  const generateStars = (count: number) => {
+    return Array.from({ length: count }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      size: Math.random() * 2 + 0.5,
+      animationDelay: Math.random() * 3,
+      animationDuration: Math.random() * 3 + 2,
+    }));
+  };
+
+  const stars = generateStars(200);
+
   return (
     <>
-      {/* Main Space Container */}
-      <div className="space-background">
-        {/* Nebula Layer */}
-        <div className="nebula" />
-        
-        {/* Star Layers */}
-        <div className="stars" />
-        
-        {/* Cosmic Dust */}
-        <div className="cosmic-dust" />
-        
-        {/* Shooting Stars */}
-        <div className="shooting-star" />
-        <div className="shooting-star" />
-        <div className="shooting-star" />
-        
-        {/* Floating Orb/Planet */}
-        <div className="space-orb" />
-        
-        {/* Additional Animated Elements */}
+      {/* Night Sky Container */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        {/* Deep Night Sky Gradient */}
         <div 
+          className="absolute inset-0"
           style={{
-            position: 'absolute',
-            top: '60%',
-            left: '15%',
-            width: '100px',
-            height: '100px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.2), rgba(219, 39, 119, 0.05))',
-            filter: 'blur(40px)',
-            animation: 'orbFloat 25s ease-in-out infinite',
-            animationDelay: '5s',
-            opacity: 0.5,
-          }}
-        />
-        
-        <div 
-          style={{
-            position: 'absolute',
-            bottom: '20%',
-            right: '20%',
-            width: '120px',
-            height: '120px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle at 30% 30%, rgba(147, 51, 234, 0.2), rgba(126, 34, 206, 0.05))',
-            filter: 'blur(40px)',
-            animation: 'orbFloat 30s ease-in-out infinite',
-            animationDelay: '10s',
-            opacity: 0.5,
+            background: 'radial-gradient(ellipse at top, #1e3a8a 0%, #0f172a 40%, #020617 100%)',
           }}
         />
 
-        {/* Gradient Overlay for depth */}
+        {/* Starfield */}
+        <div className="absolute inset-0">
+          {stars.map((star) => (
+            <div
+              key={star.id}
+              className="absolute rounded-full bg-white"
+              style={{
+                left: `${star.left}%`,
+                top: `${star.top}%`,
+                width: `${star.size}px`,
+                height: `${star.size}px`,
+                boxShadow: `0 0 ${star.size * 2}px rgba(255, 255, 255, 0.8)`,
+                animation: `twinkle-star ${star.animationDuration}s ease-in-out ${star.animationDelay}s infinite`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Shooting Stars */}
+        {[0, 1, 2].map((i) => (
+          <div
+            key={`shooting-${i}`}
+            className="absolute w-1 h-1 bg-white rounded-full"
+            style={{
+              top: `${20 + i * 30}%`,
+              left: `${10 + i * 25}%`,
+              boxShadow: '0 0 8px 2px rgba(255, 255, 255, 0.9)',
+              animation: `shooting-star ${2 + i * 0.5}s linear ${i * 4}s infinite`,
+            }}
+          />
+        ))}
+
+        {/* Subtle Milky Way Effect */}
         <div
+          className="absolute inset-0 opacity-30"
           style={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: '40%',
-            background: 'linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent)',
-            pointerEvents: 'none',
+            background: 'linear-gradient(135deg, transparent 40%, rgba(139, 92, 246, 0.1) 50%, rgba(59, 130, 246, 0.15) 60%, transparent 70%)',
+            transform: 'rotate(-15deg) scale(1.5)',
+          }}
+        />
+
+        {/* Bottom Gradient for Depth */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-1/3"
+          style={{
+            background: 'linear-gradient(to top, rgba(15, 23, 42, 0.6), transparent)',
           }}
         />
       </div>
 
-      {/* Additional CSS for dynamic stars */}
+      {/* CSS Animations */}
       <style>{`
-        @keyframes pulse-star {
+        @keyframes twinkle-star {
           0%, 100% {
             opacity: 0.3;
-            transform: scale(1);
+            transform: scale(0.8);
           }
           50% {
             opacity: 1;
-            transform: scale(1.5);
+            transform: scale(1.2);
           }
         }
 
-        .dynamic-star {
-          position: absolute;
-          width: 2px;
-          height: 2px;
-          background: white;
-          border-radius: 50%;
-          box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.5);
-          animation: pulse-star 2s infinite;
-        }
-
-        /* Add more star variety */
-        .space-background::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background-image: 
-            radial-gradient(1px 1px at 10% 20%, white, transparent),
-            radial-gradient(1px 1px at 30% 40%, white, transparent),
-            radial-gradient(1px 1px at 50% 60%, white, transparent),
-            radial-gradient(1px 1px at 70% 30%, white, transparent),
-            radial-gradient(1px 1px at 90% 50%, white, transparent),
-            radial-gradient(2px 2px at 15% 70%, rgba(100, 200, 255, 0.8), transparent),
-            radial-gradient(2px 2px at 45% 15%, rgba(200, 150, 255, 0.8), transparent),
-            radial-gradient(2px 2px at 85% 80%, rgba(255, 150, 200, 0.8), transparent);
-          background-size: 300px 300px, 250px 250px, 400px 400px, 350px 350px,
-                           300px 300px, 500px 500px, 450px 450px, 400px 400px;
-          background-position: 0 0, 50px 50px, 100px 100px, 150px 150px,
-                               200px 200px, 250px 250px, 300px 300px, 350px 350px;
-          animation: starfield-move 120s linear infinite;
-          opacity: 0.6;
-        }
-
-        @keyframes starfield-move {
-          from {
-            transform: translateY(0);
+        @keyframes shooting-star {
+          0% {
+            transform: translate(0, 0) rotate(-45deg);
+            opacity: 1;
           }
-          to {
-            transform: translateY(-100px);
+          70% {
+            opacity: 1;
+          }
+          100% {
+            transform: translate(300px, 300px) rotate(-45deg);
+            opacity: 0;
           }
         }
 
-        /* Light mode adjustments */
-        .light .space-background {
-          background: radial-gradient(ellipse at top, #e0f2fe 0%, #dbeafe 50%, #bfdbfe 100%);
+        /* Light mode - daytime sky */
+        .light .fixed.-z-10 > div:first-child {
+          background: linear-gradient(to bottom, #87ceeb 0%, #b0d4f1 50%, #e0f2fe 100%) !important;
         }
 
-        .light .space-background::after {
-          opacity: 0.3;
+        .light .fixed.-z-10 .absolute.inset-0 > div {
+          opacity: 0.2;
         }
 
-        .light .stars,
-        .light .nebula {
+        .light .fixed.-z-10 .bg-white {
           opacity: 0.4;
-        }
-
-        .light .shooting-star {
-          opacity: 0.5;
         }
       `}</style>
     </>
