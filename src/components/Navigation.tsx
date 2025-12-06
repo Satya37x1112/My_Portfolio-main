@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -8,7 +8,17 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { id: 'hero', label: 'Home' },
@@ -31,20 +41,34 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        background: theme === 'light' 
-          ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.6) 100%)' 
-          : 'linear-gradient(to bottom, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.6) 100%)',
-        backdropFilter: 'blur(40px) saturate(200%)',
-        WebkitBackdropFilter: 'blur(40px) saturate(200%)',
-        borderBottom: theme === 'light' 
-          ? '1px solid rgba(255, 255, 255, 0.18)' 
-          : '1px solid rgba(255, 255, 255, 0.05)',
-        boxShadow: theme === 'light'
-          ? '0 8px 32px 0 rgba(31, 38, 135, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
-          : '0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
+        background: isScrolled 
+          ? (theme === 'light' 
+            ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%)' 
+            : 'linear-gradient(to bottom, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.85) 100%)')
+          : (theme === 'light' 
+            ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%)' 
+            : 'linear-gradient(to bottom, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.5) 100%)'),
+        backdropFilter: isScrolled ? 'blur(40px) saturate(200%)' : 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: isScrolled ? 'blur(40px) saturate(200%)' : 'blur(20px) saturate(180%)',
+        borderBottom: isScrolled 
+          ? (theme === 'light' 
+            ? '1px solid rgba(226, 232, 240, 0.5)' 
+            : '1px solid rgba(255, 255, 255, 0.1)')
+          : (theme === 'light' 
+            ? '1px solid rgba(255, 255, 255, 0.18)' 
+            : '1px solid rgba(255, 255, 255, 0.05)'),
+        boxShadow: isScrolled
+          ? (theme === 'light'
+            ? '0 10px 40px 0 rgba(31, 38, 135, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.6)'
+            : '0 10px 40px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.15)')
+          : (theme === 'light'
+            ? '0 4px 16px 0 rgba(31, 38, 135, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.5)'
+            : '0 4px 16px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)'),
         position: 'relative',
+        paddingTop: isScrolled ? '0.5rem' : '0.75rem',
+        paddingBottom: isScrolled ? '0.5rem' : '0.75rem',
       }}
       role="navigation"
       aria-label="Main navigation"
