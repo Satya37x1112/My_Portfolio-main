@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -8,17 +8,7 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navItems = [
     { id: 'hero', label: 'Home' },
@@ -41,45 +31,23 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass-nav"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        background: isScrolled 
-          ? (theme === 'light' 
-            ? 'rgba(255, 255, 255, 0.7)' 
-            : 'rgba(15, 23, 42, 0.7)')
-          : (theme === 'light' 
-            ? 'rgba(255, 255, 255, 0.5)' 
-            : 'rgba(15, 23, 42, 0.5)'),
-        backdropFilter: 'blur(30px) saturate(200%)',
-        WebkitBackdropFilter: 'blur(30px) saturate(200%)',
+        background: theme === 'light' 
+          ? 'rgba(249, 250, 251, 0.72)' 
+          : 'rgba(17, 24, 39, 0.72)',
+        backdropFilter: 'blur(16px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(16px) saturate(180%)',
         borderBottom: theme === 'light' 
-          ? '1px solid rgba(255, 255, 255, 0.5)' 
-          : '1px solid rgba(255, 255, 255, 0.1)',
-        boxShadow: isScrolled
-          ? (theme === 'light'
-            ? '0 8px 32px 0 rgba(31, 38, 135, 0.15)'
-            : '0 8px 32px 0 rgba(0, 0, 0, 0.6)')
-          : (theme === 'light'
-            ? '0 4px 20px 0 rgba(31, 38, 135, 0.1)'
-            : '0 4px 20px 0 rgba(0, 0, 0, 0.4)'),
+          ? '0.5px solid rgba(209, 213, 219, 0.3)' 
+          : '0.5px solid rgba(55, 65, 81, 0.3)',
+        boxShadow: theme === 'light'
+          ? '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03)'
+          : '0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2)',
       }}
       role="navigation"
       aria-label="Main navigation"
     >
-      {/* Glass highlight */}
-      <div 
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '2px',
-          background: theme === 'light'
-            ? 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9) 50%, transparent)'
-            : 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3) 50%, transparent)',
-          pointerEvents: 'none',
-        }}
-      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ position: 'relative', zIndex: 1 }}>
         <div className="flex items-center justify-between h-16">
           <div className="text-xl font-bold text-navy-900 dark:text-white" style={theme === 'light' ? {color: '#1e3a8a'} : {}}>
@@ -93,7 +61,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
+                  className={`px-3 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
                     activeSection === item.id
                       ? 'text-navy-700 dark:text-blue-400'
                       : 'text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white'
@@ -103,16 +71,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                       ? {
                           color: theme === 'light' ? '#1e3a8a' : '#60a5fa',
                           background: theme === 'light' 
-                            ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%)' 
-                            : 'linear-gradient(to bottom, rgba(96, 165, 250, 0.2) 0%, rgba(96, 165, 250, 0.1) 100%)',
-                          backdropFilter: 'blur(20px)',
-                          WebkitBackdropFilter: 'blur(20px)',
-                          boxShadow: theme === 'light'
-                            ? '0 4px 16px 0 rgba(30, 58, 138, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 0 rgba(0, 0, 0, 0.05)'
-                            : '0 4px 16px 0 rgba(96, 165, 250, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 0 rgba(0, 0, 0, 0.2)',
-                          border: theme === 'light' 
-                            ? '1px solid rgba(255, 255, 255, 0.2)' 
-                            : '1px solid rgba(96, 165, 250, 0.3)',
+                            ? 'rgba(226, 232, 240, 0.5)' 
+                            : 'rgba(71, 85, 105, 0.5)',
                         }
                       : {}
                   }
@@ -125,20 +85,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white transition-all duration-300"
-              style={{
-                background: theme === 'light' 
-                  ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%)' 
-                  : 'linear-gradient(to bottom, rgba(51, 65, 85, 0.8) 0%, rgba(51, 65, 85, 0.5) 100%)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                boxShadow: theme === 'light'
-                  ? '0 4px 16px 0 rgba(31, 38, 135, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 0 rgba(0, 0, 0, 0.05)'
-                  : '0 4px 16px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 0 rgba(0, 0, 0, 0.2)',
-                border: theme === 'light' 
-                  ? '1px solid rgba(255, 255, 255, 0.2)' 
-                  : '1px solid rgba(255, 255, 255, 0.1)',
-              }}
+              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white transition-all duration-300 hover:bg-slate-200 dark:hover:bg-slate-700"
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
             >
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
@@ -149,20 +96,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white transition-all duration-300"
-              style={{
-                background: theme === 'light' 
-                  ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%)' 
-                  : 'linear-gradient(to bottom, rgba(51, 65, 85, 0.8) 0%, rgba(51, 65, 85, 0.5) 100%)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                boxShadow: theme === 'light'
-                  ? '0 4px 16px 0 rgba(31, 38, 135, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 0 rgba(0, 0, 0, 0.05)'
-                  : '0 4px 16px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 0 rgba(0, 0, 0, 0.2)',
-                border: theme === 'light' 
-                  ? '1px solid rgba(255, 255, 255, 0.2)' 
-                  : '1px solid rgba(255, 255, 255, 0.1)',
-              }}
+              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white transition-all duration-300 hover:bg-slate-200 dark:hover:bg-slate-700"
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
             >
               {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
@@ -184,18 +118,14 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
           <div 
             className="md:hidden"
             style={{
-              position: 'relative',
               background: theme === 'light' 
-                ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.7) 100%)' 
-                : 'linear-gradient(to bottom, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.7) 100%)',
-              backdropFilter: 'blur(40px) saturate(200%)',
-              WebkitBackdropFilter: 'blur(40px) saturate(200%)',
+                ? 'rgba(249, 250, 251, 0.72)' 
+                : 'rgba(17, 24, 39, 0.72)',
+              backdropFilter: 'blur(16px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(16px) saturate(180%)',
               borderTop: theme === 'light' 
-                ? '1px solid rgba(255, 255, 255, 0.18)' 
-                : '1px solid rgba(255, 255, 255, 0.05)',
-              boxShadow: theme === 'light'
-                ? 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 4px 16px 0 rgba(31, 38, 135, 0.1)'
-                : 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 4px 16px 0 rgba(0, 0, 0, 0.3)',
+                ? '0.5px solid rgba(209, 213, 219, 0.3)' 
+                : '0.5px solid rgba(55, 65, 81, 0.3)',
             }}
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
@@ -203,29 +133,12 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block px-4 py-2.5 text-base font-medium w-full text-left transition-all duration-300 rounded-xl ${
+                  className={`block px-3 py-2 text-base font-medium w-full text-left transition-all duration-300 rounded-lg ${
                     activeSection === item.id
-                      ? 'text-navy-700 dark:text-blue-400'
-                      : 'text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white'
+                      ? 'text-navy-700 dark:text-blue-400 bg-slate-200 dark:bg-slate-700'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                   }`}
-                  style={
-                    activeSection === item.id 
-                      ? {
-                          color: theme === 'light' ? '#1e3a8a' : '#60a5fa',
-                          background: theme === 'light' 
-                            ? 'linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%)' 
-                            : 'linear-gradient(to bottom, rgba(96, 165, 250, 0.2) 0%, rgba(96, 165, 250, 0.1) 100%)',
-                          backdropFilter: 'blur(20px)',
-                          WebkitBackdropFilter: 'blur(20px)',
-                          boxShadow: theme === 'light'
-                            ? 'inset 0 1px 0 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 0 rgba(0, 0, 0, 0.05)'
-                            : 'inset 0 1px 0 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 0 rgba(0, 0, 0, 0.2)',
-                          border: theme === 'light' 
-                            ? '1px solid rgba(255, 255, 255, 0.2)' 
-                            : '1px solid rgba(96, 165, 250, 0.3)',
-                        }
-                      : {}
-                  }
+                  style={activeSection === item.id && theme === 'light' ? {color: '#1e3a8a'} : {}}
                 >
                   {item.label}
                 </button>
