@@ -185,7 +185,7 @@ export const ModernSkills: React.FC = () => {
           className="mt-16 text-center"
         >
           <div className="glass-card p-8 inline-block">
-            <h4 className="text-2xl font-bold text-white mb-4">Tools & Technologies</h4>
+            <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 transition-colors duration-300" style={{ fontWeight: 600, letterSpacing: '-0.028em' }}>Tools & Technologies</h4>
             <div className="flex flex-wrap justify-center gap-3">
               {[
                 'Kali Linux', 'Metasploit', 'Burp Suite', 'Wireshark', 'Nmap',
@@ -198,8 +198,16 @@ export const ModernSkills: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-full text-sm text-cyan-400 hover:border-cyan-500 hover:neon-glow-cyan transition-all cursor-default"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="px-4 py-2 rounded-full text-sm font-medium transition-all cursor-default"
+                  style={{
+                    backgroundColor: 'var(--glass-bg)',
+                    border: '0.5px solid var(--glass-border)',
+                    color: 'var(--accent-blue)',
+                    fontWeight: 510,
+                    letterSpacing: '-0.01em',
+                    backdropFilter: 'blur(10px)',
+                  }}
                 >
                   {tool}
                 </motion.span>
