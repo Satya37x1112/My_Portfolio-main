@@ -33,74 +33,91 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
     <nav 
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        backgroundColor: theme === 'light' ? 'rgba(250, 250, 250, 0.72)' : 'rgba(28, 28, 30, 0.72)',
+        backdropFilter: 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+        borderBottom: theme === 'light' ? '0.5px solid rgba(0, 0, 0, 0.08)' : '0.5px solid rgba(255, 255, 255, 0.08)',
+        boxShadow: theme === 'light' 
+          ? '0 1px 3px rgba(0, 0, 0, 0.08)' 
+          : '0 1px 3px rgba(0, 0, 0, 0.3)',
       }}
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ position: 'relative', zIndex: 1 }}>
-        <div className="flex items-center justify-between" style={{ minHeight: '4rem', padding: '1rem 0' }}>
-          <div className="text-xl font-bold text-white" style={{ fontSize: '1.5rem', letterSpacing: '0.5px' }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8" style={{ position: 'relative', zIndex: 1 }}>
+        <div className="flex items-center justify-between h-14">
+          <div 
+            className="text-lg font-semibold transition-colors duration-300" 
+            style={{ 
+              fontSize: '1.125rem',
+              fontWeight: 590,
+              letterSpacing: '-0.022em',
+              color: theme === 'light' ? '#1d1d1f' : '#f5f5f7'
+            }}
+          >
             Portfolio
           </div>
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center justify-center flex-1">
-            <div className="liquid-glass flex items-center space-x-8 px-3 py-1" role="menubar" aria-label="Primary navigation">
+            <div className="liquid-glass flex items-center space-x-1 px-2 py-1" role="menubar" aria-label="Primary navigation">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="relative px-4 py-2 text-base font-medium transition-all duration-300"
+                  className="relative px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-300"
                   style={{
-                    color: activeSection === item.id ? '#ffffff' : 'rgba(255, 255, 255, 0.7)',
-                    position: 'relative',
+                    color: activeSection === item.id 
+                      ? (theme === 'light' ? '#1d1d1f' : '#f5f5f7')
+                      : (theme === 'light' ? '#86868b' : '#8e8e93'),
+                    backgroundColor: activeSection === item.id 
+                      ? (theme === 'light' ? 'rgba(0, 0, 0, 0.06)' : 'rgba(255, 255, 255, 0.12)')
+                      : 'transparent',
+                    fontWeight: activeSection === item.id ? 510 : 400,
+                    letterSpacing: '-0.022em',
                   }}
                   onMouseEnter={(e) => {
                     if (activeSection !== item.id) {
-                      e.currentTarget.style.color = 'rgba(255, 255, 255, 0.95)';
-                      e.currentTarget.style.transform = 'translateY(-2px)';
+                      e.currentTarget.style.color = theme === 'light' ? '#424245' : '#aeaeb2';
+                      e.currentTarget.style.backgroundColor = theme === 'light' 
+                        ? 'rgba(0, 0, 0, 0.03)' 
+                        : 'rgba(255, 255, 255, 0.06)';
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (activeSection !== item.id) {
-                      e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)';
-                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.color = theme === 'light' ? '#86868b' : '#8e8e93';
+                      e.currentTarget.style.backgroundColor = 'transparent';
                     }
                   }}
                   role="menuitem"
                 >
                   {item.label}
-                  {/* Active indicator - Purple underline */}
-                  <span
-                    style={{
-                      position: 'absolute',
-                      bottom: '-8px',
-                      left: '50%',
-                      transform: activeSection === item.id ? 'translateX(-50%) scaleX(1)' : 'translateX(-50%) scaleX(0)',
-                      width: '100%',
-                      height: '3px',
-                      background: 'linear-gradient(90deg, #7c3aed 0%, #a855f7 100%)',
-                      borderRadius: '2px',
-                      transition: 'transform 0.3s ease',
-                      transformOrigin: 'center',
-                    }}
-                  />
                 </button>
               ))}
             </div>
             
-            {/* Theme Toggle Button */}
+            {/* Theme Toggle Button - macOS Style */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white transition-all duration-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+              className="ml-3 p-2 rounded-lg transition-all duration-300"
+              style={{
+                color: theme === 'light' ? '#86868b' : '#8e8e93',
+                backgroundColor: 'transparent',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = theme === 'light' ? '#1d1d1f' : '#f5f5f7';
+                e.currentTarget.style.backgroundColor = theme === 'light' 
+                  ? 'rgba(0, 0, 0, 0.06)' 
+                  : 'rgba(255, 255, 255, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = theme === 'light' ? '#86868b' : '#8e8e93';
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
             >
-              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
             </button>
           </div>
 
@@ -108,19 +125,41 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white transition-all duration-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+              className="p-2 rounded-lg transition-all duration-300"
+              style={{
+                color: theme === 'light' ? '#86868b' : '#8e8e93',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = theme === 'light' ? '#1d1d1f' : '#f5f5f7';
+                e.currentTarget.style.backgroundColor = theme === 'light' 
+                  ? 'rgba(0, 0, 0, 0.06)' 
+                  : 'rgba(255, 255, 255, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = theme === 'light' ? '#86868b' : '#8e8e93';
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
             >
               {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white p-2"
+              className="p-2 transition-all duration-300"
+              style={{
+                color: theme === 'light' ? '#86868b' : '#8e8e93',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = theme === 'light' ? '#1d1d1f' : '#f5f5f7';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = theme === 'light' ? '#86868b' : '#8e8e93';
+              }}
               aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
@@ -128,29 +167,47 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div 
+            id="mobile-menu"
             className="md:hidden"
             style={{
               backgroundColor: theme === 'light' 
-                ? 'rgba(246, 246, 246, 0.8)' 
-                : 'rgba(27, 27, 27, 0.8)',
-              backdropFilter: 'saturate(180%) blur(20px)',
-              WebkitBackdropFilter: 'saturate(180%) blur(20px)',
+                ? 'rgba(250, 250, 250, 0.9)' 
+                : 'rgba(28, 28, 30, 0.9)',
+              backdropFilter: 'blur(20px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(20px) saturate(180%)',
               borderTop: theme === 'light' 
-                ? '0.5px solid rgba(0, 0, 0, 0.1)' 
-                : '0.5px solid rgba(255, 255, 255, 0.1)',
+                ? '0.5px solid rgba(0, 0, 0, 0.08)' 
+                : '0.5px solid rgba(255, 255, 255, 0.08)',
             }}
           >
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-3 py-3 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block px-3 py-2 text-base font-medium w-full text-left transition-all duration-300 rounded-lg ${
-                    activeSection === item.id
-                      ? 'text-navy-700 dark:text-blue-400 bg-slate-200 dark:bg-slate-700'
-                      : 'text-slate-600 dark:text-slate-300 hover:text-navy-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-                  }`}
-                  style={activeSection === item.id && theme === 'light' ? {color: '#1e3a8a'} : {}}
+                  className="block px-3 py-2 text-sm font-medium w-full text-left rounded-lg transition-all duration-300"
+                  style={{
+                    color: activeSection === item.id
+                      ? (theme === 'light' ? '#1d1d1f' : '#f5f5f7')
+                      : (theme === 'light' ? '#86868b' : '#8e8e93'),
+                    backgroundColor: activeSection === item.id
+                      ? (theme === 'light' ? 'rgba(0, 0, 0, 0.06)' : 'rgba(255, 255, 255, 0.12)')
+                      : 'transparent',
+                    fontWeight: activeSection === item.id ? 510 : 400,
+                    letterSpacing: '-0.022em',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (activeSection !== item.id) {
+                      e.currentTarget.style.backgroundColor = theme === 'light' 
+                        ? 'rgba(0, 0, 0, 0.03)' 
+                        : 'rgba(255, 255, 255, 0.06)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (activeSection !== item.id) {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                    }
+                  }}
                 >
                   {item.label}
                 </button>

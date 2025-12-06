@@ -142,6 +142,7 @@ export const ModernHero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+              style={{ fontWeight: 700, letterSpacing: '-0.035em', lineHeight: 1.05 }}
             >
               <span className="text-slate-900 dark:text-white transition-colors duration-300">
                 Satya Sarthak
@@ -152,22 +153,33 @@ export const ModernHero: React.FC = () => {
               </span>
             </motion.h1>
 
-            {/* Role with Animated Underline */}
+            {/* Role with Animated Underline - macOS Style */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="mb-8"
+              className="mb-10"
             >
-              <h2 className="text-2xl md:text-3xl lg:text-4xl text-cyan-600 dark:text-cyan-300 font-semibold mb-2 transition-colors duration-300">
+              <h2 
+                className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 transition-colors duration-300"
+                style={{
+                  color: 'var(--accent-blue)',
+                  fontWeight: 600,
+                  letterSpacing: '-0.028em',
+                  lineHeight: 1.1
+                }}
+              >
                 Cybersecurity Enthusiast
               </h2>
               <div className="flex justify-center">
                 <motion.div
                   initial={{ width: 0 }}
-                  animate={{ width: "200px" }}
-                  transition={{ duration: 1, delay: 1.2 }}
-                  className="h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full"
+                  animate={{ width: "180px" }}
+                  transition={{ duration: 1, delay: 1.2, ease: [0.4, 0, 0.2, 1] }}
+                  className="h-0.5 rounded-full"
+                  style={{
+                    background: 'linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%)'
+                  }}
                 />
               </div>
             </motion.div>
@@ -177,24 +189,24 @@ export const ModernHero: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12"
+              className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-12"
             >
-              <div className="glass-card p-6 hover:scale-105 transition-transform">
-                <div className="text-4xl mb-2"></div>
-                <p className="text-lg font-semibold text-slate-900 dark:text-white transition-colors duration-300">BTech Student</p>
-                <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">Sri Sri University, Odisha</p>
+              <div className="glass-card p-6 hover:scale-101 transition-all duration-300">
+                <div className="text-4xl mb-3">🎓</div>
+                <p className="text-base font-semibold text-slate-900 dark:text-white transition-colors duration-300" style={{ fontWeight: 590, letterSpacing: '-0.022em' }}>BTech Student</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 transition-colors duration-300" style={{ letterSpacing: '-0.01em' }}>Sri Sri University, Odisha</p>
               </div>
 
-              <div className="glass-card p-6 hover:scale-105 transition-transform neon-glow-cyan">
-                <div className="text-4xl mb-2"></div>
-                <p className="text-lg font-semibold text-cyan-600 dark:text-cyan-300 transition-colors duration-300">Top 10%</p>
-                <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">TryHackMe Platform</p>
+              <div className="glass-card p-6 hover:scale-101 transition-all duration-300" style={{ borderColor: 'var(--accent-blue)' }}>
+                <div className="text-4xl mb-3">🚀</div>
+                <p className="text-base font-semibold transition-colors duration-300" style={{ color: 'var(--accent-blue)', fontWeight: 590, letterSpacing: '-0.022em' }}>Top 10%</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 transition-colors duration-300" style={{ letterSpacing: '-0.01em' }}>TryHackMe Platform</p>
               </div>
 
-              <div className="glass-card p-6 hover:scale-105 transition-transform">
-                <div className="text-4xl mb-2"></div>
-                <p className="text-lg font-semibold text-slate-900 dark:text-white transition-colors duration-300">Award Winner</p>
-                <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">Creaper 2.0 Competition</p>
+              <div className="glass-card p-6 hover:scale-101 transition-all duration-300">
+                <div className="text-4xl mb-3">🏆</div>
+                <p className="text-base font-semibold text-slate-900 dark:text-white transition-colors duration-300" style={{ fontWeight: 590, letterSpacing: '-0.022em' }}>Award Winner</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 transition-colors duration-300" style={{ letterSpacing: '-0.01em' }}>Creaper 2.0 Competition</p>
               </div>
             </motion.div>
 
@@ -203,35 +215,64 @@ export const ModernHero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.5 }}
-              className="text-lg md:text-xl text-slate-700 dark:text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed transition-colors duration-300"
+              className="text-base md:text-lg text-slate-700 dark:text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed transition-colors duration-300"
+              style={{ fontWeight: 400, letterSpacing: '-0.022em', lineHeight: 1.47059 }}
             >
-              Passionate about <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition-colors duration-300">cybersecurity</span> and technology innovation. 
-              Exploring advanced <span className="text-purple-600 dark:text-purple-400 font-semibold transition-colors duration-300">penetration testing</span> and{' '}
-              <span className="text-pink-600 dark:text-pink-400 font-semibold transition-colors duration-300">network security</span>.
-              Aspiring for <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition-colors duration-300">DevSecOps</span> and{' '}
-              <span className="text-purple-600 dark:text-purple-400 font-semibold transition-colors duration-300">system design</span> roles.
+              Passionate about <span className="font-semibold transition-colors duration-300" style={{ color: 'var(--accent-blue)', fontWeight: 510 }}>cybersecurity</span> and technology innovation. 
+              Exploring advanced <span className="font-semibold transition-colors duration-300" style={{ color: 'var(--accent-purple)', fontWeight: 510 }}>penetration testing</span> and{' '}
+              <span className="font-semibold transition-colors duration-300" style={{ color: 'var(--accent-pink)', fontWeight: 510 }}>network security</span>.
+              Aspiring for <span className="font-semibold transition-colors duration-300" style={{ color: 'var(--accent-blue)', fontWeight: 510 }}>DevSecOps</span> and{' '}
+              <span className="font-semibold transition-colors duration-300" style={{ color: 'var(--accent-green)', fontWeight: 510 }}>system design</span> roles.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - macOS Style */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.8 }}
-              className="flex flex-wrap justify-center gap-4 mb-12"
+              className="flex flex-wrap justify-center gap-3 mb-12"
             >
               <button
                 onClick={() => scrollToSection('projects')}
-                className="magnetic-btn glass-card px-8 py-4 rounded-full font-semibold text-slate-900 dark:text-white hover:neon-glow-cyan transition-all group"
+                className="glass-card px-7 py-3.5 rounded-xl font-medium transition-all group hover:scale-102"
+                style={{
+                  fontWeight: 510,
+                  fontSize: '0.9375rem',
+                  letterSpacing: '-0.022em',
+                  color: 'var(--text-primary)',
+                  boxShadow: 'var(--shadow-sm)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+                }}
               >
                 <span className="flex items-center gap-2">
                   View Projects
-                  <ArrowDown size={20} className="group-hover:translate-y-1 transition-transform" />
+                  <ArrowDown size={18} className="group-hover:translate-y-0.5 transition-transform duration-300" />
                 </span>
               </button>
 
               <button
                 onClick={downloadResume}
-                className="magnetic-btn bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-full font-semibold text-white hover:shadow-2xl transition-all hover:scale-105"
+                className="px-7 py-3.5 rounded-xl font-medium text-white transition-all hover:scale-102"
+                style={{
+                  fontWeight: 510,
+                  fontSize: '0.9375rem',
+                  letterSpacing: '-0.022em',
+                  background: 'linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%)',
+                  boxShadow: 'var(--shadow-sm)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                  e.currentTarget.style.transform = 'scale(1.02)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+                  e.currentTarget.style.transform = 'scale(1)';
+                }}
               >
                 Download Resume
               </button>
