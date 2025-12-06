@@ -110,14 +110,14 @@ export const ModernHero: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Name with Glitch Effect */}
+            {/* Name - Clean and Simple */}
             <motion.h1
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
             >
-              <span className="gradient-text neon-text">
+              <span className="text-white">
                 Satya Sarthak
               </span>
               <br />
@@ -130,7 +130,7 @@ export const ModernHero: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
               className="mb-8"
             >
               <h2 className="text-2xl md:text-3xl lg:text-4xl text-cyan-300 font-semibold mb-2">
