@@ -93,13 +93,13 @@ export const CustomCursor: React.FC = () => {
 
       {/* Spotlight effect */}
       <div
-        className="fixed pointer-events-none z-[9997] opacity-30 transition-all duration-150 ease-out"
+        className="fixed pointer-events-none z-[9997] opacity-60 transition-all duration-75 ease-out"
         style={{
           left: mousePosition.x - 200,
           top: mousePosition.y - 200,
           width: '400px',
           height: '400px',
-          background: 'radial-gradient(circle, rgba(96, 165, 250, 0.4) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(96, 165, 250, 0.7) 0%, rgba(139, 92, 246, 0.3) 40%, transparent 70%)',
         }}
       />
     </>
