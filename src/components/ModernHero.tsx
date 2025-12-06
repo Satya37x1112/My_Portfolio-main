@@ -180,19 +180,19 @@ export const ModernHero: React.FC = () => {
               className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12"
             >
               <div className="glass-card p-6 hover:scale-105 transition-transform">
-                <div className="text-4xl mb-2">🎓</div>
+                <div className="text-4xl mb-2"></div>
                 <p className="text-lg font-semibold text-slate-900 dark:text-white transition-colors duration-300">BTech Student</p>
                 <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">Sri Sri University, Odisha</p>
               </div>
 
               <div className="glass-card p-6 hover:scale-105 transition-transform neon-glow-cyan">
-                <div className="text-4xl mb-2">🚀</div>
+                <div className="text-4xl mb-2"></div>
                 <p className="text-lg font-semibold text-cyan-600 dark:text-cyan-300 transition-colors duration-300">Top 10%</p>
                 <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">TryHackMe Platform</p>
               </div>
 
               <div className="glass-card p-6 hover:scale-105 transition-transform">
-                <div className="text-4xl mb-2">🏆</div>
+                <div className="text-4xl mb-2"></div>
                 <p className="text-lg font-semibold text-slate-900 dark:text-white transition-colors duration-300">Award Winner</p>
                 <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors duration-300">Creaper 2.0 Competition</p>
               </div>
@@ -203,13 +203,13 @@ export const ModernHero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.5 }}
-              className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-slate-700 dark:text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed transition-colors duration-300"
             >
-              Passionate about <span className="text-cyan-400 font-semibold">cybersecurity</span> and technology innovation. 
-              Exploring advanced <span className="text-purple-400 font-semibold">penetration testing</span> and{' '}
-              <span className="text-pink-400 font-semibold">network security</span>.
-              Aspiring for <span className="text-cyan-400 font-semibold">DevSecOps</span> and{' '}
-              <span className="text-purple-400 font-semibold">system design</span> roles.
+              Passionate about <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition-colors duration-300">cybersecurity</span> and technology innovation. 
+              Exploring advanced <span className="text-purple-600 dark:text-purple-400 font-semibold transition-colors duration-300">penetration testing</span> and{' '}
+              <span className="text-pink-600 dark:text-pink-400 font-semibold transition-colors duration-300">network security</span>.
+              Aspiring for <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition-colors duration-300">DevSecOps</span> and{' '}
+              <span className="text-purple-600 dark:text-purple-400 font-semibold transition-colors duration-300">system design</span> roles.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -221,7 +221,7 @@ export const ModernHero: React.FC = () => {
             >
               <button
                 onClick={() => scrollToSection('projects')}
-                className="magnetic-btn glass-card px-8 py-4 rounded-full font-semibold text-white hover:neon-glow-cyan transition-all group"
+                className="magnetic-btn glass-card px-8 py-4 rounded-full font-semibold text-slate-900 dark:text-white hover:neon-glow-cyan transition-all group"
               >
                 <span className="flex items-center gap-2">
                   View Projects

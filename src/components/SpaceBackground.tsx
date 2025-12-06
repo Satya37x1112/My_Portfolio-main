@@ -110,11 +110,23 @@ export const SpaceBackground: React.FC = () => {
 
         /* Light mode subtle adjustments */
         .light .fixed.-z-10 > div:first-child {
-          background-image: url('/space-screenshot.png'), linear-gradient(to bottom, #cfe9ff 0%, #e6f3ff 60%, #ffffff 100%);
+          background-image: url('/space-screenshot.png'), linear-gradient(to bottom, #e0f2fe 0%, #f0f9ff 60%, #ffffff 100%);
           background-blend-mode: overlay;
+          filter: brightness(1.1) saturate(0.8);
         }
 
-        .light .fixed.-z-10 .absolute.inset-0 { opacity: 0.25; }
+        .light .fixed.-z-10 .absolute.inset-0 { 
+          opacity: 0.15; 
+        }
+
+        .light .fixed.-z-10 .bg-white {
+          opacity: 0.3;
+        }
+
+        /* Ensure light mode has brighter, more visible background */
+        .light .fixed.-z-10 > div:nth-child(2) {
+          background: linear-gradient(to top, rgba(255,255,255,0.4), rgba(255,255,255,0.1)) !important;
+        }
 
       `}</style>
     </>
