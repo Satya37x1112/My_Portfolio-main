@@ -18,8 +18,8 @@ export const CustomCursor: React.FC = () => {
     };
 
     const animateCursor = () => {
-      // Smooth interpolation
-      const ease = 0.15;
+      // Faster, smoother interpolation - macOS style
+      const ease = 0.25;
       currentX += (targetX - currentX) * ease;
       currentY += (targetY - currentY) * ease;
       
@@ -49,57 +49,70 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <>
-      {/* Main cursor dot */}
+      {/* Main cursor dot - macOS style */}
       <motion.div
-        className="fixed pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed pointer-events-none z-[9999]"
         style={{
-          x: mousePosition.x - 6,
-          y: mousePosition.y - 6,
+          x: mousePosition.x - 4,
+          y: mousePosition.y - 4,
+        }}
+        animate={{
+          scale: isHovering ? 1.8 : 1,
+        }}
+        transition={{
+          scale: {
+            type: 'spring',
+            stiffness: 400,
+            damping: 25,
+          },
+        }}
+      >
+        <div 
+          className="w-2 h-2 rounded-full"
+          style={{
+            background: 'var(--accent-blue)',
+            boxShadow: '0 0 8px var(--accent-blue)',
+          }}
+        />
+      </motion.div>
+
+      {/* Outer ring - subtle */}
+      <motion.div
+        className="fixed pointer-events-none z-[9998] rounded-full"
+        style={{
+          x: mousePosition.x - 16,
+          y: mousePosition.y - 16,
+          width: '32px',
+          height: '32px',
+          border: '1.5px solid var(--accent-blue)',
+          opacity: 0.3,
         }}
         animate={{
           scale: isHovering ? 1.5 : 1,
+          opacity: isHovering ? 0.5 : 0.3,
         }}
         transition={{
           scale: {
             type: 'spring',
             stiffness: 300,
-            damping: 20,
+            damping: 25,
           },
-        }}
-      >
-        <div className="w-3 h-3 bg-cyan-400 rounded-full" />
-      </motion.div>
-
-      {/* Outer ring */}
-      <motion.div
-        className="fixed pointer-events-none z-[9998] border-2 border-purple-400 rounded-full mix-blend-difference"
-        style={{
-          x: mousePosition.x - 20,
-          y: mousePosition.y - 20,
-          width: '40px',
-          height: '40px',
-        }}
-        animate={{
-          scale: isHovering ? 1.5 : 1,
-        }}
-        transition={{
-          scale: {
-            type: 'spring',
-            stiffness: 200,
-            damping: 20,
+          opacity: {
+            duration: 0.2,
           },
         }}
       />
 
-      {/* Spotlight effect */}
+      {/* Subtle glow effect - professional */}
       <div
-        className="fixed pointer-events-none z-[9997] opacity-60 transition-all duration-75 ease-out"
+        className="fixed pointer-events-none z-[9997] transition-all duration-100 ease-out"
         style={{
-          left: mousePosition.x - 200,
-          top: mousePosition.y - 200,
-          width: '400px',
-          height: '400px',
-          background: 'radial-gradient(circle, rgba(96, 165, 250, 0.7) 0%, rgba(139, 92, 246, 0.3) 40%, transparent 70%)',
+          left: mousePosition.x - 100,
+          top: mousePosition.y - 100,
+          width: '200px',
+          height: '200px',
+          background: 'radial-gradient(circle, rgba(0, 122, 255, 0.08) 0%, rgba(0, 122, 255, 0.03) 40%, transparent 70%)',
+          opacity: 0.6,
         }}
       />
     </>
