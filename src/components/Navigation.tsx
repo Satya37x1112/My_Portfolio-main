@@ -50,7 +50,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center justify-center flex-1">
-            <div className="flex items-center space-x-8">
+            <div className="liquid-glass flex items-center space-x-8 px-3 py-1" role="menubar" aria-label="Primary navigation">
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -62,7 +62,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                   }}
                   onMouseEnter={(e) => {
                     if (activeSection !== item.id) {
-                      e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
+                      e.currentTarget.style.color = 'rgba(255, 255, 255, 0.95)';
                       e.currentTarget.style.transform = 'translateY(-2px)';
                     }
                   }}
@@ -72,6 +72,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                       e.currentTarget.style.transform = 'translateY(0)';
                     }
                   }}
+                  role="menuitem"
                 >
                   {item.label}
                   {/* Active indicator - Purple underline */}
