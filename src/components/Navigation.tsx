@@ -33,15 +33,15 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
     <nav 
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: theme === 'light' 
-          ? 'rgba(255, 255, 255, 0.65)' 
-          : 'rgba(15, 23, 42, 0.65)',
-        backdropFilter: 'blur(12px) saturate(180%)',
-        WebkitBackdropFilter: 'blur(12px) saturate(180%)',
+        backgroundColor: theme === 'light' 
+          ? 'rgba(246, 246, 246, 0.8)' 
+          : 'rgba(27, 27, 27, 0.8)',
+        backdropFilter: 'saturate(180%) blur(20px)',
+        WebkitBackdropFilter: 'saturate(180%) blur(20px)',
         borderBottom: theme === 'light' 
-          ? '1px solid rgba(229, 231, 235, 0.3)' 
-          : '1px solid rgba(51, 65, 85, 0.3)',
-        boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+          ? '0.5px solid rgba(0, 0, 0, 0.1)' 
+          : '0.5px solid rgba(255, 255, 255, 0.1)',
+        boxShadow: 'none',
       }}
       role="navigation"
       aria-label="Main navigation"
@@ -116,14 +116,14 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
           <div 
             className="md:hidden"
             style={{
-              background: theme === 'light' 
-                ? 'rgba(255, 255, 255, 0.65)' 
-                : 'rgba(15, 23, 42, 0.65)',
-              backdropFilter: 'blur(12px) saturate(180%)',
-              WebkitBackdropFilter: 'blur(12px) saturate(180%)',
+              backgroundColor: theme === 'light' 
+                ? 'rgba(246, 246, 246, 0.8)' 
+                : 'rgba(27, 27, 27, 0.8)',
+              backdropFilter: 'saturate(180%) blur(20px)',
+              WebkitBackdropFilter: 'saturate(180%) blur(20px)',
               borderTop: theme === 'light' 
-                ? '1px solid rgba(229, 231, 235, 0.3)' 
-                : '1px solid rgba(51, 65, 85, 0.3)',
+                ? '0.5px solid rgba(0, 0, 0, 0.1)' 
+                : '0.5px solid rgba(255, 255, 255, 0.1)',
             }}
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
