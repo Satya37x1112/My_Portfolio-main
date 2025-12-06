@@ -2,19 +2,40 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail, Terminal, Shield, Lock } from 'lucide-react';
 
-const TypewriterText: React.FC<{ text: string; delay?: number }> = ({ text, delay = 0 }) => {
+const TypewriterText: React.FC<{ texts: string[]; delay?: number }> = ({ texts, delay = 0 }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, 50 + delay);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, text, delay]);
+    const currentText = texts[textIndex];
+    
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing
+        if (currentIndex < currentText.length) {
+          setDisplayText(currentText.substring(0, currentIndex + 1));
+          setCurrentIndex(prev => prev + 1);
+        } else {
+          // Finished typing, wait then start deleting
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        // Deleting
+        if (currentIndex > 0) {
+          setDisplayText(currentText.substring(0, currentIndex - 1));
+          setCurrentIndex(prev => prev - 1);
+        } else {
+          // Finished deleting, move to next text
+          setIsDeleting(false);
+          setTextIndex((prev) => (prev + 1) % texts.length);
+        }
+      }
+    }, isDeleting ? 30 : 80);
+
+    return () => clearTimeout(timeout);
+  }, [currentIndex, textIndex, isDeleting, texts]);
 
   return <span className="terminal">{displayText}</span>;
 };
@@ -104,7 +125,12 @@ export const ModernHero: React.FC = () => {
                 </p>
                 {showContent && (
                   <p className="text-cyan-300 text-sm md:text-base font-mono mt-1">
-                    <TypewriterText text="cybersecurity_professional" />
+                    <TypewriterText texts={[
+                      "cybersecurity_enthusiast",
+                      "aspiring_devsecops_engineer",
+                      "system_design_architect",
+                      "penetration_tester"
+                    ]} />
                   </p>
                 )}
               </div>
