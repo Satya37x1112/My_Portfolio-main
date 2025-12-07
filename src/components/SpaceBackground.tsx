@@ -9,125 +9,207 @@ export const SpaceBackground: React.FC = () => {
 
   if (!mounted) return null;
 
-  // Generate random stars (subtle, lightweight)
-  const generateStars = (count: number) => {
-    return Array.from({ length: count }, (_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      size: Math.random() * 2 + 0.6,
-      animationDelay: Math.random() * 4,
-      animationDuration: Math.random() * 4 + 2,
-    }));
-  };
-
-  const stars = generateStars(220);
-
   return (
     <>
       <div className="fixed inset-0 -z-10 overflow-hidden" aria-hidden>
-        {/* Background image (user-supplied) with gradient fallback */}
+        {/* Base gradient - macOS inspired */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 transition-colors duration-500"
           style={{
-            backgroundImage: "url('/space-screenshot.png'), radial-gradient(ellipse at top, #0b1630 0%, #071026 40%, #02040a 100%)",
-            backgroundSize: 'cover, cover',
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'saturate(1.05) contrast(1.02)',
+            background: 'radial-gradient(ellipse at top left, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%)',
           }}
         />
 
-        {/* Dim overlay to ensure contrast for content */}
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.2))' }}
-        />
+        {/* Animated gradient orbs - professional & subtle */}
+        <div className="absolute inset-0 opacity-40">
+          <div
+            className="absolute w-[600px] h-[600px] rounded-full blur-3xl animate-float-slow"
+            style={{
+              top: '10%',
+              left: '10%',
+              background: 'radial-gradient(circle, rgba(0, 122, 255, 0.15) 0%, transparent 70%)',
+              animationDelay: '0s',
+            }}
+          />
+          <div
+            className="absolute w-[500px] h-[500px] rounded-full blur-3xl animate-float-slow"
+            style={{
+              top: '60%',
+              right: '15%',
+              background: 'radial-gradient(circle, rgba(191, 90, 242, 0.12) 0%, transparent 70%)',
+              animationDelay: '2s',
+            }}
+          />
+          <div
+            className="absolute w-[450px] h-[450px] rounded-full blur-3xl animate-float-slow"
+            style={{
+              bottom: '20%',
+              left: '50%',
+              background: 'radial-gradient(circle, rgba(255, 45, 85, 0.08) 0%, transparent 70%)',
+              animationDelay: '4s',
+            }}
+          />
+        </div>
 
-        {/* Subtle Milky Way band to add interest (very faint) */}
-        <div
-          className="absolute inset-0 pointer-events-none"
+        {/* Mesh grid pattern - subtle */}
+        <div 
+          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08]"
           style={{
-            background: 'linear-gradient(135deg, transparent 30%, rgba(120, 90, 230, 0.06) 45%, rgba(70, 130, 180, 0.06) 55%, transparent 70%)',
-            transform: 'rotate(-12deg) scale(1.3)',
-            opacity: 0.9,
+            backgroundImage: `
+              linear-gradient(var(--text-primary) 1px, transparent 1px),
+              linear-gradient(90deg, var(--text-primary) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px',
           }}
         />
 
-        {/* Stars layer */}
-        <div className="absolute inset-0 pointer-events-none">
-          {stars.map((star) => (
+        {/* Noise texture for depth */}
+        <div
+          className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03] mix-blend-overlay"
+          style={{
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
+          }}
+        />
+
+        {/* Geometric accent lines */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.06] dark:opacity-[0.12]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="var(--accent-blue)" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="var(--accent-purple)" stopOpacity="0.1" />
+            </linearGradient>
+            <linearGradient id="lineGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="var(--accent-pink)" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="var(--accent-blue)" stopOpacity="0.1" />
+            </linearGradient>
+          </defs>
+          
+          {/* Curved lines */}
+          <path
+            d="M 0 200 Q 400 100 800 250 T 1600 300"
+            stroke="url(#lineGradient1)"
+            strokeWidth="2"
+            fill="none"
+            className="animate-draw-line"
+          />
+          <path
+            d="M 0 400 Q 500 300 1000 450 T 2000 400"
+            stroke="url(#lineGradient2)"
+            strokeWidth="1.5"
+            fill="none"
+            className="animate-draw-line"
+            style={{ animationDelay: '1s' }}
+          />
+          
+          {/* Circular accent */}
+          <circle
+            cx="85%"
+            cy="30%"
+            r="150"
+            stroke="var(--accent-blue)"
+            strokeWidth="1"
+            fill="none"
+            opacity="0.15"
+            className="animate-pulse-slow"
+          />
+        </svg>
+
+        {/* Subtle particles */}
+        <div className="absolute inset-0 opacity-30 dark:opacity-20">
+          {Array.from({ length: 40 }).map((_, i) => (
             <div
-              key={star.id}
-              className="absolute rounded-full bg-white"
+              key={i}
+              className="absolute rounded-full animate-float-particle"
               style={{
-                left: `${star.left}%`,
-                top: `${star.top}%`,
-                width: `${star.size}px`,
-                height: `${star.size}px`,
-                boxShadow: `0 0 ${star.size * 2}px rgba(255,255,255,0.8)`,
-                opacity: 0.9,
-                animation: `twinkle-star ${star.animationDuration}s ease-in-out ${star.animationDelay}s infinite`,
-                transformOrigin: 'center',
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                width: `${Math.random() * 4 + 1}px`,
+                height: `${Math.random() * 4 + 1}px`,
+                background: i % 3 === 0 
+                  ? 'var(--accent-blue)' 
+                  : i % 3 === 1 
+                  ? 'var(--accent-purple)' 
+                  : 'var(--accent-pink)',
+                opacity: Math.random() * 0.4 + 0.1,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${Math.random() * 20 + 15}s`,
               }}
             />
           ))}
         </div>
 
-        {/* A few randomized shooting stars for elegance */}
-        {[0, 1, 2].map((i) => (
-          <div
-            key={`shoot-${i}`}
-            className="absolute w-1 h-1 bg-white rounded-full pointer-events-none"
-            style={{
-              top: `${8 + i * 26}%`,
-              left: `${6 + i * 28}%`,
-              boxShadow: '0 0 8px 2px rgba(255,255,255,0.95)',
-              animation: `shooting-star ${2.8 + i * 0.6}s linear ${i * 4}s infinite`,
-              opacity: 0.95,
-            }}
-          />
-        ))}
-
-        {/* Soft bottom vignette to ground the layout */}
+        {/* Top to bottom fade for content readability */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-1/3 pointer-events-none"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)' }}
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.02) 100%)',
+          }}
         />
       </div>
 
       <style>{`
-        @keyframes twinkle-star {
-          0%,100% { opacity: 0.25; transform: scale(0.9); }
-          50% { opacity: 1; transform: scale(1.25); }
+        @keyframes float-slow {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -30px) scale(1.05); }
+          66% { transform: translate(-20px, 20px) scale(0.95); }
         }
 
-        @keyframes shooting-star {
-          0% { transform: translate(0,0) rotate(-45deg); opacity: 1; }
-          80% { opacity: 1; }
-          100% { transform: translate(350px, 350px) rotate(-45deg); opacity: 0; }
+        @keyframes float-particle {
+          0%, 100% { 
+            transform: translate(0, 0); 
+            opacity: 0.2;
+          }
+          50% { 
+            transform: translate(var(--float-x, 20px), var(--float-y, -30px)); 
+            opacity: 0.6;
+          }
         }
 
-        /* Light mode subtle adjustments */
-        .light .fixed.-z-10 > div:first-child {
-          background-image: url('/space-screenshot.png'), linear-gradient(to bottom, #e0f2fe 0%, #f0f9ff 60%, #ffffff 100%);
-          background-blend-mode: overlay;
-          filter: brightness(1.1) saturate(0.8);
+        @keyframes pulse-slow {
+          0%, 100% { 
+            opacity: 0.1; 
+            transform: scale(1);
+          }
+          50% { 
+            opacity: 0.2; 
+            transform: scale(1.05);
+          }
         }
 
-        .light .fixed.-z-10 .absolute.inset-0 { 
-          opacity: 0.15; 
+        @keyframes draw-line {
+          0% { 
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+          }
+          100% { 
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 0;
+          }
         }
 
-        .light .fixed.-z-10 .bg-white {
-          opacity: 0.3;
+        .animate-float-slow {
+          animation: float-slow 20s ease-in-out infinite;
         }
 
-        /* Ensure light mode has brighter, more visible background */
-        .light .fixed.-z-10 > div:nth-child(2) {
-          background: linear-gradient(to top, rgba(255,255,255,0.4), rgba(255,255,255,0.1)) !important;
+        .animate-float-particle {
+          animation: float-particle 15s ease-in-out infinite;
         }
 
+        .animate-pulse-slow {
+          animation: pulse-slow 8s ease-in-out infinite;
+        }
+
+        .animate-draw-line {
+          animation: draw-line 3s ease-out forwards;
+        }
+
+        /* Dark mode enhancements */
+        .dark .fixed.-z-10 {
+          background: radial-gradient(ellipse at top, #1c1c1e 0%, #0a0a0c 100%);
+        }
       `}</style>
     </>
   );
