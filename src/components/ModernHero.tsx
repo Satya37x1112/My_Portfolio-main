@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail, Terminal, Shield, Lock } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 
-const TypewriterText: React.FC<{ texts: string[]; delay?: number }> = ({ texts, delay = 0 }) => {
+const TypewriterText: React.FC<{ texts: string[] }> = ({ texts }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [textIndex, setTextIndex] = useState(0);
@@ -32,7 +32,7 @@ const TypewriterText: React.FC<{ texts: string[]; delay?: number }> = ({ texts, 
           setTextIndex((prev) => (prev + 1) % texts.length);
         }
       }
-    }, isDeleting ? 30 : 80);
+    }, isDeleting ? 30 : 100);
 
     return () => clearTimeout(timeout);
   }, [currentIndex, textIndex, isDeleting, texts]);
@@ -40,35 +40,11 @@ const TypewriterText: React.FC<{ texts: string[]; delay?: number }> = ({ texts, 
   return <span className="terminal">{displayText}</span>;
 };
 
-const FloatingIcon: React.FC<{ icon: React.ReactNode; delay: number }> = ({ icon, delay }) => {
-  return (
-    <motion.div
-      className="absolute"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{
-        opacity: [0.3, 0.6, 0.3],
-        y: [0, -20, 0],
-        rotate: [0, 10, -10, 0],
-      }}
-      transition={{
-        duration: 4,
-        delay,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    >
-      <div className="text-cyan-400/30 backdrop-blur-sm p-3 rounded-full border border-cyan-400/20">
-        {icon}
-      </div>
-    </motion.div>
-  );
-};
-
 export const ModernHero: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowContent(true), 500);
+    const timer = setTimeout(() => setShowContent(true), 300);
     return () => clearTimeout(timer);
   }, []);
 
@@ -92,31 +68,20 @@ export const ModernHero: React.FC = () => {
 
   return (
     <section id="hero" className="min-h-screen relative overflow-hidden">
-      {/* Floating 3D Icons */}
-      <div className="hidden lg:block">
-        <FloatingIcon icon={<Shield size={40} />} delay={0} />
-        <div style={{ position: 'absolute', top: '20%', right: '15%' }}>
-          <FloatingIcon icon={<Lock size={35} />} delay={0.5} />
-        </div>
-        <div style={{ position: 'absolute', bottom: '30%', left: '10%' }}>
-          <FloatingIcon icon={<Terminal size={38} />} delay={1} />
-        </div>
-      </div>
-
       {/* Main Content */}
       <div className="min-h-screen relative z-10 flex items-center py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             className="text-center"
           >
             {/* Terminal-Style Introduction */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               className="mb-8"
             >
               <div className="inline-block glass-card px-6 py-3 text-left">
@@ -140,7 +105,7 @@ export const ModernHero: React.FC = () => {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
               style={{ fontWeight: 700, letterSpacing: '-0.035em', lineHeight: 1.05 }}
             >
@@ -157,7 +122,7 @@ export const ModernHero: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="mb-10"
             >
               <h2 
@@ -175,7 +140,7 @@ export const ModernHero: React.FC = () => {
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: "180px" }}
-                  transition={{ duration: 1, delay: 1.2, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.8, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
                   className="h-0.5 rounded-full"
                   style={{
                     background: 'linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%)'
@@ -186,9 +151,9 @@ export const ModernHero: React.FC = () => {
 
             {/* Info Cards Grid */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
               className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-12"
             >
               <div className="glass-card p-6 hover:scale-101 transition-all duration-300">

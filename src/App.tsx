@@ -1,18 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { ModernNavigation } from './components/ModernNavigation';
 import { ModernHero } from './components/ModernHero';
 import { ModernAbout } from './components/ModernAbout';
 import { ModernSkills } from './components/ModernSkills';
-import { ParticleBackground } from './components/ParticleBackground';
 import { SpaceBackground } from './components/SpaceBackground';
 import { CustomCursor } from './components/CustomCursor';
 import { ScrollProgress } from './components/ScrollProgress';
 import { LoadingScreen } from './components/LoadingScreen';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
 import ErrorBoundary from './components/ErrorBoundary';
 import { ThemeProvider } from './context/ThemeContext';
+
+// Lazy load components that aren't visible on initial load
+const Experience = lazy(() => import('./components/Experience'));
+const Projects = lazy(() => import('./components/Projects'));
+const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -59,19 +60,20 @@ function App() {
           {/* Scroll Progress */}
           <ScrollProgress />
           
-          {/* 3D Particle Background */}
-          <ParticleBackground />
-          
           {/* Navigation */}
           <ModernNavigation activeSection={activeSection} />
           
-          {/* Content */}
+          {/* Content - Critical above the fold */}
           <ModernHero />
           <ModernAbout />
           <ModernSkills />
-          <Experience />
-          <Projects />
-          <Contact />
+          
+          {/* Lazy loaded below-the-fold content */}
+          <Suspense fallback={<div className="h-screen" />}>
+            <Experience />
+            <Projects />
+            <Contact />
+          </Suspense>
         </div>
       </ThemeProvider>
     </ErrorBoundary>
