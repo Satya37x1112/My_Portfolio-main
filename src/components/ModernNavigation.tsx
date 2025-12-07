@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import photo from '../assets/p.jpeg';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -53,14 +54,19 @@ export const ModernNavigation: React.FC<ModernNavigationProps> = ({ activeSectio
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo (photo) */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl font-bold"
+            className="flex items-center"
           >
-            <span className="gradient-text">SSM</span>
+            <img
+              src={photo}
+              alt="Satya Sarthak Manohari"
+              className="w-10 h-10 rounded-full object-cover border-2"
+              style={{ borderColor: 'rgba(0,0,0,0.06)' }}
+            />
           </motion.div>
 
           {/* Desktop Navigation */}

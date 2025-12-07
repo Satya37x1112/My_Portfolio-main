@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import { Code, Shield, Trophy, Zap, Target, Rocket } from 'lucide-react';
+import { Code, Shield, Trophy, Target, Rocket } from 'lucide-react';
 
 const CounterAnimation: React.FC<{ end: number; duration?: number; suffix?: string }> = ({ 
   end, 
@@ -51,7 +51,7 @@ export const ModernAbout: React.FC = () => {
     { icon: Trophy, value: 10, suffix: '+', label: 'Projects Completed', color: 'cyan' },
     { icon: Shield, value: 100, suffix: '+', label: 'Security Tests', color: 'purple' },
     { icon: Code, value: 5, suffix: '+', label: 'Languages', color: 'pink' },
-    { icon: Zap, value: 99, suffix: '%', label: 'Client Satisfaction', color: 'cyan' },
+    { icon: Rocket, value: 12, suffix: '+', label: 'Certifications', color: 'green' },
   ];
 
   const highlights = [
