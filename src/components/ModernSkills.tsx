@@ -63,18 +63,48 @@ const TiltCard: React.FC<SkillCardProps> = ({ icon: Icon, name, level, category,
         <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 transition-colors duration-300">{category}</p>
 
         {/* Progress Bar */}
-        <div className="relative h-2 bg-slate-300 dark:bg-slate-800 rounded-full overflow-hidden transition-colors duration-300">
+        <div 
+          className="relative h-2 rounded-full overflow-hidden transition-colors duration-300"
+          style={{
+            backgroundColor: 'var(--bg-tertiary)',
+            border: '1px solid var(--border-color)',
+          }}
+        >
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: `${level}%` }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: delay + 0.2 }}
-            className={`absolute inset-y-0 left-0 bg-gradient-to-r from-${color}-500 to-${color}-600 rounded-full`}
+            className="absolute inset-y-0 left-0 rounded-full"
+            style={{
+              background: color === 'cyan' 
+                ? 'linear-gradient(to right, #06b6d4, #0891b2)'
+                : color === 'blue'
+                ? 'linear-gradient(to right, #3b82f6, #2563eb)'
+                : color === 'purple'
+                ? 'linear-gradient(to right, #a855f7, #9333ea)'
+                : color === 'pink'
+                ? 'linear-gradient(to right, #ec4899, #db2777)'
+                : 'linear-gradient(to right, var(--accent-blue), var(--accent-purple))',
+            }}
           />
         </div>
         <div className="flex justify-between mt-2">
-          <span className="text-xs text-slate-500 dark:text-slate-500 transition-colors duration-300">Proficiency</span>
-          <span className={`text-xs font-semibold text-${color}-600 dark:text-${color}-400 transition-colors duration-300`}>{level}%</span>
+          <span className="text-xs text-slate-500 dark:text-slate-400 transition-colors duration-300">Proficiency</span>
+          <span 
+            className="text-xs font-semibold transition-colors duration-300"
+            style={{
+              color: color === 'cyan' 
+                ? '#0891b2'
+                : color === 'blue'
+                ? '#2563eb'
+                : color === 'purple'
+                ? '#9333ea'
+                : color === 'pink'
+                ? '#db2777'
+                : 'var(--accent-blue)',
+            }}
+          >{level}%</span>
         </div>
 
         {/* Glow Effect */}
